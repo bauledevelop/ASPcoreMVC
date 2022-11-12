@@ -9,6 +9,8 @@ namespace Shop.Repositories.IRepositories
 {
     public interface ICategoryProductRepository
     {
+        IEnumerable<CategoryProduct> SelectByQuantityItem(int page, int pageSize);
+        long GetTotal();
         IEnumerable<CategoryProduct> SelectAll();
         CategoryProduct SelectById(object id);
         void Insert(CategoryProduct obj);

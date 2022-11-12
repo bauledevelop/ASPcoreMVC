@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Shop.Business.Interfaces;
+using Shop.Common.DTO;
 using Shop.Mvc.Areas.Admin.Mapper;
 using Shop.Mvc.Areas.Admin.Models;
 using Shop.Mvc.Commons.DropdownList;
@@ -65,6 +66,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
             {
+                _accountBusiness.DeleteAccount(long.Parse(id));
                 return Json(new
                 {
                     status = true
@@ -90,7 +92,19 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             if (!ModelState.IsValid) return View(accountViewModel);
             try
             {
-
+                var accountDto = new AccountDTO();
+                var mapperAccount = new AccountMapper();
+                var check = false;
+                accountDto = mapperAccount.MapperViewModelToDTO(accountViewModel);
+                check = _accountBusiness.InsertAccount(accountDto);
+                if (check == true)
+                {
+                    return Redirect("/Admin/Account");
+                }
+                else
+                {
+                    ViewBag.Message = "Email đã tồn tại";
+                }
             }
             catch(Exception ex)
             {
@@ -105,7 +119,15 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
             {
-                return View();
+                var accoutDto = new AccountDTO();
+                var model = new AccountViewModel();
+                var mapperAccount = new AccountMapper();
+                var dropDownList = new DropdownListItem();
+                accoutDto = _accountBusiness.GetAccountById(long.Parse(id));
+                model = mapperAccount.MapperDtoToViewModel(accoutDto);
+                ViewData["TypeSex"] = new SelectList(dropDownList.DropdownListTypeSexActive(model.Sex), "Value", "Text");
+                ViewData["TypeAccount"] = new SelectList(dropDownList.DropdownListTypeAccountActive(model.AccountType), "Value", "Text");
+                return View(model);
             }
             catch(Exception ex)
             {
@@ -119,7 +141,15 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             if (!ModelState.IsValid) return View(accountViewModel);
             try
             {
-
+                var accountDto = new AccountDTO();
+                var mapperAccount = new AccountMapper();
+                accountDto = mapperAccount.MapperViewModelToDTO(accountViewModel);
+                var check = _accountBusiness.EditAccount(accountDto);
+                if (check)
+                {
+                    return Redirect("Admin/Account");
+                }
+                ViewBag.Message = "Email đã tồn tại";
             }
             catch (Exception ex)
             {
