@@ -15,28 +15,23 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
+        public string GetEmailByUsername(string username)
+        {
+            return _dbContext.Accounts.SingleOrDefault(x => x.Username == username).Email;
+        }
+        public bool CheckEmail(string email)
+        {
+            var model = _dbContext.Accounts.SingleOrDefault(x => x.Email == email);
+            return (model == null ? true : false);
+        }
         public long GetTotal()
         {
-            try
-            {
-                return _dbContext.Accounts.Where(x => x.IsDelete == false).Count();
-            }
-            catch
-            {
-                return 0;
-            }
+            return _dbContext.Accounts.Where(x => x.IsDelete == false).Count();
         }
         public IEnumerable<Account> SelectByQuantityItem(int page,int pageSize)
         {
-            try
-            {
-                var model = _dbContext.Accounts.Where(x => x.IsDelete == false).Skip((page - 1) * pageSize).Take(pageSize);
-                return model;
-            }
-            catch
-            {
-                return null;
-            }
+            var model = _dbContext.Accounts.Where(x => x.IsDelete == false).Skip((page - 1) * pageSize).Take(pageSize);
+            return model;
         }
     }
 }

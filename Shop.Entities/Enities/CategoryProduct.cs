@@ -20,6 +20,7 @@ namespace Shop.Entities.Enities
         public DateTime CreatedDate { set; get; }
         [Column(TypeName = "datetime2")]
         public DateTime UpdateDate { set; get; }
+        public bool IsDelete { set; get; }
         [DefaultValue(false)]
         public bool Status { set; get; }
         public long? CreatedBy { set; get; }

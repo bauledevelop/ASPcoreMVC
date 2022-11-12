@@ -9,6 +9,8 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IAccountRepository
     {
+        string GetEmailByUsername(string username);
+        bool CheckEmail(string email);
         long GetTotal();
         IEnumerable<Account> SelectByQuantityItem(int page, int pageSize);
         IEnumerable<Account> SelectAll();

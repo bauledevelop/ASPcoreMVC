@@ -3,7 +3,6 @@
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/Layout/_Layout.cshtml";
     var pagination = (Shop.Mvc.Commons.Models.PaginationModel)ViewData["Pagination"];
-    var listAccount = IEnumerable<Shop.Mvc.Areas.Admin.Models.AccountViewModel>ViewData["ListAccount"];
 }
 
 <div class="container-fluid">
@@ -48,13 +47,13 @@
                                 </td>
                                 <td>@item.CreatedDate</td>
                                 <td>@item.UpdateDate</td>
-                                @foreach (var child in listAccount)
+                                @*foreach (var child in listAccount)
                                 {
                                     if (item.CreatedBy == child.ID)
                                     {
                                         <td>@child.Username</td>
                                     }
-                                }
+                                }*@
                                 <td>@item.CreatedBy</td>
                                 <td>
                                     <a href="/Admin/Account/Edit/@item.ID" style="margin-right: 2px"><i class="fa-solid fa-pen color-edit"></i></a>
