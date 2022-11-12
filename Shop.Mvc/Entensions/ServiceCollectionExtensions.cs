@@ -25,14 +25,14 @@ namespace Shop.Mvc.Entensions
             services.AddTransient<IPaymentRepository, PaymentRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
 
-            services.AddSingleton<IAccountBusiness, AccountBusiness>();
-            services.AddSingleton<ICommentBusiness, CommentBusiness>();
-            services.AddSingleton<IFeedbackBusiness, FeedbackBusiness>();
-            services.AddSingleton<IFileBusiness, FileBusiness>();
-            services.AddSingleton<IOrderBusiness, OrderBusiness>();
-            services.AddSingleton<IOrderDetailBusiness, OrderDetailBusiness>();
-            services.AddSingleton<IPaymentBusiness, PaymentBusiness>();
-            services.AddSingleton<IProductBusiness, ProductBusiness>();
+            services.AddScoped<IAccountBusiness, AccountBusiness>();
+            services.AddScoped<ICommentBusiness, CommentBusiness>();
+            services.AddScoped<IFeedbackBusiness, FeedbackBusiness>();
+            services.AddScoped<IFileBusiness, FileBusiness>();
+            services.AddScoped<IOrderBusiness, OrderBusiness>();
+            services.AddScoped<IOrderDetailBusiness, OrderDetailBusiness>();
+            services.AddScoped<IPaymentBusiness, PaymentBusiness>();
+            services.AddScoped<IProductBusiness, ProductBusiness>();
         }
     }
 }

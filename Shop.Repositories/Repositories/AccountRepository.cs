@@ -15,5 +15,28 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
+        public long GetTotal()
+        {
+            try
+            {
+                return _dbContext.Accounts.Where(x => x.IsDelete == false).Count();
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+        public IEnumerable<Account> SelectByQuantityItem(int page,int pageSize)
+        {
+            try
+            {
+                var model = _dbContext.Accounts.Where(x => x.IsDelete == false).Skip((page - 1) * pageSize).Take(pageSize);
+                return model;
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

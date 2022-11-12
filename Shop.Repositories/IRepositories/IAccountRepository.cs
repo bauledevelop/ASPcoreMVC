@@ -9,6 +9,8 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IAccountRepository
     {
+        long GetTotal();
+        IEnumerable<Account> SelectByQuantityItem(int page, int pageSize);
         IEnumerable<Account> SelectAll();
         Account SelectById(object id);
         void Insert(Account obj);
