@@ -12,7 +12,7 @@ namespace Shop.Common.DTO
         public string Content { set; get; }
         public DateTime CreatedDate { set; get; }
         public bool Status { set; get; }
-        public long? IDAccount { set; get; }
-        public long? IDProduct { set; get; }
+        public long IDAccount { set; get; }
+        public long IDProduct { set; get; }
     }
 }

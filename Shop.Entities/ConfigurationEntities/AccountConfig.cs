@@ -14,7 +14,7 @@ namespace Shop.Entities.ConfigurationEntities
         public void Configure(EntityTypeBuilder<Account> builder)
         {
             builder.ToTable("Accounts");
-            builder.HasKey(a => a.ID);
+            builder.HasKey(account => new { account.ID,account.Email,account.Username});
         }
     }
 }

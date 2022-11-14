@@ -23,7 +23,7 @@ namespace Shop.Entities.Enities
         public bool IsDelete { set; get; }
         [DefaultValue(false)]
         public bool Status { set; get; }
-        public long? CreatedBy { set; get; }
+        public long CreatedBy { set; get; }
         [ForeignKey("CreatedBy")]
         public virtual Account Account { set; get; }
         public virtual ICollection<Product> Products { set; get; }

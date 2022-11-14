@@ -15,7 +15,7 @@ namespace Shop.Entities.ConfigurationEntities
         {
             builder.ToTable("Payments");
             builder.HasKey(p => p.ID);
-            builder.HasOne<Account>(p => p.Account).WithMany(a => a.Payments).HasForeignKey(p => p.IDAccount).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne<Account>(p => p.Account).WithMany(a => a.Payments).HasForeignKey(p => p.IDAccount).HasPrincipalKey(c => c.ID).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne<Order>(p => p.Order).WithMany(o => o.Payments).HasForeignKey(p => p.IDOrder).OnDelete(DeleteBehavior.Restrict);
         }
     }

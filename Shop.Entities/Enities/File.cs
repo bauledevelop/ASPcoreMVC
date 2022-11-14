@@ -15,16 +15,16 @@ namespace Shop.Entities.Enities
         public long ID { set; get; }
         [StringLength(2048)]
         public string FileContent { set; get; }
-        [Column("small")]
         public int Type { set; get; }
-        [Column("datetime2")]
+        [Column(TypeName = "datetime2")]
         public DateTime CreatedDate { set; get; }
-        [Column("datetime2")]
+        [Column(TypeName = "datetime2")]
         public DateTime UpdatedDate { set; get; }
-        public long? CreatedBy { set; get; }
+        public long CreatedBy { set; get; }
+        public bool IsDelete { set; get; }
         [DefaultValue(false)]
         public bool Status { set; get; }
-        public long? IDProduct { set; get; }
+        public long IDProduct { set; get; }
         [ForeignKey("CreatedBy")]
         public virtual Account Account { set; get; }
         [ForeignKey("IDProduct")]

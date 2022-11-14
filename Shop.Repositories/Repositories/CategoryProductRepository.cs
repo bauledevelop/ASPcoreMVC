@@ -15,6 +15,18 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
+        public IEnumerable<CategoryProduct> SelectAllByDelete()
+        {
+            try
+            {
+                var model = _dbContext.CategoryProducts.Where(x => x.IsDelete == false);
+                return model;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         public long GetTotal()
         {
             return _dbContext.CategoryProducts.Where(x => x.IsDelete == false).Count();

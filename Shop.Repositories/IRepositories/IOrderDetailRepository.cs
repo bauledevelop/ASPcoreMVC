@@ -9,8 +9,8 @@ namespace Shop.Repositories.IRepositories
 {
     public interface  IOrderDetailRepository
     {
-        IEnumerable<OrderDetail> SelectAll();
-        OrderDetail SelectById(object id);
+        IQueryable<OrderDetail> SelectAll();
+        OrderDetail SelectById(long id);
         void Insert(OrderDetail obj);
         Task Update(OrderDetail obj);
         void Delete(object id);

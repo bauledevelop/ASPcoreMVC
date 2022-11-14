@@ -16,6 +16,6 @@ namespace Shop.Mvc.Areas.Admin.Models
         public DateTime CreatedDate { set; get; }
         [Display(Name = "Trạng thái")]
         public bool Status { set; get; }
-        public long? IDAcount { set; get; }
+        public long IDAcount { set; get; }
     }
 }

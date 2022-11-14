@@ -15,7 +15,7 @@ namespace Shop.Mvc.Areas.Admin.Models
         public long Total { set; get; }
         [Display(Name = "Trạng thái")]
         public bool Status { set; get; }
-        public long? IDOrder { set; get; }
-        public long? IDProduct { set; get; }
+        public long IDOrder { set; get; }
+        public long IDProduct { set; get; }
     }
 }

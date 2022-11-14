@@ -76,6 +76,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
             {
+                _categoryProductBusiness.DeleteCategory(long.Parse(id));
                 return Json(new
                 {
                     status = true
@@ -101,7 +102,10 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             if (!ModelState.IsValid) return View(categoryProductViewModel);
             try
             {
-                
+                var mapperCategory = new CategoryMapper();
+                var categoryDto = mapperCategory.MapperViewModelToDto(categoryProductViewModel);
+                _categoryProductBusiness.InsertCategory(categoryDto);
+                return Redirect("/Admin/CategoryProduct");
             }
             catch(Exception ex)
             {
@@ -116,7 +120,10 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
             {
-                return View();
+                var mapperCategory = new CategoryMapper();
+                var categoryDto = _categoryProductBusiness.GetCategoryById(long.Parse(id));
+                var model = mapperCategory.MapperDtoToViewModel(categoryDto);
+                return View(model);
             }
             catch(Exception ex)
             {
@@ -130,7 +137,10 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             if (!ModelState.IsValid) return View(categoryProductViewModel);
             try
             {
-
+                var mapperCategory = new CategoryMapper();
+                var category = mapperCategory.MapperViewModelToDto(categoryProductViewModel);
+                _categoryProductBusiness.EditCategory(category);
+                return Redirect("/Admin/CategoryProduct");
             }
             catch(Exception ex)
             {

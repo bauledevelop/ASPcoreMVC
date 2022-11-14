@@ -21,6 +21,12 @@ namespace Shop.Business.Implements
             _categoryProductRepository = accountRepository;
             _mapper = mapper;
         }
+        public IEnumerable<CategoryProductDTO> SelectAllCategory()
+        {
+            var categorys = _categoryProductRepository.SelectAllByDelete();
+            var categoryDtos = categorys.Select(item => _mapper.Map<CategoryProduct, CategoryProductDTO>(item));
+            return categoryDtos;
+        }
         public void DeleteCategory(long id)
         {
             var category = _categoryProductRepository.SelectById(id);
@@ -48,7 +54,8 @@ namespace Shop.Business.Implements
             category.CreatedDate = DateTime.Now;
             category.UpdateDate = DateTime.Now;
             category.IsDelete = false;
-            _categoryProductRepository.Update(category);
+            category.CreatedBy = 1;
+            _categoryProductRepository.Insert(category);
             _categoryProductRepository.Save();
             return true;
         }

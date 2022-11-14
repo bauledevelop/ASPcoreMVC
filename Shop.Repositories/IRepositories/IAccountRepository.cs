@@ -9,12 +9,15 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IAccountRepository
     {
+        bool CheckPhone(string phone);
+        string GetPhoneByUsername(string username);
+        Account GetAccountById(long id);
         string GetEmailByUsername(string username);
         bool CheckEmail(string email);
         long GetTotal();
         IEnumerable<Account> SelectByQuantityItem(int page, int pageSize);
-        IEnumerable<Account> SelectAll();
-        Account SelectById(object id);
+        IQueryable<Account> SelectAll();
+        Account SelectById(long id);
         void Insert(Account obj);
         Task Update(Account obj);
         void Delete(object id);

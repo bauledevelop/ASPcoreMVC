@@ -9,8 +9,10 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IProductRepository
     {
-        IEnumerable<Product> SelectAll();
-        Product SelectById(object id);
+        IEnumerable<Product> SelectByQuantityItem(int page, int pageSize);
+        long GetTotal();
+        IQueryable<Product> SelectAll();
+        Product SelectById(long id);
         void Insert(Product obj);
         Task Update(Product obj);
         void Delete(object id);

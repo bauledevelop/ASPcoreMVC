@@ -4,7 +4,9 @@
     Layout = "~/Areas/Admin/Views/Shared/Layout/_Layout.cshtml";
     var pagination = (Shop.Mvc.Commons.Models.PaginationModel)ViewData["Pagination"];
 }
-
+@section js{ 
+    <script src="~/../Areas/Admin/assets/js/Account.js"></script>
+} 
 <div class="container-fluid">
     <!-- DataTales Example -->
     @if (Model != null)
@@ -69,7 +71,6 @@
                                 </td>
                             </tr>
                             }
-
                         </tbody>
                     </table>
                 </div>
@@ -87,7 +88,7 @@
                                     int currentPage = (int)(pagination.Page);
                                     var start = 1;
                                     var end = totalPage;
-                                    var link = "/Admin/Employee";
+                                    var link = "/Admin/Account";
                                     if (currentPage > 1)
                                     {
                                         <li class="paginate_button page-item previous" id="dataTable_previous">

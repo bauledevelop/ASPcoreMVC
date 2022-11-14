@@ -26,6 +26,14 @@ namespace Shop.Entities.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Email")
+                        .HasMaxLength(2048)
+                        .HasColumnType("varchar(2048)");
+
+                    b.Property<string>("Username")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
                     b.Property<int>("AccountType")
                         .HasColumnType("int");
 
@@ -38,10 +46,6 @@ namespace Shop.Entities.Migrations
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(2048)
-                        .HasColumnType("varchar(2048)");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -67,11 +71,7 @@ namespace Shop.Entities.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Username")
-                        .HasMaxLength(50)
-                        .HasColumnType("varchar(50)");
-
-                    b.HasKey("ID");
+                    b.HasKey("ID", "Email", "Username");
 
                     b.ToTable("Accounts");
 
@@ -79,36 +79,36 @@ namespace Shop.Entities.Migrations
                         new
                         {
                             ID = 1L,
+                            Email = "abc",
+                            Username = "admin",
                             AccountType = 1,
                             Address = "a",
-                            BirthDay = new DateTime(2022, 11, 12, 22, 50, 17, 467, DateTimeKind.Local).AddTicks(6104),
-                            CreatedDate = new DateTime(2022, 11, 12, 22, 50, 17, 464, DateTimeKind.Local).AddTicks(3453),
-                            Email = "abc",
+                            BirthDay = new DateTime(2022, 11, 14, 16, 28, 54, 153, DateTimeKind.Local).AddTicks(9972),
+                            CreatedDate = new DateTime(2022, 11, 14, 16, 28, 54, 152, DateTimeKind.Local).AddTicks(4194),
                             IsActive = true,
                             IsDelete = false,
                             Name = "Dương",
                             Password = "1",
                             Phone = "123",
                             Sex = 1,
-                            Status = true,
-                            Username = "admin"
+                            Status = true
                         },
                         new
                         {
                             ID = 2L,
+                            Email = "zxxz",
+                            Username = "user",
                             AccountType = 2,
                             Address = "a",
-                            BirthDay = new DateTime(2022, 11, 12, 22, 50, 17, 468, DateTimeKind.Local).AddTicks(4613),
-                            CreatedDate = new DateTime(2022, 11, 12, 22, 50, 17, 468, DateTimeKind.Local).AddTicks(4569),
-                            Email = "zxxz",
+                            BirthDay = new DateTime(2022, 11, 14, 16, 28, 54, 154, DateTimeKind.Local).AddTicks(3026),
+                            CreatedDate = new DateTime(2022, 11, 14, 16, 28, 54, 154, DateTimeKind.Local).AddTicks(3016),
                             IsActive = true,
                             IsDelete = false,
                             Name = "Dương",
                             Password = "1",
                             Phone = "123",
                             Sex = 2,
-                            Status = true,
-                            Username = "user"
+                            Status = true
                         });
                 });
 
@@ -119,7 +119,7 @@ namespace Shop.Entities.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long?>("CreatedBy")
+                    b.Property<long>("CreatedBy")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedDate")
@@ -159,11 +159,14 @@ namespace Shop.Entities.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<long?>("IDAccount")
+                    b.Property<long>("IDAccount")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("IDProduct")
+                    b.Property<long>("IDProduct")
                         .HasColumnType("bigint");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
@@ -191,8 +194,11 @@ namespace Shop.Entities.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<long?>("IDAcount")
+                    b.Property<long>("IDAcount")
                         .HasColumnType("bigint");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasMaxLength(1024)
@@ -215,32 +221,30 @@ namespace Shop.Entities.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long?>("CreatedBy")
+                    b.Property<long>("CreatedBy")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedDate")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("datetime2")
-                        .HasColumnName("datetime2");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("FileContent")
                         .HasMaxLength(2048)
                         .HasColumnType("nvarchar(2048)");
 
-                    b.Property<long?>("IDProduct")
+                    b.Property<long>("IDProduct")
                         .HasColumnType("bigint");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
                     b.Property<int>("Type")
-                        .HasColumnType("int")
-                        .HasColumnName("small");
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedDate")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("datetime2")
-                        .HasColumnName("datetime2");
+                        .HasColumnType("datetime2");
 
                     b.HasKey("ID");
 
@@ -261,8 +265,11 @@ namespace Shop.Entities.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<long?>("IDAccount")
+                    b.Property<long>("IDAccount")
                         .HasColumnType("bigint");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<long>("Quantity")
                         .HasColumnType("bigint");
@@ -287,10 +294,10 @@ namespace Shop.Entities.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long?>("IDOrder")
+                    b.Property<long>("IDOrder")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("IDProduct")
+                    b.Property<long>("IDProduct")
                         .HasColumnType("bigint");
 
                     b.Property<long>("Quantity")
@@ -318,15 +325,21 @@ namespace Shop.Entities.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Email")
                         .HasMaxLength(1024)
                         .HasColumnType("nvarchar(1024)");
 
-                    b.Property<long?>("IDAccount")
+                    b.Property<long>("IDAccount")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("IDOrder")
+                    b.Property<long>("IDOrder")
                         .HasColumnType("bigint");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Phone")
                         .HasMaxLength(20)
@@ -351,7 +364,7 @@ namespace Shop.Entities.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long?>("CreatedBy")
+                    b.Property<long>("CreatedBy")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedDate")
@@ -361,7 +374,7 @@ namespace Shop.Entities.Migrations
                         .HasMaxLength(2048)
                         .HasColumnType("nvarchar(2048)");
 
-                    b.Property<long?>("IDCategoryProduct")
+                    b.Property<long>("IDCategoryProduct")
                         .HasColumnType("bigint");
 
                     b.Property<bool>("IsDelete")
@@ -391,7 +404,9 @@ namespace Shop.Entities.Migrations
                     b.HasOne("Shop.Entities.Enities.Account", "Account")
                         .WithMany("CategoryProducts")
                         .HasForeignKey("CreatedBy")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasPrincipalKey("ID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Account");
                 });
@@ -401,12 +416,15 @@ namespace Shop.Entities.Migrations
                     b.HasOne("Shop.Entities.Enities.Account", "Account")
                         .WithMany("Comments")
                         .HasForeignKey("IDAccount")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasPrincipalKey("ID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("Shop.Entities.Enities.Product", "Product")
                         .WithMany("Comments")
                         .HasForeignKey("IDProduct")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Account");
 
@@ -418,7 +436,9 @@ namespace Shop.Entities.Migrations
                     b.HasOne("Shop.Entities.Enities.Account", "Account")
                         .WithMany("Feedbacks")
                         .HasForeignKey("IDAcount")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasPrincipalKey("ID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Account");
                 });
@@ -428,12 +448,15 @@ namespace Shop.Entities.Migrations
                     b.HasOne("Shop.Entities.Enities.Account", "Account")
                         .WithMany("Files")
                         .HasForeignKey("CreatedBy")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasPrincipalKey("ID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("Shop.Entities.Enities.Product", "Product")
                         .WithMany("Files")
                         .HasForeignKey("IDProduct")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Account");
 
@@ -445,7 +468,9 @@ namespace Shop.Entities.Migrations
                     b.HasOne("Shop.Entities.Enities.Account", "Account")
                         .WithMany("Orders")
                         .HasForeignKey("IDAccount")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasPrincipalKey("ID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Account");
                 });
@@ -455,12 +480,14 @@ namespace Shop.Entities.Migrations
                     b.HasOne("Shop.Entities.Enities.Order", "Order")
                         .WithMany("OrderDetails")
                         .HasForeignKey("IDOrder")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("Shop.Entities.Enities.Product", "Product")
                         .WithMany("OrderDetails")
                         .HasForeignKey("IDProduct")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Order");
 
@@ -472,12 +499,15 @@ namespace Shop.Entities.Migrations
                     b.HasOne("Shop.Entities.Enities.Account", "Account")
                         .WithMany("Payments")
                         .HasForeignKey("IDAccount")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasPrincipalKey("ID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("Shop.Entities.Enities.Order", "Order")
                         .WithMany("Payments")
                         .HasForeignKey("IDOrder")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Account");
 
@@ -489,12 +519,15 @@ namespace Shop.Entities.Migrations
                     b.HasOne("Shop.Entities.Enities.Account", "Account")
                         .WithMany("Products")
                         .HasForeignKey("CreatedBy")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .HasPrincipalKey("ID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("Shop.Entities.Enities.CategoryProduct", "CategoryProduct")
                         .WithMany("Products")
                         .HasForeignKey("IDCategoryProduct")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.Navigation("Account");
 

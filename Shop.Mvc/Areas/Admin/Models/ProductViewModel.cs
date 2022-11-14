@@ -13,12 +13,11 @@ namespace Shop.Mvc.Areas.Admin.Models
         public string Name { set; get; }
         [Display(Name = "Mô tả sản phẩm")]
         public string Description { set; get; }
-
         public DateTime CreatedDate { set; get; }
         public DateTime UpdatedDate { set; get; }
         [Display(Name = "Trạng thái")]
         public bool Status { set; get; }
-        public long? IDCategoryProduct { set; get; }
-        public long? CreatedBy { set; get; }
+        public string IDCategoryProduct { set; get; }
+        public long CreatedBy { set; get; }
     }
 }

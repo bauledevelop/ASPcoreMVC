@@ -34,13 +34,14 @@ namespace Shop.Entities.Enities
             var configData = new ConfigData();
             modelBuilder.ApplyConfiguration(new AccountConfig());
             modelBuilder.ApplyConfiguration(new CategoryProductConfig());
+            modelBuilder.ApplyConfiguration(new ProductConfig());
             modelBuilder.ApplyConfiguration(new CommentConfig());
             modelBuilder.ApplyConfiguration(new FeedbackConfig());
             modelBuilder.ApplyConfiguration(new FileConfig());
             modelBuilder.ApplyConfiguration(new OrderConfig());
             modelBuilder.ApplyConfiguration(new OrderDetailConfig());
             modelBuilder.ApplyConfiguration(new PaymentConfig());
-            modelBuilder.ApplyConfiguration(new ProductConfig());
+            
             configData.ConfigDataAccount(modelBuilder);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

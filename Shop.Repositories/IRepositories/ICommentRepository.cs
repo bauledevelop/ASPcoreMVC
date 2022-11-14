@@ -9,8 +9,10 @@ namespace Shop.Repositories.IRepositories
 {
     public interface ICommentRepository
     {
-        IEnumerable<Comment> SelectAll();
-        Comment SelectById(object id);
+        long GetTotal();
+        IEnumerable<Comment> SelectByQuantityItem(int page, int pageSize);
+        IQueryable<Comment> SelectAll();
+        Comment SelectById(long id);
         void Insert(Comment obj);
         Task Update(Comment obj);
         void Delete(object id);

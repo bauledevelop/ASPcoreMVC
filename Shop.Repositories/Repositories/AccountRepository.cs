@@ -15,9 +15,22 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
+        public string GetPhoneByUsername(string username)
+        {
+            return _dbContext.Accounts.SingleOrDefault(x => x.Username == username).Phone;
+        }
+        public Account GetAccountById(long id)
+        {
+            return _dbContext.Accounts.SingleOrDefault(x => x.ID == id);
+        }
         public string GetEmailByUsername(string username)
         {
             return _dbContext.Accounts.SingleOrDefault(x => x.Username == username).Email;
+        }
+        public bool CheckPhone(string phone)
+        {
+            var model = _dbContext.Accounts.SingleOrDefault(x => x.Phone == phone);
+            return (model == null ? true : false);
         }
         public bool CheckEmail(string email)
         {

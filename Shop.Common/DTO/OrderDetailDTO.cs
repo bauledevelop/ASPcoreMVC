@@ -12,7 +12,7 @@ namespace Shop.Common.DTO
         public long Quantity { set; get; }
         public long Total { set; get; }
         public bool Status { set; get; }
-        public long? IDOrder { set; get; }
-        public long? IDProduct { set; get; }
+        public long IDOrder { set; get; }
+        public long IDProduct { set; get; }
     }
 }

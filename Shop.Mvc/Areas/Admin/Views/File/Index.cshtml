@@ -1,0 +1,156 @@
+﻿@model IEnumerable<Shop.Mvc.Areas.Admin.Models.FileViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/Layout/_Layout.cshtml";
+    var pagination = (Shop.Mvc.Commons.Models.PaginationModel)ViewData["Pagination"];
+    var listAccount = (IEnumerable<Shop.Mvc.Areas.Admin.Models.AccountViewModel>)ViewData["ListAccount"];
+}
+@section js{
+    <script src="~/../Areas/Admin/assets/js/File.js"></script>
+}
+<div class="container-fluid">
+    <!-- DataTales Example -->
+    @if (Model != null)
+    {
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Danh sách nhân sự</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Loại dữ liệu</th>
+                                <th>FileContent</th>
+                                <th>Ngày tạo</th>
+                                <th>Ngày chỉnh sửa gần nhất</th>
+                                <th>Tài khoản đăng tải</th>
+                                <th>Công cụ</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Loại dữ liệu</th>
+                                <th>FileContent</th>
+                                <th>Ngày tạo</th>
+                                <th>Ngày chỉnh sửa gần nhất</th>
+                                <th>Tài khoản đăng tải</th>
+                                <th>Công cụ</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                var tick = "fa-solid fa-check color-tick";
+                                var xmask = "fa-solid fa-xmark color-xmask";
+                                <tr class="item-@item.ID">
+                                    <td>
+                                        @item.IDProduct
+                                    </td>
+                                    <td>@(item.Type == "1" ? "Hình ảnh" : "Video")</td>
+                                    <td>@item.FileContent</td>
+                                    <td>@item.CreatedDate</td>
+                                    <td>@item.UpdatedDate</td>
+                                    @foreach (var child in listAccount)
+                                    {
+                                        if (item.CreatedBy == child.ID)
+                                        {
+                                            <td>@child.Username</td>
+                                            break;
+                                        }
+                                    }
+                                    <td>
+                                        <a href="/Admin/File/Edit/@item.ID" style="margin-right: 2px"><i class="fa-solid fa-pen color-edit"></i></a>
+                                        <span class="_deleteFile" data-bs-toggle="modal" data-bs-target="#deleteFile" data-id="@item.ID" style="cursor: pointer; margin-right: 2px"><i class="fa-solid fa-trash color-trash"></i></span>
+                                        <i class="@(item.Status == true ? tick : xmask)"></i>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row" style="justify-content: space-between;">
+                    <div class="col-sm-12 col-md-5">
+                        <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing @pagination.Show to @pagination.ShowTo of @pagination.Total entries</div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+                            <ul class="pagination">
+                                @if (pagination.Total > 1)
+                                {
+                                    var pageDisplay = (long)(pagination.MaxPage);
+                                    long totalPage = (long)(pagination.TotalPage);
+                                    long currentPage = (long)(pagination.Page);
+                                    var start = 1;
+                                    var end = totalPage;
+                                    var link = "/Admin/File";
+                                    if (currentPage > 1)
+                                    {
+                                        <li class="paginate_button page-item previous" id="dataTable_previous">
+                                            <a href="@link?page=@pagination.Prev" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li class="paginate_button page-item previous disabled" id="dataTable_previous">
+                                            <a href="@link?page=@pagination.Prev" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                                        </li>
+                                    }
+                                    for (long i = start; i <= end; i++)
+                                    {
+                                        if (currentPage == i)
+                                        {
+                                            <li class="paginate_button page-item active">
+                                                <a href="@link?page=@i" aria-controls="dataTable" data-dt-idx="@i" tabindex="0" class="page-link">@i</a>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                            <li class="paginate_button page-item ">
+                                                <a href="@link?page=@i" aria-controls="dataTable" data-dt-idx="@i" tabindex="0" class="page-link">@i</a>
+                                            </li>
+                                        }
+                                    }
+                                    if (currentPage < totalPage)
+                                    {
+                                        <li class="paginate_button page-item next" id="dataTable_next">
+                                            <a href="@link?page=@pagination.Next" aria-controls="dataTable" data-dt-idx="@pagination.Next" tabindex="0" class="page-link">Next</a>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li class="paginate_button page-item next disabled" id="dataTable_next">
+                                            <a href="@link?page=@pagination.Next" aria-controls="dataTable" data-dt-idx="@pagination.Next" tabindex="0" class="page-link">Next</a>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="modal fade" id="deleteFile" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn có chắc là muốn xóa nhân viên này?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
+                <button type="button" class="btn btn-primary btn-submit">Đồng ý</button>
+            </div>
+        </div>
+    </div>
+</div>

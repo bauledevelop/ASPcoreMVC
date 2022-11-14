@@ -94,17 +94,19 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             {
                 var accountDto = new AccountDTO();
                 var mapperAccount = new AccountMapper();
-                var check = false;
+                var check = 0;
                 accountDto = mapperAccount.MapperViewModelToDTO(accountViewModel);
                 check = _accountBusiness.InsertAccount(accountDto);
-                if (check == true)
+                if (check == 1)
                 {
                     return Redirect("/Admin/Account");
                 }
-                else
+                else if (check == 2)
                 {
                     ViewBag.Message = "Email đã tồn tại";
                 }
+                else
+                    ViewBag.Message = "Số điện thoại đã tồn tại";
             }
             catch(Exception ex)
             {
@@ -138,22 +140,21 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Edit(AccountViewModel accountViewModel)
         {
+            var dropDownList = new DropdownListItem();
+            ViewData["TypeSex"] = new SelectList(dropDownList.DropdownListTypeSexActive(accountViewModel.Sex), "Value", "Text");
+            ViewData["TypeAccount"] = new SelectList(dropDownList.DropdownListTypeAccountActive(accountViewModel.AccountType), "Value", "Text");
             if (!ModelState.IsValid) return View(accountViewModel);
-            try
+            var accountDto = new AccountDTO();
+            var mapperAccount = new AccountMapper();
+            accountDto = mapperAccount.MapperViewModelToDTO(accountViewModel);
+            var check = _accountBusiness.EditAccount(accountDto);
+            if (check)
             {
-                var accountDto = new AccountDTO();
-                var mapperAccount = new AccountMapper();
-                accountDto = mapperAccount.MapperViewModelToDTO(accountViewModel);
-                var check = _accountBusiness.EditAccount(accountDto);
-                if (check)
-                {
-                    return Redirect("Admin/Account");
-                }
-                ViewBag.Message = "Email đã tồn tại";
+                return Redirect("/Admin/Account");
             }
-            catch (Exception ex)
+            else
             {
-                ViewBag.Message = "Thay đổi tài khoản không thành công";
+                ViewBag.Message = "Số điện thoại đã tồn tại";
             }
             return View(accountViewModel);
         }

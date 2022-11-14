@@ -24,7 +24,7 @@ namespace Shop.Business.Mapping
             CreateMap<Feedback, FeedbackDTO>();
             CreateMap<File, FileDTO>();
             CreateMap<OrderDetail, OrderDetailDTO>();
-            CreateMap<Order, OrderDTO>();
+            CreateMap<Order, Order>();
             CreateMap<Payment, PaymentDTO>();
             CreateMap<Product, ProductDTO>();
         }

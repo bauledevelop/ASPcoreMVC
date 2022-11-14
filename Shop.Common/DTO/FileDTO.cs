@@ -13,8 +13,8 @@ namespace Shop.Common.DTO
         public int Type { set; get; }
         public DateTime CreatedDate { set; get; }
         public DateTime UpdatedDate { set; get; }
-        public long? CreatedBy { set; get; }
         public bool Status { set; get; }
-        public long? IDProduct { set; get; }
+        public long CreatedBy { set; get; }
+        public long IDProduct { set; get; }
     }
 }
