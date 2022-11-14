@@ -1,6 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Shop.Business.Implements;
 using Shop.Business.Interfaces;
+using Shop.Entities.Enities;
 using Shop.Repositories.IGenericRepository;
 using Shop.Repositories.IRepositories;
 using Shop.Repositories.Repositories;
@@ -16,6 +18,7 @@ namespace Shop.Mvc.Entensions
         public static void RegisterDependencies(this IServiceCollection services)
         {
             services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddTransient<ICategoryProductRepository, CategoryProductRepository>();
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddTransient<ICommentRepository, CommentRepository>();
             services.AddTransient<IFeedbackRepository, FeedbackRepository>();
@@ -25,6 +28,7 @@ namespace Shop.Mvc.Entensions
             services.AddTransient<IPaymentRepository, PaymentRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
 
+            services.AddScoped<ICategoryProductBusiness, CategoryProductBusiness>();
             services.AddScoped<IAccountBusiness, AccountBusiness>();
             services.AddScoped<ICommentBusiness, CommentBusiness>();
             services.AddScoped<IFeedbackBusiness, FeedbackBusiness>();
@@ -33,6 +37,7 @@ namespace Shop.Mvc.Entensions
             services.AddScoped<IOrderDetailBusiness, OrderDetailBusiness>();
             services.AddScoped<IPaymentBusiness, PaymentBusiness>();
             services.AddScoped<IProductBusiness, ProductBusiness>();
+            services.AddScoped<DbContext, ShopContext>();
         }
     }
 }

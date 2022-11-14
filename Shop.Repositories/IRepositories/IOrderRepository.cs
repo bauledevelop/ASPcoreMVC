@@ -9,8 +9,10 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IOrderRepository
     {
-        IEnumerable<Order> SelectAll();
-        Order SelectById(object id);
+        IEnumerable<Order> SelectByQuantityItem(int page, int pageSize);
+        long GetTotal();
+        IQueryable<Order> SelectAll();
+        Order SelectById(long id);
         void Insert(Order obj);
         Task Update(Order obj);
         void Delete(object id);

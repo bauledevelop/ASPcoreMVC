@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Shop.Common.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,70 @@ namespace Shop.Mvc.Commons.DropdownList
 {
     public class DropdownListItem
     {
+        public IEnumerable<SelectListItem> DropdownListProductActive(IEnumerable<ProductDTO> productDTOs,long active)
+        {
+            var listItem = new List<SelectListItem>();
+            var target = productDTOs.SingleOrDefault(item => item.ID == active);
+            listItem.Add(new SelectListItem() { Text = target.Name, Value = target.ID.ToString() });
+            foreach (var item in productDTOs)
+            {
+                if (target.ID != item.ID)
+                    listItem.Add(new SelectListItem() { Text = item.Name, Value = item.ID.ToString() });
+            }
+            return listItem;
+        }
+        public IEnumerable<SelectListItem> DropdownListProduct(IEnumerable<ProductDTO> productDTOs)
+        {
+            var listItem = new List<SelectListItem>();
+            foreach (var item in productDTOs)
+            {
+                listItem.Add(new SelectListItem() { Text = item.Name, Value = item.ID.ToString() });
+            }
+            return listItem;
+        }
+        public IEnumerable<SelectListItem> DropdownListTypeFileActive(string active)
+        {
+            var listItem = new List<SelectListItem>();
+            if (active == "1")
+            {
+                listItem.Add(new SelectListItem() { Text = "Hình ảnh", Value = "1" });
+                listItem.Add(new SelectListItem() { Text = "Video", Value = "2" });
+            }
+            else
+            {
+                listItem.Add(new SelectListItem() { Text = "Video", Value = "2" });
+                listItem.Add(new SelectListItem() { Text = "Hình ảnh", Value = "1" });
+            }
+            return listItem;
+        }
+        public IEnumerable<SelectListItem> DropdownListTypeFile()
+        {
+            var listItem = new List<SelectListItem>();
+            listItem.Add(new SelectListItem() { Text = "Hình ảnh", Value = "1" });
+            listItem.Add(new SelectListItem() { Text = "Video", Value = "2" });
+            return listItem;
+        }
+        public IEnumerable<SelectListItem> DropdownListCategoryActive(IEnumerable<CategoryProductDTO> categoryProductDTO,long active)
+        {
+            var listItem = new List<SelectListItem>();
+            var target = categoryProductDTO.SingleOrDefault(item => item.ID == active);
+            listItem.Add(new SelectListItem() { Text = target.Name, Value = target.ID.ToString()});
+            foreach (var item in categoryProductDTO)
+            {
+                if (target.ID != item.ID)
+                    listItem.Add(new SelectListItem() { Text = item.Name, Value = item.ID.ToString() });
+            }
+            return listItem;
+        }
+        public IEnumerable<SelectListItem> DropdownListCategory(IEnumerable<CategoryProductDTO> categoryProductDTO)
+        {
+            var listItem = new List<SelectListItem>();
+            foreach (var item in categoryProductDTO)
+            {
+                listItem.Add(new SelectListItem() { Text = item.Name, Value = item.ID.ToString() });
+            }
+            return listItem;
+        }
         public IEnumerable<SelectListItem> DropdownListTypeSexActive(string active)
         {
             var listItem = new List<SelectListItem>();

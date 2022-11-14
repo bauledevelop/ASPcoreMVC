@@ -16,9 +16,12 @@ namespace Shop.Entities.Enities
         public string Email { set; get; }
         [StringLength(20)]
         public string Phone { set; get; }
+        [Column(TypeName = "datetime2")]
+        public DateTime CreatedDate { set; get; }
+        public bool IsDelete { set; get; }
         public bool Status { set; get; }
-        public long? IDAccount { set; get; }
-        public long? IDOrder { set; get; }
+        public long IDAccount { set; get; }
+        public long IDOrder { set; get; }
         [ForeignKey("IDAccount")]
         public virtual Account Account { set; get; }
         [ForeignKey("IDOrder")]

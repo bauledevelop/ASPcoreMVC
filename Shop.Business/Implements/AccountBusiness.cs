@@ -31,16 +31,16 @@ namespace Shop.Business.Implements
         {
             var account = _accountRepository.SelectById(id);
             account.IsDelete = true;
-            _accountRepository.Update(account);
+            _accountRepository.DeleteByItem(account);
             _accountRepository.Save();
         }
         public bool EditAccount(AccountDTO accountDTO)
         {
             var account = _mapper.Map<AccountDTO, Account>(accountDTO);
             var SHA1 = new HashPasswordSHA1();
-            var email = _accountRepository.GetEmailByUsername(account.Username);
-            var check = _accountRepository.CheckEmail(account.Email);
-            if (check || email == accountDTO.Email)
+            var phone = _accountRepository.GetPhoneByUsername(account.Username);
+            var check = _accountRepository.CheckPhone(account.Phone);
+            if (check || phone == accountDTO.Phone)
             {
                 account.Password = SHA1.HashPassword(account.Password);
                 _accountRepository.Update(account);
@@ -51,26 +51,34 @@ namespace Shop.Business.Implements
         }
         public AccountDTO GetAccountById(long id)
         {
-            var account = _accountRepository.SelectById(id);
+            var account = _accountRepository.GetAccountById(id);
             var accountDto = _mapper.Map<Account, AccountDTO>(account);
             return accountDto;
         }
-        public bool InsertAccount(AccountDTO accountDTO)
+        public int InsertAccount(AccountDTO accountDTO)
         {
             var account = _mapper.Map<AccountDTO, Account>(accountDTO);
             var SHA1 = new HashPasswordSHA1();
             account.CreatedDate = DateTime.Now;
             account.IsActive = true;
             account.IsDelete = false;
-            var check = _accountRepository.CheckEmail(account.Email);
-            if (check)
+            var checkEmail = _accountRepository.CheckEmail(account.Email);
+            var checkPhone = _accountRepository.CheckPhone(account.Phone);
+            if (checkEmail)
             {
-                account.Password = SHA1.HashPassword(account.Password);
-                _accountRepository.Update(account);
-                _accountRepository.Save();
-                return true;
+                if (checkPhone)
+                {
+                    account.Password = SHA1.HashPassword(account.Password);
+                    _accountRepository.Insert(account);
+                    _accountRepository.Save();
+                    return 1;
+                }
+                return 3;
             }
-            return false;
+            else
+            {
+                return 2;
+            }
         }
         public IEnumerable<AccountDTO> SelectByQuantityItem(int page,int pageSize)
         {

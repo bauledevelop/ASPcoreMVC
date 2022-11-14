@@ -13,7 +13,7 @@ namespace Shop.Business.Interfaces
         void DeleteAccount(long id);
         bool EditAccount(AccountDTO accountDTO);
         AccountDTO GetAccountById(long id);
-        bool InsertAccount(AccountDTO accountDTO);
+        int InsertAccount(AccountDTO accountDTO);
         long GetTotal();
         IEnumerable<AccountDTO> SelectByQuantityItem(int page, int pageSize);
     }

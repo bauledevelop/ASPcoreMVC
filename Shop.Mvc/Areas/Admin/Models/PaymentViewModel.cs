@@ -9,10 +9,12 @@ namespace Shop.Mvc.Areas.Admin.Models
     public class PaymentViewModel
     {
         public long ID { set; get; }
+        public string Name { set; get; }
         public string Email { set; get; }
         public string Phone { set; get; }
+        public DateTime CreatedDate { set; get; }
         public bool Status { set; get; }
-        public long? IDAccount { set; get; }
-        public long? IDOrder { set; get; }
+        public long IDAccount { set; get; }
+        public long IDOrder { set; get; }
     }
 }

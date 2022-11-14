@@ -15,7 +15,7 @@ namespace Shop.Entities.ConfigurationEntities
         {
             builder.ToTable("Comments");
             builder.HasKey(a => a.ID);
-            builder.HasOne<Account>(c => c.Account).WithMany(a => a.Comments).HasForeignKey(c => c.IDAccount).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne<Account>(c => c.Account).WithMany(a => a.Comments).HasForeignKey(c => c.IDAccount).HasPrincipalKey(c => c.ID).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne<Product>(c => c.Product).WithMany(p => p.Comments).HasForeignKey(c => c.IDProduct).OnDelete(DeleteBehavior.Restrict);
 
         }

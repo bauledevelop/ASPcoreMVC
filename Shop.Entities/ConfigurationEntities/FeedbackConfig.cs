@@ -15,7 +15,7 @@ namespace Shop.Entities.ConfigurationEntities
         {
             builder.ToTable("Feedbacks");
             builder.HasKey(a => a.ID);
-            builder.HasOne<Account>(f => f.Account).WithMany(a => a.Feedbacks).HasForeignKey(f => f.IDAcount).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne<Account>(f => f.Account).WithMany(a => a.Feedbacks).HasForeignKey(f => f.IDAcount).HasPrincipalKey(c => c.ID).OnDelete(DeleteBehavior.Restrict);
 
         }
     }

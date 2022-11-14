@@ -9,8 +9,10 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IFeedbackRepository
     {
-        IEnumerable<Feedback> SelectAll();
-        Feedback SelectById(object id);
+        IEnumerable<Feedback> SelectByQuantityItem(int page, int pageSize);
+        long GetTotal();
+        IQueryable<Feedback> SelectAll();
+        Feedback SelectById(long id);
         void Insert(Feedback obj);
         Task Update(Feedback obj);
         void Delete(object id);

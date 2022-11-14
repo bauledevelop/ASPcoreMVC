@@ -9,8 +9,10 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IPaymentRepository
     {
-        IEnumerable<Payment> SelectAll();
-        Payment SelectById(object id);
+        IEnumerable<Payment> SelectByQuantityItem(int page, int pageSize);
+        long GetTotal();
+        IQueryable<Payment> SelectAll();
+        Payment SelectById(long id);
         void Insert(Payment obj);
         Task Update(Payment obj);
         void Delete(object id);

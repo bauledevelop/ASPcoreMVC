@@ -15,5 +15,21 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
+        public IEnumerable<Comment> SelectByQuantityItem(int page, int pageSize)
+        {
+            try
+            {
+                var model = _dbContext.Comments.Where(x => x.ID != 0).Skip((page - 1) * pageSize).Take(pageSize);
+                return model;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public long GetTotal()
+        {
+            return _dbContext.Comments.Where(x => x.ID!=0).Count();
+        }
     }
 }

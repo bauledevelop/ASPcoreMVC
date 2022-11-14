@@ -17,21 +17,15 @@ namespace Shop.Repositories.Repositories
         {
             _db = dbContext;
             _table = _db.Set<T>();
+            
         }
-        public IEnumerable<T> SelectAll()
+        public IQueryable<T> SelectAll()
         {
-            return _table.ToList();
+            return _table.AsQueryable().AsNoTracking();
         }
-        public T SelectById(object id)
+        public T SelectById(long id)
         {
-            try
-            {
-                return _table.Find(id);
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
+            return _table.Find(id);
         }
         public void Insert(T obj)
         {
@@ -47,6 +41,7 @@ namespace Shop.Repositories.Repositories
             {
                 throw new ArgumentNullException(nameof(obj));
             }
+            _db.ChangeTracker.Clear();
             _table.Attach(obj);
             _db.Entry(obj).State = EntityState.Modified;
             return Task.CompletedTask;

@@ -15,8 +15,9 @@ namespace Shop.Entities.Enities
         [Column(TypeName = "datetime2")]
         public DateTime CreatedDate { set; get; }
         public long Total { set; get; }
+        public bool IsDelete { set; get; }
         public bool Status { set; get; }
-        public long? IDAccount { set; get; }
+        public long IDAccount { set; get; }
         [ForeignKey("IDAccount")]
         public virtual Account Account { set; get; }
         public virtual ICollection<Payment> Payments { set; get; }

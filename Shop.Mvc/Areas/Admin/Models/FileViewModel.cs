@@ -12,12 +12,12 @@ namespace Shop.Mvc.Areas.Admin.Models
         [Display(Name = "Đường dẫn")]
         public string FileContent { set; get; }
         [Display(Name = "Loại dữ liệu")]
-        public int Type { set; get; }
+        public string Type { set; get; }
         public DateTime CreatedDate { set; get; }
         public DateTime UpdatedDate { set; get; }
-        public long? CreatedBy { set; get; }
+        public long CreatedBy { set; get; }
         [Display(Name = "Trạng thái")]
         public bool Status { set; get; }
-        public long? IDProduct { set; get; }
+        public string IDProduct { set; get; }
     }
 }

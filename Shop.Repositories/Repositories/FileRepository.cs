@@ -15,5 +15,16 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
+
+        public IEnumerable<File> SelectByQuantityItem(int page,int pageSize)
+        {
+            var model = _dbContext.Files.Where(x => x.IsDelete == false).Skip((page - 1) * pageSize).Take(pageSize);
+            return model;
+        }
+        public long GetTotal()
+        {
+            var model = _dbContext.Files.Where(x => x.IsDelete == false).Count();
+            return model;
+        }
     }
 }

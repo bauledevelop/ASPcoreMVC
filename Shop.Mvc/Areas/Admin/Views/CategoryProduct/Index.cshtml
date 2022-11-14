@@ -3,8 +3,11 @@
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/Shared/Layout/_Layout.cshtml";
     var pagination = (Shop.Mvc.Commons.Models.PaginationModel)ViewData["Pagination"];
+    var listAccount = (IEnumerable<Shop.Mvc.Areas.Admin.Models.AccountViewModel>)ViewData["ListAccount"];
 }
-
+@section js{
+    <script src="~/../Areas/Admin/assets/js/Category.js"></script>
+} 
 <div class="container-fluid">
     <!-- DataTales Example -->
     @if (Model != null)
@@ -22,7 +25,6 @@
                                 <th>Ngày tạo</th>
                                 <th>Chỉnh sửa gần nhất</th>
                                 <th>Tài khoản đăng tải</th>
-                                <th>Loại người dùng</th>
                                 <th>Công cụ</th>
                             </tr>
                         </thead>
@@ -32,7 +34,6 @@
                                 <th>Ngày tạo</th>
                                 <th>Chỉnh sửa gần nhất</th>
                                 <th>Tài khoản đăng tải</th>
-                                <th>Loại người dùng</th>
                                 <th>Công cụ</th>
                             </tr>
                         </tfoot>
@@ -41,26 +42,26 @@
                             {
                                 var tick = "fa-solid fa-check color-tick";
                                 var xmask = "fa-solid fa-xmark color-xmask";
-                            <tr class="item-@item.ID">
-                                <td>
-                                    @item.Name
-                                </td>
-                                <td>@item.CreatedDate</td>
-                                <td>@item.UpdateDate</td>
-                                @*foreach (var child in listAccount)
-                                {
-                                    if (item.CreatedBy == child.ID)
+                                <tr class="item-@item.ID">
+                                    <td>
+                                        @item.Name
+                                    </td>
+                                    <td>@item.CreatedDate</td>
+                                    <td>@item.UpdateDate</td>
+                                    @foreach (var child in listAccount)
                                     {
-                                        <td>@child.Username</td>
+                                        if (item.CreatedBy == child.ID)
+                                        {
+                                            <td>@child.Username</td>
+                                            break;
+                                        }
                                     }
-                                }*@
-                                <td>@item.CreatedBy</td>
-                                <td>
-                                    <a href="/Admin/Account/Edit/@item.ID" style="margin-right: 2px"><i class="fa-solid fa-pen color-edit"></i></a>
-                                    <span class="_deleteEmployee" data-bs-toggle="modal" data-bs-target="#deleteAccount" data-id="@item.ID" style="cursor: pointer; margin-right: 2px"><i class="fa-solid fa-trash color-trash"></i></span>
-                                    <i class="@(item.Status == true ? tick : xmask)"></i>
-                                </td>
-                            </tr>
+                                    <td>
+                                        <a href="/Admin/CategoryProduct/Edit/@item.ID" style="margin-right: 2px"><i class="fa-solid fa-pen color-edit"></i></a>
+                                        <span class="_deleteCategory" data-bs-toggle="modal" data-bs-target="#deleteCategory" data-id="@item.ID" style="cursor: pointer; margin-right: 2px"><i class="fa-solid fa-trash color-trash"></i></span>
+                                        <i class="@(item.Status == true ? tick : xmask)"></i>
+                                    </td>
+                                </tr>
                             }
 
                         </tbody>
@@ -75,12 +76,12 @@
                             <ul class="pagination">
                                 @if (pagination.Total > 1)
                                 {
-                                    var pageDisplay = (int)(pagination.MaxPage);
+                                    var pageDisplay = (long)(pagination.MaxPage);
                                     long totalPage = (long)(pagination.TotalPage);
-                                    int currentPage = (int)(pagination.Page);
-                                    var start = 1;
-                                    var end = totalPage;
-                                    var link = "/Admin/Employee";
+                                    long currentPage = (long)(pagination.Page);
+                                    var start = ((currentPage < 3) ? 1 : (currentPage + 2) > totalPage ? (totalPage - 4 < 1) ? 1 : totalPage - 4 : currentPage - 2);
+                                    var end = ((currentPage < 3) ? ((totalPage < 5) ? totalPage : 5) : (currentPage + 2 > totalPage) ? totalPage : currentPage + 2);
+                                    var link = "/Admin/CategoryProduct";
                                     if (currentPage > 1)
                                     {
                                         <li class="paginate_button page-item previous" id="dataTable_previous">
@@ -93,7 +94,7 @@
                                             <a href="@link?page=@pagination.Prev" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
                                         </li>
                                     }
-                                    for (int i = start; i <= end; i++)
+                                    for (long i = start; i <= end; i++)
                                     {
                                         if (currentPage == i)
                                         {
@@ -130,7 +131,7 @@
     }
 </div>
 
-<div class="modal fade" id="deleteAccount" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteCategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

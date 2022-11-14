@@ -14,7 +14,7 @@ namespace Shop.Common.DTO
         public DateTime CreatedDate { set; get; }
         public DateTime UpdatedDate { set; get; }
         public bool Status { set; get; }
-        public long? IDCategoryProduct { set; get; }
-        public long? CreatedBy { set; get; }
+        public long IDCategoryProduct { set; get; }
+        public long CreatedBy { set; get; }
     }
 }

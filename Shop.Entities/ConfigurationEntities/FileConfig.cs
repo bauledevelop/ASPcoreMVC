@@ -15,7 +15,7 @@ namespace Shop.Entities.ConfigurationEntities
         {
             builder.ToTable("Files");
             builder.HasKey(a => a.ID);
-            builder.HasOne<Account>(f => f.Account).WithMany(a => a.Files).HasForeignKey(f => f.CreatedBy).OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne<Account>(f => f.Account).WithMany(a => a.Files).HasForeignKey(f => f.CreatedBy).HasPrincipalKey(c => c.ID).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne<Product>(f => f.Product).WithMany(f => f.Files).HasForeignKey(f => f.IDProduct).OnDelete(DeleteBehavior.Restrict);
         }
     }

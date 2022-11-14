@@ -74,9 +74,8 @@ namespace Shop.Mvc
                 RequestPath = "/Commons"
             });
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -86,8 +85,7 @@ namespace Shop.Mvc
                 endpoints.MapAreaControllerRoute(
                     name: "admin",
                     areaName: "Admin",
-                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
-                    );
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
