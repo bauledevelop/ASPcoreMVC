@@ -16,10 +16,32 @@ namespace Shop.Business.Implements
     {
         private readonly IAccountRepository _accountRepository;
         private readonly IMapper _mapper;
-        public AccountBusiness(IAccountRepository accountRepository,IMapper mapper)
+        private readonly ICategoryProductBusiness _categoryProductBusiness;
+        private readonly IProductBusiness _productBusiness;
+        private readonly IFeedbackBusiness _feedbackBusiness;
+        private readonly IFileBusiness _fileBusiness;
+        private readonly ICommentBusiness _commentBusiness;
+        private readonly IPaymentBusiness _paymentBusiness;
+        private readonly IOrderBusiness _orderBusiness;
+        public AccountBusiness(IAccountRepository accountRepository,IMapper mapper,
+            ICategoryProductBusiness categoryProductBusiness,
+            IProductBusiness productBusiness,
+            IFeedbackBusiness feedbackBusiness,
+            IFileBusiness fileBusiness,
+            ICommentBusiness commentBusiness,
+            IPaymentBusiness paymentBusiness,
+            IOrderBusiness orderBusiness
+            )
         {
             _accountRepository = accountRepository;
             _mapper = mapper;
+            _categoryProductBusiness = categoryProductBusiness;
+            _productBusiness = productBusiness;
+            _feedbackBusiness = feedbackBusiness;
+            _fileBusiness = fileBusiness;
+            _commentBusiness = commentBusiness;
+            _paymentBusiness = paymentBusiness;
+            _orderBusiness = orderBusiness;
         }
         public IEnumerable<AccountDTO> SelectAll()
         {
@@ -29,10 +51,17 @@ namespace Shop.Business.Implements
         }
         public void DeleteAccount(long id)
         {
-            var account = _accountRepository.SelectById(id);
-            account.IsDelete = true;
+            var account = _accountRepository.SelectAccountById(id);
+            _categoryProductBusiness.DeleteByAccountID(id);
+            _productBusiness.DeleteByIDAccount(id);
+            _commentBusiness.DeleteByIDAccount(id);
+            _feedbackBusiness.DeleteByIDAccount(id);
+            _fileBusiness.DeleteByIDAccount(id);
+            _orderBusiness.DeleteByIDAccount(id);
+            _paymentBusiness.DeleteByIDAccount(id);
             _accountRepository.DeleteByItem(account);
             _accountRepository.Save();
+           
         }
         public bool EditAccount(AccountDTO accountDTO)
         {

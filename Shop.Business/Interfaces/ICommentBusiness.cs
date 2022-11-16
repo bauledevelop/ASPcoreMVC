@@ -9,6 +9,8 @@ namespace Shop.Business.Interfaces
 {
     public interface ICommentBusiness
     {
+        void DeleteByIDAccount(long IDAccount);
+        void DeleteByIDProduct(long IDProduct, bool where = false);
         void DeleteComment(long id);
         long GetTotal();
         IEnumerable<CommentDTO> SelectByQuantityItem(int page, int pageSize);

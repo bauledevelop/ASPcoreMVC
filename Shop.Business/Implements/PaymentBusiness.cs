@@ -20,10 +20,40 @@ namespace Shop.Business.Implements
             _paymentRepository = paymentRepository;
             _mapper = mapper;
         }
-        public void DeleteOrder(long id)
+        public void DeleteByIDOrder(long IDOrder)
         {
-            _paymentRepository.Delete(id);
+            var payments = _paymentRepository.SelectAll();
+            if (payments != null)
+            {
+                foreach (var item in payments)
+                {
+                    if (item.IDOrder == IDOrder)
+                    {
+                        _paymentRepository.DeleteByItem(item);
+                        _paymentRepository.Save();
+                    }
+                }
+            }
+        }
+        public void DeletePayment(long ID)
+        {
+            _paymentRepository.Delete(ID);
             _paymentRepository.Save();
+        }
+        public void DeleteByIDAccount(long IDAccount)
+        {
+            var payments = _paymentRepository.SelectAll();
+            if (payments != null)
+            {
+                foreach (var item in payments)
+                {
+                    if (item.IDAccount == IDAccount)
+                    {
+                        _paymentRepository.DeleteByItem(item);
+                        _paymentRepository.Save();
+                    }
+                }
+            }
         }
         public long GetTotal()
         {

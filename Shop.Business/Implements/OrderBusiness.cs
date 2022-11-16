@@ -15,13 +15,36 @@ namespace Shop.Business.Implements
     {
         private readonly IOrderRepository _orderRepository;
         private readonly IMapper _mapper;
-        public OrderBusiness(IOrderRepository orderRepository, IMapper mapper)
+        private readonly IOrderDetailBusiness _orderDetailBusiness;
+        private readonly IPaymentBusiness _paymentBusiness;
+        public OrderBusiness(IOrderRepository orderRepository, IMapper mapper,IOrderDetailBusiness orderDetailBusiness,IPaymentBusiness paymentBusiness)
         {
             _orderRepository = orderRepository;
             _mapper = mapper;
+            _orderDetailBusiness = orderDetailBusiness;
+            _paymentBusiness = paymentBusiness;
+        }
+        public void DeleteByIDAccount(long IDAccount)
+        {
+            var orders = _orderRepository.SelectAll();
+            foreach(var item in orders)
+            {
+                if (item.IDAccount == IDAccount)
+                {
+                    _orderDetailBusiness.DeleteByIDOrder(item.ID);
+                    _orderRepository.DeleteByItem(item);
+                }
+            }
+        }
+        public void DeleteByIDOrder(long IDOrder)
+        {
+            _orderRepository.Delete(IDOrder);
+            _orderRepository.Save();
         }
         public void DeleteOrder(long id)
         {
+            _orderDetailBusiness.DeleteByIDOrder(id);
+            _paymentBusiness.DeleteByIDOrder(id);
             _orderRepository.Delete(id);
             _orderRepository.Save();
         }

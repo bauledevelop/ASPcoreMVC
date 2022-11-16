@@ -9,6 +9,8 @@ namespace Shop.Business.Interfaces
 {
     public interface IOrderBusiness
     {
+        void DeleteByIDAccount(long IDAccount);
+        void DeleteByIDOrder(long IDOrder);
         void DeleteOrder(long id);
         long GetTotal();
         IEnumerable<OrderDTO> SelectByQuantityItem(int page, int pageSize);

@@ -33,6 +33,7 @@ namespace Shop.Entities.Enities
         {
             var configData = new ConfigData();
             modelBuilder.ApplyConfiguration(new AccountConfig());
+            modelBuilder.ApplyConfiguration(new MenuConfig());
             modelBuilder.ApplyConfiguration(new CategoryProductConfig());
             modelBuilder.ApplyConfiguration(new ProductConfig());
             modelBuilder.ApplyConfiguration(new CommentConfig());

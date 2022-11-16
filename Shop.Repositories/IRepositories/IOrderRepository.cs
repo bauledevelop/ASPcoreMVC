@@ -11,7 +11,7 @@ namespace Shop.Repositories.IRepositories
     {
         IEnumerable<Order> SelectByQuantityItem(int page, int pageSize);
         long GetTotal();
-        IQueryable<Order> SelectAll();
+        IEnumerable<Order> SelectAll();
         Order SelectById(long id);
         void Insert(Order obj);
         Task Update(Order obj);

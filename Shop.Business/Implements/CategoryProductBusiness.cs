@@ -16,10 +16,12 @@ namespace Shop.Business.Implements
     {
         private readonly ICategoryProductRepository _categoryProductRepository;
         private readonly IMapper _mapper;
-        public CategoryProductBusiness(ICategoryProductRepository accountRepository, IMapper mapper)
+        private readonly IProductBusiness _productBusiness;
+        public CategoryProductBusiness(ICategoryProductRepository accountRepository, IMapper mapper,IProductBusiness productBusiness)
         {
             _categoryProductRepository = accountRepository;
             _mapper = mapper;
+            _productBusiness = productBusiness;
         }
         public IEnumerable<CategoryProductDTO> SelectAllCategory()
         {
@@ -27,11 +29,24 @@ namespace Shop.Business.Implements
             var categoryDtos = categorys.Select(item => _mapper.Map<CategoryProduct, CategoryProductDTO>(item));
             return categoryDtos;
         }
+        public void DeleteByAccountID(long IDAccount)
+        {
+            var category = _categoryProductRepository.SelectAll();
+            foreach(var item in category)
+            {
+                if (item.CreatedBy == IDAccount)
+                {
+                    _productBusiness.DeleteByCategoryID(item.ID);
+                    _categoryProductRepository.Delete(item.ID);
+                    _categoryProductRepository.Save();
+                }
+            }
+        }
         public void DeleteCategory(long id)
         {
             var category = _categoryProductRepository.SelectById(id);
-            category.IsDelete = true;
-            _categoryProductRepository.Update(category);
+            _productBusiness.DeleteByCategoryID(id);
+            _categoryProductRepository.Delete(id);
             _categoryProductRepository.Save();
         }
         public bool EditCategory(CategoryProductDTO categoryDto)

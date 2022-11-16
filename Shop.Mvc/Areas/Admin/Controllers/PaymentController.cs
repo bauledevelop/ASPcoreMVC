@@ -73,7 +73,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
             {
-                _paymentBusiness.DeleteOrder(long.Parse(id));
+                _paymentBusiness.DeletePayment(long.Parse(id));
                 return Json(new
                 {
                     status = true

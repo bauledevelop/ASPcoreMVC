@@ -11,7 +11,7 @@ namespace Shop.Repositories.IRepositories
     {
         IEnumerable<Feedback> SelectByQuantityItem(int page, int pageSize);
         long GetTotal();
-        IQueryable<Feedback> SelectAll();
+        IEnumerable<Feedback> SelectAll();
         Feedback SelectById(long id);
         void Insert(Feedback obj);
         Task Update(Feedback obj);

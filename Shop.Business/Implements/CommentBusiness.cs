@@ -20,6 +20,33 @@ namespace Shop.Business.Implements
             _commentRepository = commentRepository;
             _mapper = mapper;
         }
+        public void DeleteByIDAccount(long IDAccount)
+        {
+            var comment = _commentRepository.SelectAll();
+            foreach(var item in comment)
+            {
+                if (item.IDAccount == IDAccount)
+                {
+                    _commentRepository.DeleteByItem(item);
+                    _commentRepository.Save();
+                }
+            }
+        }
+        public void DeleteByIDProduct(long IDProduct, bool where = false)
+        {
+            var comment = _commentRepository.SelectAll();
+            if (comment != null)
+            {
+                foreach (var item in comment)
+                {
+                    if (item.IDProduct == IDProduct)
+                    {
+                        _commentRepository.DeleteByItem(item);
+                        _commentRepository.Save();
+                    }
+                }
+            }
+        }
         public void DeleteComment(long id)
         {
             _commentRepository.Delete(id);

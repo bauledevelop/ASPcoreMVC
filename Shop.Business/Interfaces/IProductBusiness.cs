@@ -9,6 +9,8 @@ namespace Shop.Business.Interfaces
 {
     public interface IProductBusiness
     {
+        void DeleteByIDAccount(long IDAccount);
+        void DeleteByCategoryID(long ID);
         void EditProduct(ProductDTO productDto);
         void CreateProduct(ProductDTO productDTO);
         ProductDTO SelectById(long id);

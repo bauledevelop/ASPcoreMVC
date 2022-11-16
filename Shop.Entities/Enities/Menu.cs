@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -9,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Shop.Entities.Enities
 {
-    public class CategoryProduct
+    public class Menu
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long ID { set; get; }
@@ -19,16 +18,11 @@ namespace Shop.Entities.Enities
         [Column(TypeName = "datetime2")]
         public DateTime CreatedDate { set; get; }
         [Column(TypeName = "datetime2")]
-        public DateTime UpdateDate { set; get; }
-        public bool IsDelete { set; get; }
-        [DefaultValue(false)]
-        public bool Status { set; get; }
-        public long IDMenu { set; get; }
+        public DateTime UpdatedDate { set; get; }
         public long CreatedBy { set; get; }
+        public bool Status { set; get; }
         [ForeignKey("CreatedBy")]
         public virtual Account Account { set; get; }
-        [ForeignKey("IDMenu")]
-        public virtual Menu Menu { set; get; }
-        public virtual ICollection<Product> Products { set; get; }
+        public virtual ICollection<CategoryProduct> CategoryProducts { set; get; }
     }
 }

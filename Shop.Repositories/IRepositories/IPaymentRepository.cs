@@ -11,7 +11,7 @@ namespace Shop.Repositories.IRepositories
     {
         IEnumerable<Payment> SelectByQuantityItem(int page, int pageSize);
         long GetTotal();
-        IQueryable<Payment> SelectAll();
+        IEnumerable<Payment> SelectAll();
         Payment SelectById(long id);
         void Insert(Payment obj);
         Task Update(Payment obj);

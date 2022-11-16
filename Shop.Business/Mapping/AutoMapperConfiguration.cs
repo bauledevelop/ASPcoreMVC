@@ -27,6 +27,7 @@ namespace Shop.Business.Mapping
             CreateMap<Order, Order>();
             CreateMap<Payment, PaymentDTO>();
             CreateMap<Product, ProductDTO>();
+            CreateMap<Menu, MenuDTO>();
         }
         private void DtoToEntity()
         {
@@ -39,6 +40,7 @@ namespace Shop.Business.Mapping
             CreateMap<OrderDTO, Order>();
             CreateMap<PaymentDTO, Payment>();
             CreateMap<ProductDTO, Product>();
+            CreateMap<MenuDTO, Menu>();
         }
     }
 }

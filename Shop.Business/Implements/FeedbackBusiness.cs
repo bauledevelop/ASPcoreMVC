@@ -20,6 +20,18 @@ namespace Shop.Business.Implements
             _feedbackRepository = feedbackRepository;
             _mapper = mapper;
         }
+        public void DeleteByIDAccount(long IDAccount)
+        {
+            var feedback = _feedbackRepository.SelectAll();
+            foreach(var item in feedback)
+            {
+                if (item.IDAcount == IDAccount)
+                {
+                    _feedbackRepository.Delete(item.ID);
+                    _feedbackRepository.Save();
+                }
+            }
+        }
         public void DeleteFeedback(long id)
         {
             _feedbackRepository.Delete(id);
