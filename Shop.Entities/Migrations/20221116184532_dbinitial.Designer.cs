@@ -7,26 +7,30 @@ using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shop.Entities.Enities;
 
+#nullable disable
+
 namespace Shop.Entities.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    [Migration("20221113185628_Dbinitial")]
-    partial class Dbinitial
+    [Migration("20221116184532_dbinitial")]
+    partial class dbinitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.16")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "6.0.11")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
             modelBuilder.Entity("Shop.Entities.Enities.Account", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"), 1L, 1);
 
                     b.Property<string>("Email")
                         .HasMaxLength(2048)
@@ -75,7 +79,7 @@ namespace Shop.Entities.Migrations
 
                     b.HasKey("ID", "Email", "Username");
 
-                    b.ToTable("Accounts");
+                    b.ToTable("Accounts", (string)null);
 
                     b.HasData(
                         new
@@ -85,8 +89,8 @@ namespace Shop.Entities.Migrations
                             Username = "admin",
                             AccountType = 1,
                             Address = "a",
-                            BirthDay = new DateTime(2022, 11, 14, 1, 56, 27, 343, DateTimeKind.Local).AddTicks(1253),
-                            CreatedDate = new DateTime(2022, 11, 14, 1, 56, 27, 341, DateTimeKind.Local).AddTicks(6770),
+                            BirthDay = new DateTime(2022, 11, 17, 1, 45, 32, 105, DateTimeKind.Local).AddTicks(7947),
+                            CreatedDate = new DateTime(2022, 11, 17, 1, 45, 32, 105, DateTimeKind.Local).AddTicks(7931),
                             IsActive = true,
                             IsDelete = false,
                             Name = "Dương",
@@ -102,8 +106,8 @@ namespace Shop.Entities.Migrations
                             Username = "user",
                             AccountType = 2,
                             Address = "a",
-                            BirthDay = new DateTime(2022, 11, 14, 1, 56, 27, 343, DateTimeKind.Local).AddTicks(4489),
-                            CreatedDate = new DateTime(2022, 11, 14, 1, 56, 27, 343, DateTimeKind.Local).AddTicks(4481),
+                            BirthDay = new DateTime(2022, 11, 17, 1, 45, 32, 105, DateTimeKind.Local).AddTicks(7950),
+                            CreatedDate = new DateTime(2022, 11, 17, 1, 45, 32, 105, DateTimeKind.Local).AddTicks(7950),
                             IsActive = true,
                             IsDelete = false,
                             Name = "Dương",
@@ -118,14 +122,18 @@ namespace Shop.Entities.Migrations
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"), 1L, 1);
 
                     b.Property<long>("CreatedBy")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<long>("IDMenu")
+                        .HasColumnType("bigint");
 
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
@@ -144,15 +152,18 @@ namespace Shop.Entities.Migrations
 
                     b.HasIndex("CreatedBy");
 
-                    b.ToTable("CategoryProducts");
+                    b.HasIndex("IDMenu");
+
+                    b.ToTable("CategoryProducts", (string)null);
                 });
 
             modelBuilder.Entity("Shop.Entities.Enities.Comment", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"), 1L, 1);
 
                     b.Property<string>("Content")
                         .HasMaxLength(2048)
@@ -179,15 +190,16 @@ namespace Shop.Entities.Migrations
 
                     b.HasIndex("IDProduct");
 
-                    b.ToTable("Comments");
+                    b.ToTable("Comments", (string)null);
                 });
 
             modelBuilder.Entity("Shop.Entities.Enities.Feedback", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"), 1L, 1);
 
                     b.Property<string>("Content")
                         .HasMaxLength(2048)
@@ -213,23 +225,22 @@ namespace Shop.Entities.Migrations
 
                     b.HasIndex("IDAcount");
 
-                    b.ToTable("Feedbacks");
+                    b.ToTable("Feedbacks", (string)null);
                 });
 
             modelBuilder.Entity("Shop.Entities.Enities.File", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"), 1L, 1);
 
                     b.Property<long>("CreatedBy")
                         .HasColumnType("bigint");
 
                     b.Property<DateTime>("CreatedDate")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("datetime2")
-                        .HasColumnName("datetime2");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("FileContent")
                         .HasMaxLength(2048)
@@ -245,13 +256,10 @@ namespace Shop.Entities.Migrations
                         .HasColumnType("bit");
 
                     b.Property<int>("Type")
-                        .HasColumnType("int")
-                        .HasColumnName("small");
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedDate")
-                        .ValueGeneratedOnUpdateSometimes()
-                        .HasColumnType("datetime2")
-                        .HasColumnName("datetime2");
+                        .HasColumnType("datetime2");
 
                     b.HasKey("ID");
 
@@ -259,15 +267,50 @@ namespace Shop.Entities.Migrations
 
                     b.HasIndex("IDProduct");
 
-                    b.ToTable("Files");
+                    b.ToTable("Files", (string)null);
+                });
+
+            modelBuilder.Entity("Shop.Entities.Enities.Menu", b =>
+                {
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"), 1L, 1);
+
+                    b.Property<long>("CreatedBy")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(1024)
+                        .HasColumnType("nvarchar(1024)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.ToTable("Menus", (string)null);
                 });
 
             modelBuilder.Entity("Shop.Entities.Enities.Order", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"), 1L, 1);
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -291,15 +334,16 @@ namespace Shop.Entities.Migrations
 
                     b.HasIndex("IDAccount");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Shop.Entities.Enities.OrderDetail", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"), 1L, 1);
 
                     b.Property<long>("IDOrder")
                         .HasColumnType("bigint");
@@ -322,15 +366,16 @@ namespace Shop.Entities.Migrations
 
                     b.HasIndex("IDProduct");
 
-                    b.ToTable("OrderDetails");
+                    b.ToTable("OrderDetails", (string)null);
                 });
 
             modelBuilder.Entity("Shop.Entities.Enities.Payment", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"), 1L, 1);
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -361,15 +406,16 @@ namespace Shop.Entities.Migrations
 
                     b.HasIndex("IDOrder");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payments", (string)null);
                 });
 
             modelBuilder.Entity("Shop.Entities.Enities.Product", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"), 1L, 1);
 
                     b.Property<long>("CreatedBy")
                         .HasColumnType("bigint");
@@ -403,7 +449,7 @@ namespace Shop.Entities.Migrations
 
                     b.HasIndex("IDCategoryProduct");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Shop.Entities.Enities.CategoryProduct", b =>
@@ -415,7 +461,15 @@ namespace Shop.Entities.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("Shop.Entities.Enities.Menu", "Menu")
+                        .WithMany("CategoryProducts")
+                        .HasForeignKey("IDMenu")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("Account");
+
+                    b.Navigation("Menu");
                 });
 
             modelBuilder.Entity("Shop.Entities.Enities.Comment", b =>
@@ -468,6 +522,18 @@ namespace Shop.Entities.Migrations
                     b.Navigation("Account");
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("Shop.Entities.Enities.Menu", b =>
+                {
+                    b.HasOne("Shop.Entities.Enities.Account", "Account")
+                        .WithMany("Menus")
+                        .HasForeignKey("CreatedBy")
+                        .HasPrincipalKey("ID")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Account");
                 });
 
             modelBuilder.Entity("Shop.Entities.Enities.Order", b =>
@@ -551,6 +617,8 @@ namespace Shop.Entities.Migrations
 
                     b.Navigation("Files");
 
+                    b.Navigation("Menus");
+
                     b.Navigation("Orders");
 
                     b.Navigation("Payments");
@@ -561,6 +629,11 @@ namespace Shop.Entities.Migrations
             modelBuilder.Entity("Shop.Entities.Enities.CategoryProduct", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("Shop.Entities.Enities.Menu", b =>
+                {
+                    b.Navigation("CategoryProducts");
                 });
 
             modelBuilder.Entity("Shop.Entities.Enities.Order", b =>

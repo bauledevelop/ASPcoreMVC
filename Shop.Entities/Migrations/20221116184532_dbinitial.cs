@@ -1,9 +1,11 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
+#nullable disable
+
 namespace Shop.Entities.Migrations
 {
-    public partial class Dbinitial : Migration
+    public partial class dbinitial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,14 +15,14 @@ namespace Shop.Entities.Migrations
                 {
                     ID = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
+                    Username = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: false),
+                    Email = table.Column<string>(type: "varchar(2048)", maxLength: 2048, nullable: false),
                     Password = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true),
                     Name = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: true),
                     BirthDay = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Sex = table.Column<int>(type: "int", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(2048)", maxLength: 2048, nullable: true),
                     Phone = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: true),
-                    Email = table.Column<string>(type: "varchar(2048)", maxLength: 2048, nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     AccountType = table.Column<int>(type: "int", nullable: false),
                     IsActive = table.Column<bool>(type: "bit", nullable: false),
@@ -29,30 +31,8 @@ namespace Shop.Entities.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Accounts", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CategoryProducts",
-                columns: table => new
-                {
-                    ID = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Status = table.Column<bool>(type: "bit", nullable: false),
-                    CreatedBy = table.Column<long>(type: "bigint", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CategoryProducts", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_CategoryProducts_Accounts_CreatedBy",
-                        column: x => x.CreatedBy,
-                        principalTable: "Accounts",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
+                    table.PrimaryKey("PK_Accounts", x => new { x.ID, x.Email, x.Username });
+                    table.UniqueConstraint("AK_Accounts_ID", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -64,8 +44,9 @@ namespace Shop.Entities.Migrations
                     Name = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: true),
                     Content = table.Column<string>(type: "nvarchar(2048)", maxLength: 2048, nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: false),
-                    IDAcount = table.Column<long>(type: "bigint", nullable: true)
+                    IDAcount = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -73,6 +54,30 @@ namespace Shop.Entities.Migrations
                     table.ForeignKey(
                         name: "FK_Feedbacks_Accounts_IDAcount",
                         column: x => x.IDAcount,
+                        principalTable: "Accounts",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Menus",
+                columns: table => new
+                {
+                    ID = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Menus", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Menus_Accounts_CreatedBy",
+                        column: x => x.CreatedBy,
                         principalTable: "Accounts",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
@@ -87,8 +92,9 @@ namespace Shop.Entities.Migrations
                     Quantity = table.Column<long>(type: "bigint", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Total = table.Column<long>(type: "bigint", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: false),
-                    IDAccount = table.Column<long>(type: "bigint", nullable: true)
+                    IDAccount = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -102,32 +108,32 @@ namespace Shop.Entities.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Products",
+                name: "CategoryProducts",
                 columns: table => new
                 {
                     ID = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(2048)", maxLength: 2048, nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: false),
-                    IDCategoryProduct = table.Column<long>(type: "bigint", nullable: true),
-                    CreatedBy = table.Column<long>(type: "bigint", nullable: true)
+                    IDMenu = table.Column<long>(type: "bigint", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.ID);
+                    table.PrimaryKey("PK_CategoryProducts", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_Products_Accounts_CreatedBy",
+                        name: "FK_CategoryProducts_Accounts_CreatedBy",
                         column: x => x.CreatedBy,
                         principalTable: "Accounts",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Products_CategoryProducts_IDCategoryProduct",
-                        column: x => x.IDCategoryProduct,
-                        principalTable: "CategoryProducts",
+                        name: "FK_CategoryProducts_Menus_IDMenu",
+                        column: x => x.IDMenu,
+                        principalTable: "Menus",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -140,9 +146,11 @@ namespace Shop.Entities.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Email = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: true),
                     Phone = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: false),
-                    IDAccount = table.Column<long>(type: "bigint", nullable: true),
-                    IDOrder = table.Column<long>(type: "bigint", nullable: true)
+                    IDAccount = table.Column<long>(type: "bigint", nullable: false),
+                    IDOrder = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -162,6 +170,38 @@ namespace Shop.Entities.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    ID = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(2048)", maxLength: 2048, nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
+                    Status = table.Column<bool>(type: "bit", nullable: false),
+                    IDCategoryProduct = table.Column<long>(type: "bigint", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Products_Accounts_CreatedBy",
+                        column: x => x.CreatedBy,
+                        principalTable: "Accounts",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Products_CategoryProducts_IDCategoryProduct",
+                        column: x => x.IDCategoryProduct,
+                        principalTable: "CategoryProducts",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Comments",
                 columns: table => new
                 {
@@ -169,9 +209,10 @@ namespace Shop.Entities.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Content = table.Column<string>(type: "nvarchar(2048)", maxLength: 2048, nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: false),
-                    IDAccount = table.Column<long>(type: "bigint", nullable: true),
-                    IDProduct = table.Column<long>(type: "bigint", nullable: true)
+                    IDAccount = table.Column<long>(type: "bigint", nullable: false),
+                    IDProduct = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -197,11 +238,13 @@ namespace Shop.Entities.Migrations
                     ID = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FileContent = table.Column<string>(type: "nvarchar(2048)", maxLength: 2048, nullable: true),
-                    small = table.Column<int>(type: "int", nullable: false),
-                    datetime2 = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedBy = table.Column<long>(type: "bigint", nullable: true),
+                    Type = table.Column<int>(type: "int", nullable: false),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<long>(type: "bigint", nullable: false),
+                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: false),
-                    IDProduct = table.Column<long>(type: "bigint", nullable: true)
+                    IDProduct = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -229,8 +272,8 @@ namespace Shop.Entities.Migrations
                     Quantity = table.Column<long>(type: "bigint", nullable: false),
                     Total = table.Column<long>(type: "bigint", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: false),
-                    IDOrder = table.Column<long>(type: "bigint", nullable: true),
-                    IDProduct = table.Column<long>(type: "bigint", nullable: true)
+                    IDOrder = table.Column<long>(type: "bigint", nullable: false),
+                    IDProduct = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -251,18 +294,23 @@ namespace Shop.Entities.Migrations
 
             migrationBuilder.InsertData(
                 table: "Accounts",
-                columns: new[] { "ID", "AccountType", "Address", "BirthDay", "CreatedDate", "Email", "IsActive", "IsDelete", "Name", "Password", "Phone", "Sex", "Status", "Username" },
-                values: new object[] { 1L, 1, "a", new DateTime(2022, 11, 11, 20, 31, 21, 126, DateTimeKind.Local).AddTicks(2872), new DateTime(2022, 11, 11, 20, 31, 21, 124, DateTimeKind.Local).AddTicks(7366), "abc", true, false, "Dương", "1", "123", 1, true, "admin" });
+                columns: new[] { "Email", "ID", "Username", "AccountType", "Address", "BirthDay", "CreatedDate", "IsActive", "IsDelete", "Name", "Password", "Phone", "Sex", "Status" },
+                values: new object[] { "abc", 1L, "admin", 1, "a", new DateTime(2022, 11, 17, 1, 45, 32, 105, DateTimeKind.Local).AddTicks(7947), new DateTime(2022, 11, 17, 1, 45, 32, 105, DateTimeKind.Local).AddTicks(7931), true, false, "Dương", "1", "123", 1, true });
 
             migrationBuilder.InsertData(
                 table: "Accounts",
-                columns: new[] { "ID", "AccountType", "Address", "BirthDay", "CreatedDate", "Email", "IsActive", "IsDelete", "Name", "Password", "Phone", "Sex", "Status", "Username" },
-                values: new object[] { 2L, 2, "a", new DateTime(2022, 11, 11, 20, 31, 21, 126, DateTimeKind.Local).AddTicks(5613), new DateTime(2022, 11, 11, 20, 31, 21, 126, DateTimeKind.Local).AddTicks(5587), "zxxz", true, false, "Dương", "1", "123", 2, true, "user" });
+                columns: new[] { "Email", "ID", "Username", "AccountType", "Address", "BirthDay", "CreatedDate", "IsActive", "IsDelete", "Name", "Password", "Phone", "Sex", "Status" },
+                values: new object[] { "zxxz", 2L, "user", 2, "a", new DateTime(2022, 11, 17, 1, 45, 32, 105, DateTimeKind.Local).AddTicks(7950), new DateTime(2022, 11, 17, 1, 45, 32, 105, DateTimeKind.Local).AddTicks(7950), true, false, "Dương", "1", "123", 2, true });
 
             migrationBuilder.CreateIndex(
                 name: "IX_CategoryProducts_CreatedBy",
                 table: "CategoryProducts",
                 column: "CreatedBy");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_CategoryProducts_IDMenu",
+                table: "CategoryProducts",
+                column: "IDMenu");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comments_IDAccount",
@@ -288,6 +336,11 @@ namespace Shop.Entities.Migrations
                 name: "IX_Files_IDProduct",
                 table: "Files",
                 column: "IDProduct");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Menus_CreatedBy",
+                table: "Menus",
+                column: "CreatedBy");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrderDetails_IDOrder",
@@ -350,6 +403,9 @@ namespace Shop.Entities.Migrations
 
             migrationBuilder.DropTable(
                 name: "CategoryProducts");
+
+            migrationBuilder.DropTable(
+                name: "Menus");
 
             migrationBuilder.DropTable(
                 name: "Accounts");
