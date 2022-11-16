@@ -2,10 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
-	  
     <PackageReference Include="AutoMapper" Version="12.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.11" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.11">
@@ -18,19 +19,18 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Admin\assets\plugins\" />
+    <Folder Include="Areas\Admin\Data\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Shop.Business\Shop.Business.csproj" />
     <ProjectReference Include="..\Shop.Entities\Shop.Entities.csproj" />
     <ProjectReference Include="..\Shop.Repositories\Shop.Repositories.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Admin\assets\plugins\" />
-    <Folder Include="Areas\Admin\Data\" />
   </ItemGroup>
 
 </Project>

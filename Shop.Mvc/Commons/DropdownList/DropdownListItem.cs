@@ -9,6 +9,29 @@ namespace Shop.Mvc.Commons.DropdownList
 {
     public class DropdownListItem
     {
+        public IEnumerable<SelectListItem> DropdownListMenuActive(IEnumerable<MenuDTO> menuDTOs,long active)
+        {
+            var listItem = new List<SelectListItem>();
+            var target = menuDTOs.SingleOrDefault(item => item.ID == active);
+            listItem.Add(new SelectListItem() { Text = target.Name, Value = target.ID.ToString() });
+            foreach (var item in menuDTOs)
+            {
+                if (target.ID != item.ID)
+                {
+                    listItem.Add(new SelectListItem { Text = item.Name, Value = item.ID.ToString() });
+                }
+            }
+            return listItem;
+        }
+        public IEnumerable<SelectListItem> DropdownListMenu(IEnumerable<MenuDTO> menuDTOs)
+        {
+            var listItem = new List<SelectListItem>();
+            foreach(var item in menuDTOs)
+            {
+                listItem.Add(new SelectListItem { Text = item.Name ,Value = item.ID.ToString()});
+            }
+            return listItem;
+        }
         public IEnumerable<SelectListItem> DropdownListProductActive(IEnumerable<ProductDTO> productDTOs,long active)
         {
             var listItem = new List<SelectListItem>();

@@ -9,35 +9,31 @@ namespace Shop.Mvc.Areas.Admin.Mapper
 {
     public class MenuMapper
     {
-        public FileDTO MapperViewModelToDto(FileViewModel fileViewModel)
+        public MenuDTO MapperViewModelToDto(MenuViewModel menuViewModel)
         {
-            var fileDto = new FileDTO()
+            var menuDTO = new MenuDTO()
             {
-                ID = fileViewModel.ID,
-                FileContent = fileViewModel.FileContent,
-                Type = int.Parse(fileViewModel.Type),
-                CreatedDate = fileViewModel.CreatedDate,
-                UpdatedDate = fileViewModel.UpdatedDate,
-                Status = fileViewModel.Status,
-                CreatedBy = fileViewModel.CreatedBy,
-                IDProduct = long.Parse(fileViewModel.IDProduct)
+                ID = menuViewModel.ID,
+                Name = menuViewModel.Name,
+                CreatedDate = menuViewModel.CreatedDate,
+                UpdatedDate = menuViewModel.UpdatedDate,
+                CreatedBy = menuViewModel.CreatedBy,
+                Status = menuViewModel.Status,
             };
-            return fileDto;
+            return menuDTO;
         }
-        public FileViewModel MapperDtoToViewModel(FileDTO fileDTO)
+        public MenuViewModel MapperDtoToViewModel(MenuDTO menuDTO)
         {
-            var fileViewModel = new FileViewModel()
+            var menuViewModel = new MenuViewModel()
             {
-                ID = fileDTO.ID,
-                FileContent = fileDTO.FileContent,
-                Type = fileDTO.Type.ToString(),
-                CreatedDate = fileDTO.CreatedDate,
-                UpdatedDate = fileDTO.UpdatedDate,
-                Status = fileDTO.Status,
-                CreatedBy = fileDTO.CreatedBy,
-                IDProduct = fileDTO.IDProduct.ToString()
+                ID = menuDTO.ID,
+                Name = menuDTO.Name,
+                CreatedDate = menuDTO.CreatedDate,
+                UpdatedDate = menuDTO.UpdatedDate,
+                CreatedBy = menuDTO.CreatedBy,
+                Status = menuDTO.Status,
             };
-            return fileViewModel;
+            return menuViewModel;
         }
     }
 }

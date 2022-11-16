@@ -87,8 +87,8 @@ namespace Shop.Entities.Migrations
                             Username = "admin",
                             AccountType = 1,
                             Address = "a",
-                            BirthDay = new DateTime(2022, 11, 16, 12, 40, 25, 815, DateTimeKind.Local).AddTicks(6731),
-                            CreatedDate = new DateTime(2022, 11, 16, 12, 40, 25, 815, DateTimeKind.Local).AddTicks(6723),
+                            BirthDay = new DateTime(2022, 11, 16, 23, 44, 55, 33, DateTimeKind.Local).AddTicks(5741),
+                            CreatedDate = new DateTime(2022, 11, 16, 23, 44, 55, 33, DateTimeKind.Local).AddTicks(5732),
                             IsActive = true,
                             IsDelete = false,
                             Name = "Dương",
@@ -104,8 +104,8 @@ namespace Shop.Entities.Migrations
                             Username = "user",
                             AccountType = 2,
                             Address = "a",
-                            BirthDay = new DateTime(2022, 11, 16, 12, 40, 25, 815, DateTimeKind.Local).AddTicks(6735),
-                            CreatedDate = new DateTime(2022, 11, 16, 12, 40, 25, 815, DateTimeKind.Local).AddTicks(6734),
+                            BirthDay = new DateTime(2022, 11, 16, 23, 44, 55, 33, DateTimeKind.Local).AddTicks(5745),
+                            CreatedDate = new DateTime(2022, 11, 16, 23, 44, 55, 33, DateTimeKind.Local).AddTicks(5744),
                             IsActive = true,
                             IsDelete = false,
                             Name = "Dương",
@@ -281,6 +281,9 @@ namespace Shop.Entities.Migrations
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .HasMaxLength(1024)

@@ -19,6 +19,7 @@ namespace Shop.Mvc.Areas.Admin.Mapper
                 CreatedBy = categoryProductDTO.CreatedBy,
                 UpdateDate = categoryProductDTO.UpdateDate,
                 Status = categoryProductDTO.Status,
+                IDMenu = categoryProductDTO.IDMenu.ToString(),
             };
             return categoryViewModel;
         }
@@ -32,6 +33,7 @@ namespace Shop.Mvc.Areas.Admin.Mapper
                 CreatedBy = categoryProductViewModel.CreatedBy,
                 UpdateDate = categoryProductViewModel.UpdateDate,
                 Status = categoryProductViewModel.Status,
+                IDMenu = long.Parse(categoryProductViewModel.IDMenu),
             };
             return categoryDto;
         }
