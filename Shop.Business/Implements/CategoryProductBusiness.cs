@@ -7,6 +7,7 @@ using Shop.Repositories.IRepositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,6 +29,19 @@ namespace Shop.Business.Implements
             var categorys = _categoryProductRepository.SelectAllByDelete();
             var categoryDtos = categorys.Select(item => _mapper.Map<CategoryProduct, CategoryProductDTO>(item));
             return categoryDtos;
+        }
+        public void DeleteByMenuID(long IDMenu)
+        {
+            var category = _categoryProductRepository.SelectAll();
+            foreach (var item in category)
+            {
+                if (item.IDMenu == IDMenu)
+                {
+                    _productBusiness.DeleteByCategoryID(item.ID);
+                    _categoryProductRepository.Delete(item.ID);
+                    _categoryProductRepository.Save();
+                }
+            }
         }
         public void DeleteByAccountID(long IDAccount)
         {

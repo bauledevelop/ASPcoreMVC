@@ -16,6 +16,8 @@ namespace Shop.Mvc.Areas.Admin.Models
         public DateTime UpdateDate { set; get; }
         [Display(Name = "Trang thái")]
         public bool Status { set; get; }
+        public string IDMenu { set; get; }
         public long CreatedBy { set; get; }
+       
     }
 }

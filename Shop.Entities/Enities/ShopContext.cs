@@ -29,6 +29,7 @@ namespace Shop.Entities.Enities
         public virtual DbSet<Order> Orders { set; get; }
         public virtual DbSet<OrderDetail> OrderDetails { set; get; }
         public virtual DbSet<Payment> Payments { set; get; }
+        public virtual DbSet<Menu> Menus { set; get; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             var configData = new ConfigData();

@@ -12,6 +12,7 @@ namespace Shop.Common.DTO
         public string Name { set; get; }
         public DateTime CreatedDate { set; get; }
         public DateTime UpdateDate { set; get; }
+        public long IDMenu { set; get; }
         public bool Status { set; get; }
         public long CreatedBy { set; get; }
     }
