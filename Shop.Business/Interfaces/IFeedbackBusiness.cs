@@ -9,6 +9,7 @@ namespace Shop.Business.Interfaces
 {
     public interface IFeedbackBusiness
     {
+        void DeleteByIDAccount(long IDAccount);
         void DeleteFeedback(long id);
         long GetTotal();
         IEnumerable<FeedbackDTO> SelectByQuantityItem(int page, int pageSize);

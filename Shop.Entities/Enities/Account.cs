@@ -42,6 +42,7 @@ namespace Shop.Entities.Enities
         public bool IsDelete { set; get; }
         [DefaultValue(false)]
         public bool Status { set; get; }
+        public virtual ICollection<Menu> Menus { set; get; }
         public virtual ICollection<Product> Products { set; get; }
         public virtual ICollection<CategoryProduct> CategoryProducts { set; get; }
         public virtual ICollection<File> Files { set; get; }

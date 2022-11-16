@@ -64,17 +64,11 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         public IActionResult Delete(string id)
         {
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
-            try
+            _accountBusiness.DeleteAccount(long.Parse(id));
+            return Json(new
             {
-                _accountBusiness.DeleteAccount(long.Parse(id));
-                return Json(new
-                {
-                    status = true
-                });
-            } catch(Exception ex)
-            {
-                return Json(new { status = false });
-            }
+                status = true
+            });
         }
         [Area("Admin")]
         [HttpGet]

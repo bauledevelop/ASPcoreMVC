@@ -20,6 +20,38 @@ namespace Shop.Business.Implements
             _fileRepository = fileRepository;
             _mapper = mapper;
         }
+        public void DeleteFIle(long ID)
+        {
+            _fileRepository.Delete(ID);
+            _fileRepository.Save();
+        }
+        public void DeleteByIDAccount(long IDAccount)
+        {
+            var files = _fileRepository.SelectAll();
+            foreach(var item in files)
+            {
+                if (item.CreatedBy == IDAccount)
+                {
+                    _fileRepository.Delete(item.ID);
+                    _fileRepository.Save();
+                }
+            }
+        }
+        public void DeleteByIDProduct(long IDProduct)
+        {
+            var files = _fileRepository.SelectAll();
+            if (files != null)
+            {
+                foreach (var item in files)
+                {
+                    if (item.IDProduct == IDProduct)
+                    {
+                        _fileRepository.DeleteByItem(item);
+                        _fileRepository.Save();
+                    }
+                }
+            }
+        }
         public void EditFile(FileDTO fileDTO)
         {
             var file = _mapper.Map<FileDTO, File>(fileDTO);

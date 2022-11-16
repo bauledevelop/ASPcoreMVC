@@ -9,7 +9,9 @@ namespace Shop.Business.Interfaces
 {
     public interface IPaymentBusiness
     {
-        void DeleteOrder(long id);
+        void DeletePayment(long ID);
+        void DeleteByIDOrder(long IDOrder);
+        void DeleteByIDAccount(long IDAccount);
         long GetTotal();
         IEnumerable<PaymentDTO> SelectByQuantityItem(int page, int pageSize);
         IEnumerable<PaymentDTO> SelectAll();

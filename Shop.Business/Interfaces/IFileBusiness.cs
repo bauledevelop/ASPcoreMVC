@@ -9,6 +9,9 @@ namespace Shop.Business.Interfaces
 {
     public interface IFileBusiness
     {
+        void DeleteFIle(long ID);
+        void DeleteByIDAccount(long IDAccount);
+        void DeleteByIDProduct(long IDProduct);
         void EditFile(FileDTO fileDTO);
         void InsertFile(FileDTO fileDTO);
         FileDTO SelectById(long id);

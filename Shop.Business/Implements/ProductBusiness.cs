@@ -15,10 +15,59 @@ namespace Shop.Business.Implements
     {
         private readonly IProductRepository _productRepository;
         private readonly IMapper _mapper;
-        public ProductBusiness(IProductRepository productRepository, IMapper mapper)
+        private readonly IFileBusiness _fileBusiness;
+        private readonly ICommentBusiness _commentBusiness;
+        private readonly IOrderDetailBusiness _orderDetailBusiness;
+        public ProductBusiness(IProductRepository productRepository, IMapper mapper,IFileBusiness fileBusiness
+            , ICommentBusiness commentBusiness, IOrderDetailBusiness orderDetailBusiness)
         {
             _productRepository = productRepository;
             _mapper = mapper;
+            _fileBusiness = fileBusiness;
+            _commentBusiness = commentBusiness;
+            _orderDetailBusiness = orderDetailBusiness;
+        }
+        public void DeleteProduct(long ID)
+        {
+            _fileBusiness.DeleteByIDProduct(ID);
+            _commentBusiness.DeleteByIDProduct(ID);
+            _orderDetailBusiness.DeleteByIDProduct(ID);
+            _productRepository.Delete(ID);
+            _productRepository.Save();
+        }
+        public void DeleteByIDAccount(long IDAccount)
+        {
+            var product = _productRepository.SelectAll();
+            foreach (var item in product)
+            {
+                if (item.CreatedBy == IDAccount)
+                {
+                    _fileBusiness.DeleteByIDProduct(item.ID);
+                    _commentBusiness.DeleteByIDProduct(item.ID);
+                    _orderDetailBusiness.DeleteByIDProduct(item.ID);
+                    _productRepository.Delete(item.ID);
+                    _productRepository.Save();
+                }
+            }
+        }
+        public void DeleteByCategoryID(long ID)
+        {
+            var product = _productRepository.SelectAll();
+            if (product != null)
+            {
+                foreach (var item in product)
+                {
+                    if (item.IDCategoryProduct == ID)
+                    {
+                        _fileBusiness.DeleteByIDProduct(item.ID);
+                        _commentBusiness.DeleteByIDProduct(item.ID);
+                        _orderDetailBusiness.DeleteByIDProduct(item.ID);
+                        _productRepository.DeleteByItem(item);
+                        _productRepository.Save();
+                    }
+                }
+            }
+            
         }
         public void EditProduct(ProductDTO productDto)
         {
@@ -40,11 +89,6 @@ namespace Shop.Business.Implements
             var product = _productRepository.SelectById(id);
             var productDto = _mapper.Map<Product, ProductDTO>(product);
             return productDto;
-        }
-        public void DeleteProduct(long id)
-        {
-            _productRepository.Delete(id);
-            _productRepository.Save();
         }
         public long GetTotal()
         {

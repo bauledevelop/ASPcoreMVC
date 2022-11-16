@@ -11,7 +11,7 @@ namespace Shop.Repositories.IRepositories
     {
         long GetTotal();
         IEnumerable<File> SelectByQuantityItem(int page, int pageSize);
-        IQueryable<File> SelectAll();
+        IEnumerable<File> SelectAll();
         File SelectById(long id);
         void Insert(File obj);
         Task Update(File obj);

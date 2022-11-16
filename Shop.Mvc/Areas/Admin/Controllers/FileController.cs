@@ -84,6 +84,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
             {
+                _fileBusiness.DeleteFIle(long.Parse(id));
                 return Json(new
                 {
                     status = true

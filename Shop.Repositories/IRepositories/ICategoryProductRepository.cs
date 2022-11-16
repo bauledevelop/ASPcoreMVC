@@ -12,7 +12,7 @@ namespace Shop.Repositories.IRepositories
         IEnumerable<CategoryProduct> SelectAllByDelete();
         IEnumerable<CategoryProduct> SelectByQuantityItem(int page, int pageSize);
         long GetTotal();
-        IQueryable<CategoryProduct> SelectAll();
+        IEnumerable<CategoryProduct> SelectAll();
         CategoryProduct SelectById(long id);
         void Insert(CategoryProduct obj);
         Task Update(CategoryProduct obj);

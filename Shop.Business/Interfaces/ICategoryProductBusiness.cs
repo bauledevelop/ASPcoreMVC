@@ -9,6 +9,7 @@ namespace Shop.Business.Interfaces
 {
     public interface ICategoryProductBusiness
     {
+        void DeleteByAccountID(long IDAccount);
         IEnumerable<CategoryProductDTO> SelectAllCategory();
         void DeleteCategory(long id);
         bool EditCategory(CategoryProductDTO categoryDto);

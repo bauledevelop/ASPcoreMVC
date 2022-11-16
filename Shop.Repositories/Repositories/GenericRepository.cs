@@ -19,9 +19,9 @@ namespace Shop.Repositories.Repositories
             _table = _db.Set<T>();
             
         }
-        public IQueryable<T> SelectAll()
+        public IEnumerable<T> SelectAll()
         {
-            return _table.AsQueryable().AsNoTracking();
+            return _table.ToList();
         }
         public T SelectById(long id)
         {

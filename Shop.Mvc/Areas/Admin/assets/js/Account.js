@@ -14,6 +14,7 @@
             success: function (res) {
                 if (res.status == true) {
                     alert("Xóa người dùng thành công");
+                    $('#deleteAccount').modal('toggle');
                     var item = ".item-" + Id.toString();
                     $(item).html('');
                 }

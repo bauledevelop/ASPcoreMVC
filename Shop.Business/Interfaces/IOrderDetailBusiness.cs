@@ -8,5 +8,7 @@ namespace Shop.Business.Interfaces
 {
     public interface IOrderDetailBusiness
     {
+        void DeleteByIDOrder(long IDOrder);
+        void DeleteByIDProduct(long IDProduct);
     }
 }

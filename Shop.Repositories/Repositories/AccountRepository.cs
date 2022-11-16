@@ -15,6 +15,10 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
+        public Account SelectAccountById(long id)
+        {
+            return _dbContext.Accounts.SingleOrDefault(x => x.ID == id);
+        }
         public string GetPhoneByUsername(string username)
         {
             return _dbContext.Accounts.SingleOrDefault(x => x.Username == username).Phone;
