@@ -1,0 +1,14 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Shop.Business.Interfaces
+{
+    public interface IOrderDetailBusiness
+    {
+        void DeleteByIDOrder(long IDOrder);
+        void DeleteByIDProduct(long IDProduct);
+    }
+}
