@@ -1,0 +1,310 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Layout/_Layout.cshtml";
+    var listFile = (IEnumerable<Shop.Common.DTO.FileDTO>)ViewData["ListFile"];
+    var listProduct = (IEnumerable<Shop.Common.DTO.ProductDTO>)ViewData["ListProduct"];
+    var product = (Shop.Common.DTO.ProductDTO)ViewData["Product"];
+}
+@section js{
+    <script src="/assets/js/Product.js"></script>
+}
+@await Component.InvokeAsync("Title")
+<div id="main-wrapper">
+    <div class="site-wrapper-reveal">
+        <div class="single-product-wrap section-space--pt_90 border-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
+                        <!-- Product Details Left -->
+                        <div class="product-details-left">
+                            <div class="product-details-images-2 slider-lg-image-2">
+                                @foreach(var item in listFile)
+                                {
+                                    if (item.IDProduct == product.ID)
+                                    {
+                                        <div class="easyzoom-style">
+                                            <div class="easyzoom">
+                                                <a href="@item.FileContent" class="poppu-img" >
+                                                    <img src="@item.FileContent" class="img-fluid" style="width: 400px; height: 400px;background-size: cover;" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                            <div class="product-details-thumbs-2 slider-thumbs-2">
+                                @foreach(var item in listFile)
+                                {
+                                    if (item.IDProduct == product.ID)
+                                    {
+                                        <div class="sm-image"><img src="@item.FileContent" style="width: 100px; height: 100px;background-size: cover;" alt="product image thumb"></div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                        <!--// Product Details Left -->
+                            
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
+                        <div class="product-details-content ">
+
+                            <h5 class="font-weight--reguler mb-10">@product.Name</h5>
+                            <h3 class="price">@product.Price.ToString("N0") VND</h3>
+                            <div class="quickview-peragraph mt-10">
+                                <p>@product.Description</p>
+                            </div>
+                            <div class="product-size-wrapper mt-20">
+                                <div class="tab-content d-flex">
+                                    <label class="mr-2" style="margin-right:10px">Size</label>
+                                    <div class="tab-pane fade show active" id="tab_list_s">
+                                        S
+                                    </div>
+                                    <div class="tab-pane fade" id="tab_list_m">
+                                        M
+                                    </div>
+                                    <div class="tab-pane fade " id="tab_list_l">
+                                        L
+                                    </div>
+                                </div>
+                                <ul class="nav product-size-menu" role="tablist">
+                                    <li class="tab__item nav-item active">
+                                        <a class="_size nav-link " data-value="3" data-bs-toggle="tab" href="#tab_list_s" role="tab">S</a>
+                                    </li>
+                                    
+                                    <li class="tab__item nav-item">
+                                        <a class="_size nav-link" data-value="2" data-bs-toggle="tab" href="#tab_list_m" role="tab">M</a>
+                                    </li>
+                                    <li class="tab__item nav-item">
+                                        <a class="_size nav-link " data-value="1" data-bs-toggle="tab" href="#tab_list_l" role="tab">L</a>
+                                    </li>
+                                    
+
+                                </ul>
+                            </div>
+                            <div class="product-color-wrapper mt-20">
+                                <div class="tab-content d-flex">
+                                    <label class="mr-2" style="margin-right:10px">Color </label>
+                                    <div class="tab-pane fade show active" id="tab_list_black">
+                                        Black
+                                    </div>
+                                    <div class="tab-pane fade" id="tab_list_white">
+                                        White
+                                    </div>
+                                </div>
+                                <ul class="nav product-color-menu" role="tablist">
+                                    <li class="tab__item nav-item active">
+                                        <a class="_color nav-link active" data-value="1" data-bs-toggle="tab" href="#tab_list_black" role="tab"></a>
+                                    </li>
+                                    <li class="tab__item nav-item">
+                                        <a class="_color nav-link" data-value="2" data-bs-toggle="tab" href="#tab_list_white" role="tab"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="quickview-action-wrap mt-30">
+                                <div class="quickview-cart-box">
+                                    <div class="quickview-quality">
+                                        <div class="cart-plus-minus _btnClick" >
+                                            <input class="cart-plus-minus-box _amount" type="text" name="qtybutton" value="1">
+                                        </div>
+                                    </div>
+                                    <div class="quickview-button">
+                                        <div class="quickview-cart button">
+                                            <a class="_btnSubmit btn--lg btn--black font-weight--reguler text-white" data-id="@product.ID">Thêm giỏ hàng</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="product_meta mt-30">
+                                <div class="sku_wrapper item_meta">
+                                    <span class="label"> SKU: </span>
+                                    <span class="sku"> 502 </span>
+                                </div>
+                                <div class="posted_in item_meta">
+                                    <span class="label">Categories: </span><a href="#">Furniture</a>, <a href="#">Table</a>
+                                </div>
+                            </div>
+
+                            <div class="product_socials section-space--mt_60">
+                                <span class="label">Share this items :</span>
+                                <ul class="helendo-social-share socials-inline">
+                                    <li>
+                                        <a class="share-twitter helendo-twitter" href="#" target="_blank"><i class="social_twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="share-facebook helendo-facebook" href="#" target="_blank"><i class="social_facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="share-google-plus helendo-google-plus" href="#" target="_blank"><i class="social_googleplus"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="share-pinterest helendo-pinterest" href="#" target="_blank"><i class="social_pinterest"></i></a>
+                                    </li>
+                                    <li>
+                                        <a class="share-linkedin helendo-linkedin" href="#" target="_blank"><i class="social_linkedin"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="product-details-tab section-space--pt_90">
+                            <ul role="tablist" class=" nav">
+                                <li class="active" role="presentation">
+                                    <a data-bs-toggle="tab" role="tab" href="#detail" class="active">Chi tiết sản phẩm</a>
+                                </li>
+@*                                <li role="presentation">
+                                    <a data-bs-toggle="tab" role="tab" href="#sheet">Additional information</a>
+                                </li>*@
+                                <li role="presentation">
+                                    <a data-bs-toggle="tab" role="tab" href="#reviews">Comments</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="product_details_tab_content tab-content mt-30">
+                            <!-- Start Single Content -->
+                            <div class="product_tab_content tab-pane active" id="detail" role="tabpanel">
+                                <div class="product_description_wrap">
+                                    <div class="product-details-wrap">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-7 order-md-1 order-2">
+                                                <div class="details mt-30">
+                                                    <h5 class="mb-10">Chi tiết sản phẩm</h5>
+                                                    <p>@product.Detail</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5 order-md-2 order-1">
+                                                <div class="images">
+                                                    @foreach(var item in listFile)
+                                                    {
+                                                        if (item.IDProduct == product.ID)
+                                                        {
+                                                            <img src="@item.FileContent" class="img-fluid" alt="">
+                                                            break;
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Single Content -->
+                            <!-- Start Single Content -->
+                            @*<div class="product_tab_content tab-pane" id="sheet" role="tabpanel">
+                                <div class="pro_feature">
+                                    <table class="shop_attributes">
+                                        <tbody>
+                                            <tr>
+                                                <th>Weight</th>
+                                                <td>1.2 kg</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Dimensions</th>
+                                                <td>12 × 2 × 1.5 cm</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>*@
+                            <!--Comment-->
+                            <div class="product_tab_content tab-pane" id="reviews" role="tabpanel">
+                                @*<div class="rating_wrap mb-30">
+                                    <h4 class="rating-title-2">Be the first to review “Wooden chair”</h4>
+                                    <p>Your rating</p>
+                                    <div class="rating_list">
+                                        <div class="product-rating d-flex">
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                        </div>
+                                    </div>
+                                </div>*@
+                                <div class="comments-area comments-reply-area">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <form action="#" class="comment-form-area">
+                                                <p class="comment-form-comment">
+                                                    <label>Your review *</label>
+                                                    <textarea class="comment-notes" required="required"></textarea>
+                                                </p>
+                                                <div class="comment-input">
+                                                    <p class="comment-form-author">
+                                                        <label>Name <span class="required">*</span></label>
+                                                        <input type="text" required="required" name="Name">
+                                                    </p>
+                                                    <p class="comment-form-email">
+                                                        <label>Email <span class="required">*</span></label>
+                                                        <input type="text" required="required" name="email">
+                                                    </p>
+                                                </div>
+
+                                                <div class="comment-form-submit">
+                                                    <input type="submit" value="Submit" class="comment-submit">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                           <!--End Comment-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="related-products section-space--ptb_90">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title text-center mb-30">
+                                <h4>Sản phẩm liên quan</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-slider-active">
+                        @foreach(var item in listProduct)
+                        {
+                             <div class="col-lg-12">
+                                <!-- Single Product Item Start -->
+                                <div class="single-product-item text-center">
+                                    <div class="products-images">
+                                        <a href="/Product/@item.ID" class="product-thumbnail">
+                                            @foreach(var child in listFile)
+                                            {
+                                                if (item.ID == child.IDProduct)
+                                                {
+                                                    <img src="@child.FileContent" class="img-fluid" alt="Product Images" width="300" height="300">
+                                                    break;
+                                                }
+                                            }
+                                        </a>
+                                        <div class="product-actions">
+                                            <a href="/Product/@item.ID"><i class="p-icon icon-plus"></i><span class="tool-tip">Xem chi tiết</span></a>
+                                            <a class="_clickAddBag"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Thêm sản phẩm</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h6 class="prodect-title"><a href="product-details.html">@item.Name</a></h6>
+                                        <div class="prodect-price">
+                                            <span class="new-price">@item.Price.ToString("N0") VND</span>
+                                        </div>
+                                    </div>
+                                </div><!-- Single Product Item End -->
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@await Component.InvokeAsync("Footer")

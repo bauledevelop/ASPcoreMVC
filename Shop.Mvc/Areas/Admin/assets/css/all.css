@@ -1,0 +1,28 @@
+﻿.color-xmask {
+    color: red !important;
+}
+
+.color-tick {
+    color: greenyellow !important;
+}
+
+.color-trash {
+    color: red !important;
+}
+
+.color-edit {
+    color: yellow !important;
+}
+.color-file {
+    color: blue !important;
+}
+
+.txt-area {
+    width: 100%;
+}
+.form-width-txt{
+    width: 80%;
+}
+.form-width-txt input{
+    width: 100%;
+}

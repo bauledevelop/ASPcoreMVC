@@ -1,0 +1,14 @@
+D:\CNNet\source\Shop.Entities\bin\Debug\net6.0\Shop.Entities.deps.json
+D:\CNNet\source\Shop.Entities\bin\Debug\net6.0\Shop.Entities.runtimeconfig.json
+D:\CNNet\source\Shop.Entities\bin\Debug\net6.0\Shop.Entities.dll
+D:\CNNet\source\Shop.Entities\bin\Debug\net6.0\Shop.Entities.pdb
+D:\CNNet\source\Shop.Entities\obj\Debug\net6.0\Shop.Entities.csproj.AssemblyReference.cache
+D:\CNNet\source\Shop.Entities\obj\Debug\net6.0\Shop.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\CNNet\source\Shop.Entities\obj\Debug\net6.0\Shop.Entities.AssemblyInfoInputs.cache
+D:\CNNet\source\Shop.Entities\obj\Debug\net6.0\Shop.Entities.AssemblyInfo.cs
+D:\CNNet\source\Shop.Entities\obj\Debug\net6.0\Shop.Entities.csproj.CoreCompileInputs.cache
+D:\CNNet\source\Shop.Entities\obj\Debug\net6.0\Shop.Entities.dll
+D:\CNNet\source\Shop.Entities\obj\Debug\net6.0\refint\Shop.Entities.dll
+D:\CNNet\source\Shop.Entities\obj\Debug\net6.0\Shop.Entities.pdb
+D:\CNNet\source\Shop.Entities\obj\Debug\net6.0\Shop.Entities.genruntimeconfig.cache
+D:\CNNet\source\Shop.Entities\obj\Debug\net6.0\ref\Shop.Entities.dll
