@@ -28,6 +28,7 @@ namespace Shop.Mvc.Entensions
             services.AddTransient<IPaymentRepository, PaymentRepository>();
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<IMenuRepository, MenuRepository>();
+            services.AddTransient<IRateRepository, RateRepository>();
 
             services.AddScoped<ICategoryProductBusiness, CategoryProductBusiness>();
             services.AddScoped<IMenuBusiness, MenuBusiness>();
@@ -39,6 +40,7 @@ namespace Shop.Mvc.Entensions
             services.AddScoped<IOrderDetailBusiness, OrderDetailBusiness>();
             services.AddScoped<IPaymentBusiness, PaymentBusiness>();
             services.AddScoped<IProductBusiness, ProductBusiness>();
+            services.AddScoped<IRateBusiness, RateBusiness>();
             services.AddScoped<DbContext, ShopContext>();
             
         }

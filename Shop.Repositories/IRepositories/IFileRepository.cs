@@ -9,10 +9,10 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IFileRepository
     {
-        IEnumerable<File> SelectByStatus();
-        IEnumerable<File> SelectByIDProduct(long IDProduct);
+        IQueryable<File> SelectByStatus();
+        IQueryable<File> SelectByIDProduct(long IDProduct);
         long GetTotal();
-        IEnumerable<File> SelectByQuantityItem(int page, int pageSize);
+        IQueryable<File> SelectByQuantityItem(int page, int pageSize);
         IEnumerable<File> SelectAll();
         File SelectById(long id);
         void Insert(File obj);

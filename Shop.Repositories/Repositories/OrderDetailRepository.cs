@@ -15,5 +15,29 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
+        public IQueryable<OrderDetail> SelectByIDProduct(long id)
+        {
+            try
+            {
+                var model = _dbContext.OrderDetails.Where(x => x.IDProduct == id);
+                return model;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public IQueryable<OrderDetail> SelectAllOrderDetail()
+        {
+            try
+            {
+                var model = _dbContext.OrderDetails.Where(x => x.Status == true);
+                return model;
+            }
+            catch
+            {
+                return null;
+            }
+        }
     }
 }

@@ -24,6 +24,16 @@ namespace Shop.Business.Implements
             _orderDetailBusiness = orderDetailBusiness;
             _paymentBusiness = paymentBusiness;
         }
+
+        public long InsertOrder(OrderDTO orderDTO)
+        {
+            orderDTO.CreatedDate = DateTime.Now;
+            orderDTO.IsDelete = false;
+            orderDTO.Status = true;
+            var order = _mapper.Map<OrderDTO, Order>(orderDTO);
+            long _id = _orderRepository.InsertOrder(order);
+            return _id;
+        }
         public void DeleteByIDAccount(long IDAccount)
         {
             var orders = _orderRepository.SelectAll();

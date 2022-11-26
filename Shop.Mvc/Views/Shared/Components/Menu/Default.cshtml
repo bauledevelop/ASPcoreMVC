@@ -21,12 +21,12 @@
                     <div class="widget-currency col-md-6">
                         <h6> Currencies</h6>
                         <ul>
-                            <li class="actived" style="color: #dcb14a">Đồng</li>
+                            <li class="actived" style="color: #dcb14a">VND</li>
                         </ul>
                     </div>
                 </div>
-                <nav class="offcanvas-navigation">
             </div>
+            <nav class="offcanvas-navigation">
                 <ul>
                     <li class="has-children">
                         <a href="/">Home</a>
@@ -36,7 +36,9 @@
                         <ul class="sub-menu">
                             @foreach(var item in listMenu)
                             {
-                                <li><a href="#"><span>@item.Name</span></a>
+                            <li class="has-children">
+                                <a href="#"><span>@item.Name</span></a>
+                                <ul class="sub-menu">
                                 @foreach (var child in listCategory)
                                 {
                                     if (item.ID == child.IDMenu)
@@ -44,8 +46,10 @@
                                         <li><a href="/Category/@child.ID"><span>@child.Name</span></a></li>
                                     }
                                 }
-                                </li>
+                                </ul>
+                            </li>
                             }
+
                                 @*
                                 <ul class="sub-menu">
                                     <li><a href="shop-3-column.html"><span>Shop 3 Columns</span></a></li>
@@ -87,17 +91,7 @@
                         </ul>
                     </li>
                     <li class="has-children">
-                        <a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li><a href="about-us.html"><span>About Us</span></a></li>
-                            <li><a href="contact-us.html"><span>Contact</span></a></li>
-                            <li><a href="faq.html"><span>FAQ Pages</span></a></li>
-                            <li><a href="coming-soon.html"><span>Coming Soon</span></a></li>
-                            <li><a href="404-page.html"><span>404 Page</span></a></li>
-                        </ul>
-                    </li>
-                    <li class="has-children">
-                        <a href="/Feedback">Phản hồi</a>
+                        <a href="/Feedback">Liên hệ</a>
                     </li>
 
                 </ul>

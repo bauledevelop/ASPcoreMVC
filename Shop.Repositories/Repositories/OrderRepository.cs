@@ -15,7 +15,13 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
-        public IEnumerable<Order> SelectByQuantityItem(int page, int pageSize)
+        public long InsertOrder(Order order)
+        {
+            _dbContext.Orders.Add(order);
+            _dbContext.SaveChanges();
+            return order.ID;
+        }
+        public IQueryable<Order> SelectByQuantityItem(int page, int pageSize)
         {
             try
             {

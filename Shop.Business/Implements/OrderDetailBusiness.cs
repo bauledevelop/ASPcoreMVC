@@ -1,4 +1,7 @@
-﻿using Shop.Business.Interfaces;
+﻿using AutoMapper;
+using Shop.Business.Interfaces;
+using Shop.Common.DTO;
+using Shop.Entities.Enities;
 using Shop.Repositories.IRepositories;
 using System;
 using System.Collections.Generic;
@@ -11,9 +14,30 @@ namespace Shop.Business.Implements
     public class OrderDetailBusiness : IOrderDetailBusiness
     {
         private readonly IOrderDetailRepository _orderDetailRepository;
-        public OrderDetailBusiness(IOrderDetailRepository orderDetailRepository )
+        private readonly IMapper _mapper;
+        public OrderDetailBusiness(IOrderDetailRepository orderDetailRepository, IMapper mapper )
         {
             _orderDetailRepository = orderDetailRepository;
+            _mapper = mapper;
+        }
+        public long GetAmountByIDProduct(long id)
+        {
+            var orderDetails = _orderDetailRepository.SelectByIDProduct(id);
+            long total = 0;
+            if (orderDetails == null)
+                return 0;
+            foreach(var item in orderDetails)
+            {
+                total += item.Quantity;
+            }
+            return total;
+        }
+        public void InsertOrderDetail(OrderDetailDTO orderDetailDTO)
+        {
+            orderDetailDTO.Status = true;
+            var orderDetail = _mapper.Map<OrderDetailDTO, OrderDetail>(orderDetailDTO);
+            _orderDetailRepository.Insert(orderDetail);
+            _orderDetailRepository.Save();
         }
         public void DeleteOrderDetail(long ID)
         {

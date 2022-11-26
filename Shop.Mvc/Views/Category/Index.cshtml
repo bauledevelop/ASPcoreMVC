@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/Layout/_Layout.cshtml";
     var listMenu = (IEnumerable<Shop.Common.DTO.MenuDTO>)ViewData["ListMenu"];
@@ -7,180 +6,182 @@
     var listCategory = (IEnumerable<Shop.Common.DTO.CategoryProductDTO>)ViewData["ListCategory"];
     var listFile = (IEnumerable<Shop.Common.DTO.FileDTO>)ViewData["ListFile"];
     var pagination = (Shop.Mvc.Commons.Models.PaginationModel)ViewData["Pagination"];
+    var listTrend = (IEnumerable<Shop.Common.DTO.ProductDTO>)ViewData["ListTrend"];
 }
 @await Component.InvokeAsync("Title")
 <div id="main-wrapper">
     <div class="site-wrapper-reveal border-bottom">
+        <!-- Product Area Start -->
+        <div class="product-wrapper section-space--ptb_120">
+            <div class="container">
+                <!--Loại sản phẩm-->
                 <!-- Product Area Start -->
-                <div class="product-wrapper section-space--ptb_120">
-                    <div class="container">
-                        <!--Loại sản phẩm-->
-                        <!-- Product Area Start -->
-                        <div class="product-wrapper section-space--pb_90">
-                            <div class="row align-items-center">
-                                <div class="col-lg-3 col-md-4">
-                                    <div class="section-title text-md-start text-center tablet-mt__20 small-mt__20">
-                                        <h3 class="section-title">Thịnh hành</h3>
-                                    </div>
-                                </div>
-                                <div class="col-lg-9 col-md-8">
-                                    <ul class="nav product-tab-menu  justify-content-center justify-content-md-end" role="tablist">
-                                        <li class="tab__item nav-item active">
+                <div class="product-wrapper section-space--pb_90">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-md-4">
+                            <div class="section-title text-md-start text-center tablet-mt__20 small-mt__20">
+                                <h3 class="section-title">Thịnh hành</h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-8">
+                            <ul class="nav product-tab-menu  justify-content-center justify-content-md-end" role="tablist">
+                                <li class="tab__item nav-item active">
                                     <a class="nav-link active" data-bs-toggle="tab" href="#tab_list_01" role="tab">@ViewBag.TitleMenu</a>
-                                        </li>
-                                        <li class="tab__item nav-item">
+                                </li>
+                                <li class="tab__item nav-item">
                                     <a class="nav-link">@ViewBag.TitleCategory</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <div class="tab-content">
-                                <div class="tab-pane fade show active" id="tab_list_01">
-                                    <!-- product-slider-active -->
-                                    <div class="product-slider-active">
-                                        @for(var i = 0 ;i<8 ;i++)
-                                        {
-                                            <div class="col-lg-12">
-                                                    <!-- Single Product Item Start -->
-                                                    <div class="single-product-item text-center">
-                                                        <div class="products-images">
-                                                            <a href="product-details.html" class="product-thumbnail">
-                                                                <img src="~/../assets/dist/images/product/1_1-300x300.webp" class="img-fluid" alt="Product Images" width="300" height="300">
-
-                                                                <span class="ribbon out-of-stock ">
-                                                                Out Of Stock
-                                                            </span>
-                                                            </a>
-                                                            <div class="product-actions">
-                                                                <a href="#"><i class="p-icon icon-plus"></i><span class="tool-tip">Xem chi tiết</span></a>
-                                                                <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Add to cart</span></a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="product-content">
-                                                            <h6 class="prodect-title"><a href="product-details.html">Teapot with black tea</a></h6>
-                                                            <div class="prodect-price">
-                                                                <span class="new-price">£40.00</span> - <span class="old-price"> £635.00</span>
-                                                            </div>
-                                                        </div>
-                                                    </div><!-- Single Product Item End -->
-                                                </div>
-                                        }
-                            
-
-                                    </div>
-                                </div>
-                            </div>
-
+                                </li>
+                            </ul>
                         </div>
-                        <!-- Product Area End -->
-                    
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6">
-                                <div class="shop-toolbar__items shop-toolbar__item--left">
-                                    <div class="shop-toolbar__item shop-toolbar__item--result">
-                                        <p class="result-count"> Showing 1–9 of 21 results</p>
-                                    </div>
+                    </div>
 
-                                    <div class="shop-toolbar__item shop-short-by">
-                                        <ul>
-                                            <li>
-                                                <a href="#">Sort by <i class="fa fa-angle-down angle-down"></i></a>
-                                                <ul>
-                                                    <li class="active"><a href="#">Default sorting</a></li>
-                                                    <li><a href="#">Sort by popularity</a></li>
-                                                    <li><a href="#">Sort by average rating</a></li>
-                                                    <li><a href="#">Sort by latest</a></li>
-                                                    <li><a href="#">Sort by price: low to high</a></li>
-                                                    <li><a href="#">Sort by price: high to low</a></li>
-                                                </ul>
-                                            </li>
-
-                                        </ul>
-
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6">
-                                <div class="shop-toolbar__items shop-toolbar__item--right">
-                                    <div class="shop-toolbar__items-wrapper">
-                                        <div class="shop-toolbar__item">
-                                            <ul class="nav toolber-tab-menu justify-content-start" role="tablist">
-                                                <li class="tab__item nav-item">
-                                                    <a class="nav-link active"><img src="~/../assets/dist/images/svg/column-04.svg" class="img-fluid" alt="Columns 03"> </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="shop-toolbar__item shop-toolbar__item--filter ">
-                                            <a class="shop-filter-active" href="#">Tìm kiếm<i class="icon-plus"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product-filter-wrapper">
-                            <div class="row">
-                                <!-- Product Filter -->
-                                @foreach(var item in listMenu)
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="tab_list_01">
+                            <!-- product-slider-active -->
+                            <div class="product-slider-active">
+                                @foreach (var item in listTrend)
                                 {
-                                    <div class="mb-20 col__20">
-                                        <div class="product-filter">
-                                            <h5>@item.Name</h5>
-                                            <ul class="widget-nav-list">
-                                                @foreach(var child in listCategory)
-                                                {
-                                                    if (item.ID == child.IDMenu)
+                                    <div class="col-lg-12">
+                                        <!-- Single Product Item Start -->
+                                        <div class="single-product-item text-center">
+                                            <div class="products-images">
+                                                <a href="product-details.html" class="product-thumbnail">
+                                                    @foreach (var child in listFile)
                                                     {
-                                                        <li><a href="/Category/@child.ID">@child.Name</a></li>
+                                                        if (item.ID == child.IDProduct)
+                                                        {
+                                                            <img src="@child.FileContent" class="img-fluid" alt="Product Images" width="300" height="300">
+                                                            break;
+                                                        }
                                                     }
-                                                }
-                                            </ul>
-                                        </div>
+                                                </a>
+                                                <div class="product-actions">
+                                                    <a href="/Product/@item.ID"><i class="p-icon icon-plus"></i><span class="tool-tip">Xem chi tiết</span></a>
+                                                    <a class="_clickAddBag" data-id="@item.ID"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Thêm giỏ hàng</span></a>
+                                                </div>
+                                            </div>
+                                            <div class="product-content">
+                                                <h6 class="prodect-title"><a href="product-details.html">@item.Name</a></h6>
+                                                <div class="prodect-price">
+                                                    <span class="new-price">@item.Price.ToString("N0") VND</span>
+                                                </div>
+                                            </div>
+                                        </div><!-- Single Product Item End -->
                                     </div>
                                 }
                             </div>
                         </div>
+                    </div>
 
-                <div class="tab-content">
-                    <div class="tab-pane fade show active">
-                                <div class="row">
-                                    @foreach(var item in listProduct)
-                                    {
-                                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
-                                            <!-- Single Product Item Start -->
-                                            <div class="single-product-item text-center">
-                                                <div class="products-images">
-                                                    <a href="product-details.html" class="product-thumbnail">
-                                                        @foreach(var child in listFile)
-                                                        {
-                                                            if(item.ID == child.IDProduct)
-                                                            {
-                                                                <img src="@child.FileContent" class="img-fluid" alt="Product Images" width="300" height="300">
-                                                                break;
-                                                            }
-                                                        }
-                                                    </a>
-                                                    <div class="product-actions">
-                                                        <a href="/Product/@item.ID"><i class="p-icon icon-plus"></i><span class="tool-tip">Xem chi tiết</span></a>
-                                                <a class="_clickAddBag"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Thêm giỏ hàng</span></a>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h6 class="prodect-title"><a href="product-details.html">@item.Name</a></h6>
-                                                    <div class="prodect-price">
-                                                        <span class="new-price">@item.Price.ToString("N0") VND</span>
-                                                    </div>
-                                                </div>
-                                            </div><!-- Single Product Item End -->
-                                        </div>
-                                    }   
+                </div>
+                <!-- Product Area End -->
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="shop-toolbar__items shop-toolbar__item--left">
+                            <div class="shop-toolbar__item shop-toolbar__item--result">
+                                <p class="result-count"> Showing 1–9 of 21 results</p>
+                            </div>
+
+                            <div class="shop-toolbar__item shop-short-by">
+                                <ul>
+                                    <li>
+                                        <a href="#">Sort by <i class="fa fa-angle-down angle-down"></i></a>
+                                        <ul>
+                                            <li class="active"><a href="#">Default sorting</a></li>
+                                            <li><a href="#">Sort by popularity</a></li>
+                                            <li><a href="#">Sort by average rating</a></li>
+                                            <li><a href="#">Sort by latest</a></li>
+                                            <li><a href="#">Sort by price: low to high</a></li>
+                                            <li><a href="#">Sort by price: high to low</a></li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="shop-toolbar__items shop-toolbar__item--right">
+                            <div class="shop-toolbar__items-wrapper">
+                                <div class="shop-toolbar__item">
+                                    <ul class="nav toolber-tab-menu justify-content-start" role="tablist">
+                                        <li class="tab__item nav-item">
+                                            <a class="nav-link active"><img src="~/../assets/dist/images/svg/column-04.svg" class="img-fluid" alt="Columns 03"> </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="shop-toolbar__item shop-toolbar__item--filter ">
+                                    <a class="shop-filter-active" href="#">Tìm kiếm<i class="icon-plus"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Product Area End -->
+                <div class="product-filter-wrapper">
+                    <div class="row">
+                        <!-- Product Filter -->
+                        @foreach (var item in listMenu)
+                        {
+                            <div class="mb-20 col__20">
+                                <div class="product-filter">
+                                    <h5>@item.Name</h5>
+                                    <ul class="widget-nav-list">
+                                        @foreach (var child in listCategory)
+                                        {
+                                            if (item.ID == child.IDMenu)
+                                            {
+                                                <li><a href="/Category/@child.ID">@child.Name</a></li>
+                                            }
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-pane fade show active">
+                        <div class="row">
+                            @foreach (var item in listProduct)
+                            {
+                                <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                                    <!-- Single Product Item Start -->
+                                    <div class="single-product-item text-center">
+                                        <div class="products-images">
+                                            <a href="product-details.html" class="product-thumbnail">
+                                                @foreach (var child in listFile)
+                                                {
+                                                    if (item.ID == child.IDProduct)
+                                                    {
+                                                        <img src="@child.FileContent" class="img-fluid" alt="Product Images" width="300" height="300">
+                                                        break;
+                                                    }
+                                                }
+                                            </a>
+                                            <div class="product-actions">
+                                                <a href="/Product/@item.ID"><i class="p-icon icon-plus"></i><span class="tool-tip">Xem chi tiết</span></a>
+                                                <a class="_clickAddBag"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Thêm giỏ hàng</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h6 class="prodect-title"><a href="product-details.html">@item.Name</a></h6>
+                                            <div class="prodect-price">
+                                                <span class="new-price">@item.Price.ToString("N0") VND</span>
+                                            </div>
+                                        </div>
+                                    </div><!-- Single Product Item End -->
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-       @await Component.InvokeAsync("Footer")
+        </div>
+        <!-- Product Area End -->
+    </div>
+    @await Component.InvokeAsync("Footer")
 </div>
 

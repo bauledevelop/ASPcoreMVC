@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+﻿    $(document).ready(function () {
     let Id = 0;
     $('._clickFile').click(handleClickFile);
     $('._deleteProduct').click(handleDelItem);

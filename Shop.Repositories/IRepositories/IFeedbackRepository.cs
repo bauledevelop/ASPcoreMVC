@@ -9,7 +9,7 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IFeedbackRepository
     {
-        IEnumerable<Feedback> SelectByQuantityItem(int page, int pageSize);
+        IQueryable<Feedback> SelectByQuantityItem(int page, int pageSize);
         long GetTotal();
         IEnumerable<Feedback> SelectAll();
         Feedback SelectById(long id);

@@ -15,7 +15,7 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
-        public IEnumerable<File> SelectByStatus()
+        public IQueryable<File> SelectByStatus()
         {
             try
             {
@@ -27,7 +27,7 @@ namespace Shop.Repositories.Repositories
                 return null;
             }
         }
-        public IEnumerable<File> SelectByIDProduct(long IDProduct)
+        public IQueryable<File> SelectByIDProduct(long IDProduct)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace Shop.Repositories.Repositories
                 return null;
             }
         }
-        public IEnumerable<File> SelectByQuantityItem(int page,int pageSize)
+        public IQueryable<File> SelectByQuantityItem(int page,int pageSize)
         {
             var model = _dbContext.Files.Where(x => x.IsDelete == false).Skip((page - 1) * pageSize).Take(pageSize);
             return model;

@@ -10,7 +10,7 @@ namespace Shop.Mvc.Controllers
         private readonly IMenuBusiness _menuBusiness;
         private readonly ICategoryProductBusiness _categoryProductBusiness;
         private readonly IFileBusiness _fileBusiness;
-        public CategoryController(IProductBusiness productBusiness, IMenuBusiness menuBusiness,ICategoryProductBusiness categoryProductBusiness,IFileBusiness fileBusiness)
+        public CategoryController(IProductBusiness productBusiness, IMenuBusiness menuBusiness, ICategoryProductBusiness categoryProductBusiness, IFileBusiness fileBusiness)
         {
             _productBusiness = productBusiness;
             _menuBusiness = menuBusiness;
@@ -18,7 +18,7 @@ namespace Shop.Mvc.Controllers
             _fileBusiness = fileBusiness;
         }
         [Route("Category/{id?}")]
-        public IActionResult Index(string id,int page=1,int pageSize=8)
+        public IActionResult Index(string id, int page = 1, int pageSize = 8)
         {
             try
             {
@@ -28,6 +28,7 @@ namespace Shop.Mvc.Controllers
                 var listFile = _fileBusiness.SelectAll();
                 var categoryDTOs = _categoryProductBusiness.SelectAllCategoryByStatus();
                 var pagination = new PaginationModel();
+                var listTrend = _productBusiness.SelectTrendProduct();
                 pagination.Total = total;
                 pagination.Show = (total != 0 ? ((page - 1) * pageSize) + 1 : 0);
                 pagination.ShowTo = (((page - 1) * pageSize) + 1) + productDTOs.Count() - 1;
@@ -41,12 +42,12 @@ namespace Shop.Mvc.Controllers
                 pagination.Last = totalPage;
                 pagination.Next = page + 1;
                 pagination.Prev = page - 1;
-                foreach(var item in categoryDTOs)
+                foreach (var item in categoryDTOs)
                 {
                     if (item.ID == long.Parse(id))
                     {
                         ViewBag.TitleCategory = item.Name;
-                        foreach(var child in menuDTOs)
+                        foreach (var child in menuDTOs)
                         {
                             if (item.IDMenu == child.ID)
                             {
@@ -54,9 +55,10 @@ namespace Shop.Mvc.Controllers
                                 break;
                             }
                         }
-                        
+
                     }
                 }
+                ViewData["ListTrend"] = listTrend;
                 ViewData["ListProduct"] = productDTOs;
                 ViewData["ListMenu"] = menuDTOs;
                 ViewData["ListCategory"] = categoryDTOs;
@@ -64,7 +66,7 @@ namespace Shop.Mvc.Controllers
                 ViewData["Pagination"] = pagination;
                 return View();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return Redirect("/404");
             }

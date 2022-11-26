@@ -9,10 +9,10 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IMenuRepository
     {
-        IEnumerable<Menu> SelectAllByStatus();
-        IEnumerable<Menu> SelectAllByDelete();
+        IQueryable<Menu> SelectAllByStatus();
+        IQueryable<Menu> SelectAllByDelete();
         long GetTotal();
-        IEnumerable<Menu> SelectByQuantityItem(int page, int pageSize);
+        IQueryable<Menu> SelectByQuantityItem(int page, int pageSize);
         IEnumerable<Menu> SelectAll();
         Menu SelectById(long id);
         void Insert(Menu obj);

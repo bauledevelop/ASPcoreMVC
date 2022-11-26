@@ -1,9 +1,11 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/Layout/_Layout.cshtml";
     var listNew = (IEnumerable<Shop.Common.DTO.ProductDTO>)ViewData["ListNew"];
     var listFile = (IEnumerable<Shop.Common.DTO.FileDTO>)ViewData["ListFile"];
+    var listTrend = (IEnumerable<Shop.Common.DTO.ProductDTO>)ViewData["ListTrend"];
+    var listOutStanding = (IEnumerable<Shop.Common.DTO.ProductDTO>)ViewData["ListOutStanding"];
+    var i = 0;
 }
 @section js{
     <script src="~/../assets/js/Home.js"></script>
@@ -16,7 +18,7 @@
                     <div class="col-lg-12 ps-0 ps-lg-3 pe-0 pe-lg-3">
                         <!-- Hero Slider Area Start -->
                         <div class="hero-area hero-slider-one">
-                            <div class="single-hero-slider-one bg-img" data-bg="~/../assets/dist/images/hero/home-default-1.webp">
+                            <div class="single-hero-slider-one bg-img" data-bg="/assets/dist/images/hero/home-default-1.webp">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -36,7 +38,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="single-hero-slider-one bg-img" data-bg="~/../assets/dist/images/hero/home-default-2.webp">
+                            <div class="single-hero-slider-one bg-img" data-bg="/assets/dist/images/hero/home-default-2.webp">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -56,7 +58,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="single-hero-slider-one bg-img" data-bg="~/../assets/dist/images/hero/home-default-3.webp">
+                            <div class="single-hero-slider-one bg-img" data-bg="/assets/dist/images/hero/home-default-3.webp">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-12">
@@ -124,31 +126,36 @@
             </div>
         </div>
         <!-- Shopping Support Area End -->
-        <div class="featuted-product-wrap section-space--pt_120">
-            <div class="container">
-                <div class="row align-items-center featuted-product-one">
-                    <div class="col-lg-6 col-md-6 order-md-1 order-1">
-                        <div class="product-thumbnail">
-                            <a href="product-details.html"><img src="~/../assets/dist/images/featured-product/df-1.webp" class="img-fluid" alt="Featured Image" height="451" width="397"></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 order-md-2 order-2">
-                        <div class="featured-product-contect">
-                            <h6 class="sub-heading mb-2">Sản phẩm nổi bật</h6>
-                            <h2 class="section-title--one"><a href="product-details.html">Nancy Chair</a></h2>
-                            <p class="mt-30">
-                                When an unknown printer took a galley of type and scrambled it to make a
-                                type specimen book. Excepteur sint occaecat cupidatat non proident, sunt in
-                                culpa qui officia.
-                            </p>
-                            <div class="button-box section-space--mt_60">
-                                <a href="product-details.html" class="btn btn--md btn--border_1">Only $90 <i class="icon-arrow-right"></i></a>
+        @foreach (var item in listOutStanding)
+        {
+            <div class="featuted-product-wrap section-space--pt_120">
+                <div class="container">
+                    <div class="row align-items-center featuted-product-one">
+                            <div class="col-lg-6 col-md-6 order-md-2 order-2">
+                                <div class="featured-product-contect">
+                                    <h6 class="sub-heading mb-2">Sản phẩm nổi bật</h6>
+                                    <h2 class="section-title--one"><a href="/Product/@item.ID">@item.Name</a></h2>
+                                    <p class="mt-30">
+                                        @item.Description
+                                    </p>
+                                    <div class="button-box section-space--mt_60">
+                                        <a href="/Product/@item.ID" class="btn btn--md btn--border_1">@item.Price.ToString("N0") VND <i class="icon-arrow-right"></i></a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                            <div class="col-lg-6 col-md-6 order-md-1 order-1">
+                                <div class="product-thumbnail">
+                                    @foreach (var child in listFile.Where(x => x.IDProduct == item.ID))
+                                    {
+                                        <a href="/Product/@item.ID"><img src="@child.FileContent" class="img-fluid" alt="Featured Image" height="451" width="397"></a>
+                                        break;
+                                    }
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>
-        </div>
+        }
         <div class="product-wrapper section-space--ptb_120">
             <div class="container">
                 <div class="row">
@@ -201,12 +208,12 @@
                 </div>
 
                 <div class="product-slider-active">
-                   @foreach (var item in listNew)
-                   {
+                    @foreach (var item in listTrend)
+                    {
                         <div class="single-product-item text-center">
                             <div class="products-images">
                                 <a href="/Product/@item.ID" class="product-thumbnail">
-                                    @foreach(var child in listFile)
+                                    @foreach (var child in listFile)
                                     {
                                         if (child.IDProduct == item.ID)
                                         {
@@ -217,17 +224,17 @@
                                 </a>
                                 <div class="product-actions">
                                     <a href="/Product/@item.ID"><i class="p-icon icon-plus"></i><span class="tool-tip">Xem chi tiết</span></a>
-                                    <a href="product-details.html"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Thêm giỏ hàng</span></a>
+                                    <a class="_clickAddBag" data-id="@item.ID"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Thêm giỏ hàng</span></a>
                                 </div>
                             </div>
                             <div class="product-content">
-                                <h6 class="prodect-title"><a href="product-details.html">Teapot with black tea</a></h6>
+                                <h6 class="prodect-title"><a href="product-details.html">@item.Name</a></h6>
                                 <div class="prodect-price">
                                     <span class="new-price">@item.Price.ToString("N0") VND</span>
                                 </div>
                             </div>
                         </div>
-                   }
+                    }
                 </div>
             </div>
         </div>
@@ -237,71 +244,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title text-center mb-20">
-                            <h2 class="section-title--one section-title--center">Đội ngũ nhân viên</h2> 
+                            <h2 class="section-title--one section-title--center">Đội ngũ nhân viên</h2>
                         </div>
                     </div>
                 </div>
-
-               @* <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                        <!-- Single Blog Item Start -->
-                        <div class="single-blog-item mt-30">
-                            <div class="blog-thumbnail-box">
-                                <a href="single-blog-post.html" class="thumbnail">
-                                    <img src="assets/images/blog/8-570x370.webp" class="img-fluid" alt="Blog Images" height="238" width="366">
-                                </a>
-                                <a href="single-blog-post.html" class="btn-blog"> Read more </a>
-                            </div>
-                            <div class="blog-contents">
-                                <h6 class="blog-title"><a href="single-blog-post.html">Interior design is the art, the interior designer is the artist.</a></h6>
-                                <div class="meta-tag-box">
-                                    <div class="meta date"><span>October 15, 2022</span></div>
-                                    <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                    <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                                </div>
-                            </div>
-                        </div><!-- Single Blog Item End -->
-                    </div>
-                    <div class="col-lg-4 col-md-6  col-sm-6 col-12">
-                        <!-- Single Blog Item Start -->
-                        <div class="single-blog-item mt-30">
-                            <div class="blog-thumbnail-box">
-                                <a href="single-blog-post.html" class="thumbnail">
-                                    <img src="assets/images/blog/9-570x370.webp" class="img-fluid" alt="Blog Images" height="238" width="366">
-                                </a>
-                                <a href="single-blog-post.html" class="btn-blog"> Read more </a>
-                            </div>
-                            <div class="blog-contents">
-                                <h6 class="blog-title"><a href="single-blog-post.html">Decorate your home with the most modern furnishings.</a></h6>
-                                <div class="meta-tag-box">
-                                    <div class="meta date"><span>October 02, 2022</span></div>
-                                    <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                    <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                                </div>
-                            </div>
-                        </div><!-- Single Blog Item End -->
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
-                        <!-- Single Blog Item Start -->
-                        <div class="single-blog-item mt-30">
-                            <div class="blog-thumbnail-box">
-                                <a href="single-blog-post.html" class="thumbnail">
-                                    <img src="assets/images/blog/10-570x370.webp" class="img-fluid" alt="Blog Images" height="238" width="366">
-                                </a>
-                                <a href="single-blog-post.html" class="btn-blog"> Read more </a>
-                            </div>
-                            <div class="blog-contents">
-                                <h6 class="blog-title"><a href="single-blog-post.html">Spatialize with the decorations of the Helendo store.</a></h6>
-                                <div class="meta-tag-box">
-                                    <div class="meta date"><span>October 18, 2022</span></div>
-                                    <div class="meta author"><span><a href="#">Hastheme</a></span></div>
-                                    <div class="meta cat"><span>in <a href="#">Chair</a></span></div>
-                                </div>
-                            </div>
-                        </div><!-- Single Blog Item End -->
-                    </div>
-                </div>
-    *@
             </div>
         </div>
     </div>

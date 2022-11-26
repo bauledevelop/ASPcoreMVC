@@ -15,12 +15,12 @@
             @if (listCart != null)
             {
                 <ul class="minicart-list">
-                    @foreach(var item in listCart)
+                    @foreach (var item in listCart)
                     {
                         <li class="minicart-product _clickMenu _item-@item.Product.ID" data-id="@item.Product.ID">
                             <a class="product-item_remove"><i class="icon-cross2 _clickDelete"></i></a>
                             <a class="product-item_img">
-                                @foreach(var child in listFile)
+                                @foreach (var child in listFile)
                                 {
                                     if (item.Product.ID == child.IDProduct)
                                     {
@@ -36,29 +36,29 @@
                             </div>
                         </li>
                     }
-@*                   
-                    <li class="minicart-product">
-                        <a class="product-item_remove" href="javascript:void(0)"><i class="icon-cross2"></i></a>
-                        <a class="product-item_img">
-                            <img class="img-fluid" src="assets/images/product/small/cart-02.webp" alt="Product Image">
-                        </a>
-                        <div class="product-item_content">
-                            <a class="product-item_title" href="product-details.html">Teapot with black tea</a>
-                            <label>Qty : <span>1</span></label>
-                            <label class="product-item_quantity">Price: <span> $20.00</span></label>
-                        </div>
-                    </li>
-                    <li class="minicart-product">
-                        <a class="product-item_remove" href="javascript:void(0)"><i class="icon-cross2"></i></a>
-                        <a class="product-item_img">
-                            <img class="img-fluid" src="assets/images/product/small/cart-03.webp" alt="Product Image">
-                        </a>
-                        <div class="product-item_content">
-                            <a class="product-item_title" href="product-details.html">Simple Chair</a>
-                            <label>Qty : <span>1</span></label>
-                            <label class="product-item_quantity">Price: <span> $20.00</span></label>
-                        </div>
-                    </li>*@
+                    @*
+                <li class="minicart-product">
+                <a class="product-item_remove" href="javascript:void(0)"><i class="icon-cross2"></i></a>
+                <a class="product-item_img">
+                <img class="img-fluid" src="assets/images/product/small/cart-02.webp" alt="Product Image">
+                </a>
+                <div class="product-item_content">
+                <a class="product-item_title" href="product-details.html">Teapot with black tea</a>
+                <label>Qty : <span>1</span></label>
+                <label class="product-item_quantity">Price: <span> $20.00</span></label>
+                </div>
+                </li>
+                <li class="minicart-product">
+                <a class="product-item_remove" href="javascript:void(0)"><i class="icon-cross2"></i></a>
+                <a class="product-item_img">
+                <img class="img-fluid" src="assets/images/product/small/cart-03.webp" alt="Product Image">
+                </a>
+                <div class="product-item_content">
+                <a class="product-item_title" href="product-details.html">Simple Chair</a>
+                <label>Qty : <span>1</span></label>
+                <label class="product-item_quantity">Price: <span> $20.00</span></label>
+                </div>
+                </li>*@
 
                 </ul>
             }
@@ -137,7 +137,6 @@
     <i class="arrow-bottom icon-arrow-up"></i>
 </a>
 <!--====================  End of scroll top  ====================-->
-
 <!--====================  footer area ====================-->
 <div class="footer-area-wrapper" style="background: lemonchiffon;">
     <div class="footer-area section-space--ptb_120">

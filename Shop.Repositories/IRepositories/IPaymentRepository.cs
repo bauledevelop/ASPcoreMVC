@@ -9,7 +9,7 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IPaymentRepository
     {
-        IEnumerable<Payment> SelectByQuantityItem(int page, int pageSize);
+        IQueryable<Payment> SelectByQuantityItem(int page, int pageSize);
         long GetTotal();
         IEnumerable<Payment> SelectAll();
         Payment SelectById(long id);

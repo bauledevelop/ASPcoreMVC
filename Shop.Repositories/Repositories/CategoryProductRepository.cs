@@ -16,12 +16,12 @@ namespace Shop.Repositories.Repositories
             _dbContext = shopContext;
         }
 
-        public IEnumerable<CategoryProduct> SelectByIDMenu(long idMenu)
+        public IQueryable<CategoryProduct> SelectByIDMenu(long idMenu)
         {
             var model = _dbContext.CategoryProducts.Where(c => c.IDMenu == idMenu);
             return model;
         }
-        public IEnumerable<CategoryProduct> SelectAllByStatus()
+        public IQueryable<CategoryProduct> SelectAllByStatus()
         {
             try
             {
@@ -33,8 +33,8 @@ namespace Shop.Repositories.Repositories
                 return null;
             }
         }
-        public IEnumerable<CategoryProduct> SelectAllByDelete()
-        {
+        public IQueryable<CategoryProduct> SelectAllByDelete()
+        {   
             try
             {
                 var model = _dbContext.CategoryProducts.Where(x => x.IsDelete == false);
@@ -49,7 +49,7 @@ namespace Shop.Repositories.Repositories
         {
             return _dbContext.CategoryProducts.Where(x => x.IsDelete == false).Count();
         }
-        public IEnumerable<CategoryProduct> SelectByQuantityItem(int page, int pageSize)
+        public IQueryable<CategoryProduct> SelectByQuantityItem(int page, int pageSize)
         {
             var model = _dbContext.CategoryProducts.Where(x => x.IsDelete == false).Skip((page - 1) * pageSize).Take(pageSize);
             return model;

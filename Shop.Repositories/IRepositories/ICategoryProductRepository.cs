@@ -9,10 +9,10 @@ namespace Shop.Repositories.IRepositories
 {
     public interface ICategoryProductRepository
     {
-        IEnumerable<CategoryProduct> SelectAllByStatus();
-        IEnumerable<CategoryProduct> SelectByIDMenu(long idMenu);
-        IEnumerable<CategoryProduct> SelectAllByDelete();
-        IEnumerable<CategoryProduct> SelectByQuantityItem(int page, int pageSize);
+        IQueryable<CategoryProduct> SelectAllByStatus();
+        IQueryable<CategoryProduct> SelectByIDMenu(long idMenu);
+        IQueryable<CategoryProduct> SelectAllByDelete();
+        IQueryable<CategoryProduct> SelectByQuantityItem(int page, int pageSize);
         long GetTotal();
         IEnumerable<CategoryProduct> SelectAll();
         CategoryProduct SelectById(long id);

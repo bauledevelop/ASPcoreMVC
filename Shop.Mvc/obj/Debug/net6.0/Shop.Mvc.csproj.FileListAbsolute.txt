@@ -1,11 +1,3 @@
-D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.csproj.AssemblyReference.cache
-D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.GeneratedMSBuildEditorConfig.editorconfig
-D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.AssemblyInfoInputs.cache
-D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.AssemblyInfo.cs
-D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.csproj.CoreCompileInputs.cache
-D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.MvcApplicationPartsAssemblyInfo.cache
-D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.RazorAssemblyInfo.cache
-D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.RazorAssemblyInfo.cs
 D:\CNNet\source\Shop.Mvc\bin\Debug\net6.0\appsettings.Development.json
 D:\CNNet\source\Shop.Mvc\bin\Debug\net6.0\appsettings.json
 D:\CNNet\source\Shop.Mvc\bin\Debug\net6.0\Commons\fontawesome-free-6.2.0-web\metadata\icon-families.json
@@ -276,6 +268,14 @@ D:\CNNet\source\Shop.Mvc\bin\Debug\net6.0\Shop.Business.pdb
 D:\CNNet\source\Shop.Mvc\bin\Debug\net6.0\Shop.Entities.pdb
 D:\CNNet\source\Shop.Mvc\bin\Debug\net6.0\Shop.Repositories.pdb
 D:\CNNet\source\Shop.Mvc\bin\Debug\net6.0\Shop.Common.pdb
+D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.csproj.AssemblyReference.cache
+D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.GeneratedMSBuildEditorConfig.editorconfig
+D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.AssemblyInfoInputs.cache
+D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.AssemblyInfo.cs
+D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.csproj.CoreCompileInputs.cache
+D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.MvcApplicationPartsAssemblyInfo.cache
+D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.RazorAssemblyInfo.cache
+D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\Shop.Mvc.RazorAssemblyInfo.cs
 D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\staticwebassets\msbuild.Shop.Mvc.Microsoft.AspNetCore.StaticWebAssets.props
 D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\staticwebassets\msbuild.build.Shop.Mvc.props
 D:\CNNet\source\Shop.Mvc\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Shop.Mvc.props

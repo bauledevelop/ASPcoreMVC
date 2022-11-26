@@ -6,7 +6,20 @@
     $('.inc').click(handleChangeAmount);
     $('.dec').click(handleChangeAmount);
     $('._deleteItem').click(handleDeleteItem);
+    $('._settionSize').change(handleChangeSize);
 
+    function handleChangeSize() {
+        var _size = $(this).val();
+        $.ajax({
+            url: '/Cart/ChangeSize',
+            dataType: 'Json',
+            type: 'POST',
+            data: {
+                id: _id,
+                size: _size
+            }
+        });
+    }
     function handleDeleteItem() {
         $.ajax({
             url: '/Cart/DeleteItem',
@@ -40,11 +53,12 @@
         });
     }
     function handleChangeAmount() {
-        if ($('._Amount').val() <= 0) {
-            $('._Amount').val("1");
+        var _amount = "._Amount-" + _id;
+        if ($(_amount).val() <= 0) {
+            $(_amount).val("1");
         }
         else {
-            submitChangeAmount($('._Amount').val());
+            submitChangeAmount($(_amount).val());
         }
         
     }

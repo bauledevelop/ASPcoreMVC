@@ -20,6 +20,31 @@ namespace Shop.Business.Implements
             _commentRepository = commentRepository;
             _mapper = mapper;
         }
+        public long GetTotalByIDProduct(long idProduct)
+        {
+            return _commentRepository.GetTotalByIDProduct(idProduct);
+        }
+        public IEnumerable<CommentDTO> SelectByIDProduct(long idProduct,int page,int pageSize)
+        {
+            var comments = _commentRepository.SelectByIDProduct(idProduct,page,pageSize);
+            var commentDTOs = comments.Select(item => _mapper.Map<Comment, CommentDTO>(item));
+            return commentDTOs;
+        }
+        public void Insert(CommentDTO commentDTO)
+        {
+            commentDTO.CreatedDate = DateTime.Now;
+            commentDTO.Status = true;
+            var comment = _mapper.Map<CommentDTO, Comment>(commentDTO);
+            _commentRepository.Insert(comment);
+            _commentRepository.Save();
+        }
+        public CommentDTO GetCommentByIDAccount(long IDAccount)
+        {
+            var comment = _commentRepository.GetCommentByIDAccount(IDAccount);
+            if (comment == null) return null;
+            var commentDTO = _mapper.Map<Comment, CommentDTO>(comment);
+            return commentDTO;
+        }
         public void DeleteByIDAccount(long IDAccount)
         {
             var comment = _commentRepository.SelectAll();

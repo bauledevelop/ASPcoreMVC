@@ -19,7 +19,7 @@ namespace Shop.Repositories.IRepositories
         string GetEmailByUsername(string username);
         bool CheckEmail(string email);
         long GetTotal();
-        IEnumerable<Account> SelectByQuantityItem(int page, int pageSize);
+        IQueryable<Account> SelectByQuantityItem(int page, int pageSize);
         IEnumerable<Account> SelectAll();
         Account SelectById(long id);
         void Insert(Account obj);

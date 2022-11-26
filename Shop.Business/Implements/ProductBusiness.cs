@@ -18,14 +18,72 @@ namespace Shop.Business.Implements
         private readonly IFileBusiness _fileBusiness;
         private readonly ICommentBusiness _commentBusiness;
         private readonly IOrderDetailBusiness _orderDetailBusiness;
+        private readonly IOrderDetailRepository _orderDetailRepository;
+        private readonly IRateRepository _rateRepository;
         public ProductBusiness(IProductRepository productRepository, IMapper mapper,IFileBusiness fileBusiness
-            , ICommentBusiness commentBusiness, IOrderDetailBusiness orderDetailBusiness)
+            , ICommentBusiness commentBusiness, IOrderDetailBusiness orderDetailBusiness, IOrderDetailRepository orderDetailRepository
+            , IRateRepository rateRepository
+            )
         {
             _productRepository = productRepository;
             _mapper = mapper;
             _fileBusiness = fileBusiness;
             _commentBusiness = commentBusiness;
             _orderDetailBusiness = orderDetailBusiness;
+            _orderDetailRepository = orderDetailRepository;
+            _rateRepository = rateRepository;
+        }
+        public IEnumerable<ProductDTO> SelectOutStanding()
+        {
+            var products = _productRepository.SelectAllProduct();
+            var productDTOs = products.Select(item => _mapper.Map<Product, ProductDTO>(item));
+            var rate = _rateRepository.SelectAll();
+            var standingDTOs = new List<StandingDTO>();
+            foreach(var item in productDTOs)
+            {
+                var getRate = rate.Where(x => x.IDProduct == item.ID).Count();
+                if (getRate != 0)
+                {
+                    var standingDTO = new StandingDTO();
+                    standingDTO.productDTO = item;
+                    standingDTO.amount = getRate;
+                    standingDTOs.Add(standingDTO);
+                }
+            }
+            var result = standingDTOs.OrderByDescending(x => x.amount).Take(4);
+            var resultProductDTO = new List<ProductDTO>();
+            foreach(var item in result)
+            {
+                resultProductDTO.Add(item.productDTO);
+            }
+            return resultProductDTO;
+        }
+        public IEnumerable<ProductDTO> SelectTrendProduct()
+        {
+            var products = _productRepository.SelectAllProduct();
+            var orderDetails = _orderDetailRepository.SelectAllOrderDetail();
+            var orderDetailDTOs = new List<OrderDetailDTO>();
+            foreach(var item in products)
+            {
+                var orderDetail = new OrderDetailDTO();
+                orderDetail.IDProduct = item.ID;
+                orderDetail.Quantity = 0;
+                foreach (var child in orderDetails.Where(x => x.Status == true  && x.IDProduct == item.ID))
+                {
+                    orderDetail.Quantity += child.Quantity;
+                }
+                if (orderDetail.Quantity != 0)
+                {
+                    orderDetailDTOs.Add(orderDetail);
+                }
+            }
+            var result = orderDetailDTOs.OrderByDescending(x => x.Quantity).Take(8);
+            var productDTO = new List<ProductDTO>();
+            foreach (var item in result)
+            {
+                productDTO.Add(_mapper.Map<ProductDTO>(_productRepository.SelectById(item.IDProduct)));
+            }
+            return productDTO;  
         }
         public ProductDTO GetProductByID(long ID)
         {

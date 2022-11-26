@@ -27,8 +27,9 @@
                                     <thead>
                                         <tr class="bg-gray">
                                             <th></th>
-                                            <th class="">Sản phẩm</th>
-                                            <th class="">Giá</th>
+                                            <th>Sản phẩm</th>
+                                            <th>Giá</th>
+                                            <th>Size</th>
                                             <th>Màu sắc</th>
                                             <th>Số lượng</th>
                                             <th>Tổng tiền</th>
@@ -37,6 +38,7 @@
                                     </thead>
                                     <tfoot style="height: 50px;">
                                         <tr class="bg-gray">
+                                            <th></th>
                                             <th></th>
                                             <th></th>
                                             <th></th>
@@ -63,7 +65,32 @@
                                                 </td>
                                                 <td class="product-name"><a href="/Product/@item.Product.ID">@item.Product.Name</a></td>
 
-                                                <td class="product-price"><span class="amount">@item.Product.Price.ToString("N0") VND</span></td>
+                                                <td><span class="amount">@item.Product.Price.ToString("N0") VND</span></td>
+                                                <td class="_settingSelect">
+                                                    <select class="_settionSize">
+                                                        @if(item.Size == "1")
+                                                        {
+                                                            <option value="1">S</option>
+                                                            <option value="2">M</option>
+                                                            <option value="3">L</option>
+                                                        }
+                                                        else
+                                                        {
+                                                            if (item.Size == "2")
+                                                            {
+                                                                <option value="2">M</option>
+                                                                <option value="1">S</option>
+                                                                <option value="3">L</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="3">L</option>
+                                                                <option value="1">S</option>
+                                                                <option value="2">M</option>
+                                                            }
+                                                        }
+                                                    </select>
+                                                </td>
                                                 <td>
                                                     <select class="_settingOption">
                                                         @if(item.Color == "1")
@@ -81,7 +108,7 @@
                                                 <td class="cart-quality">
                                                     <div class="quickview-quality quality-height-dec2">
                                                         <div class="cart-plus-minus _clickChangeAmount">
-                                                            <input class="cart-plus-minus-box _Amount" type="text" name="qtybutton" value="@item.Amount">
+                                                            <input class="cart-plus-minus-box _Amount-@item.Product.ID" type="text" name="qtybutton" value="@item.Amount">
                                                         </div>
                                                     </div>
                                                 </td>

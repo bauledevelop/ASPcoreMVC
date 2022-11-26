@@ -15,6 +15,18 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
+        public IQueryable<Product> SelectAllProduct()
+        {
+            try
+            {
+                var model = _dbContext.Products.Where(x => x.Status == true);
+                return model;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         public Product GetByID(long id)
         {
             try
@@ -27,7 +39,7 @@ namespace Shop.Repositories.Repositories
                 return null;
             }
         }
-        public IEnumerable<Product> SelectRelatedProduct(long IDCategory,long ID)
+        public IQueryable<Product> SelectRelatedProduct(long IDCategory,long ID)
         {
             try
             {
@@ -39,7 +51,7 @@ namespace Shop.Repositories.Repositories
                 return null;
             }
         }
-        public IEnumerable<Product> SelectNewProduct()
+        public IQueryable<Product> SelectNewProduct()
         {
             try
             {
@@ -55,7 +67,7 @@ namespace Shop.Repositories.Repositories
         {
             return _dbContext.Products.Where(x => x.IDCategoryProduct == IDCategory && x.Status).Count();
         }
-        public IEnumerable<Product> SelectByIDCategoryQuantityItem(int page,int pageSize,long IDCategory)
+        public IQueryable<Product> SelectByIDCategoryQuantityItem(int page,int pageSize,long IDCategory)
         {
             try
             {
@@ -67,7 +79,7 @@ namespace Shop.Repositories.Repositories
                 return null;
             }
         }
-        public IEnumerable<Product> SelectByIDCategory(long IDCategory)
+        public IQueryable<Product> SelectByIDCategory(long IDCategory)
         {
             try
             {
@@ -79,7 +91,7 @@ namespace Shop.Repositories.Repositories
                 return null;
             }
         }
-        public IEnumerable<Product> SelectByQuantityItem(int page, int pageSize)
+        public IQueryable<Product> SelectByQuantityItem(int page, int pageSize)
         {
             try
             {

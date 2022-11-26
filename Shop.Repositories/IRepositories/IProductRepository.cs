@@ -9,13 +9,14 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IProductRepository
     {
+        IQueryable<Product> SelectAllProduct();
         Product GetByID(long id);
-        IEnumerable<Product> SelectRelatedProduct(long IDCategory, long ID);
-        IEnumerable<Product> SelectNewProduct();
+        IQueryable<Product> SelectRelatedProduct(long IDCategory, long ID);
+        IQueryable<Product> SelectNewProduct();
         long GetTotalByIDCategory(long IDCategory);
-        IEnumerable<Product> SelectByIDCategoryQuantityItem(int page, int pageSize, long IDCategory);
-        IEnumerable<Product> SelectByIDCategory(long IDCategory);
-        IEnumerable<Product> SelectByQuantityItem(int page, int pageSize);
+        IQueryable<Product> SelectByIDCategoryQuantityItem(int page, int pageSize, long IDCategory);
+        IQueryable<Product> SelectByIDCategory(long IDCategory);
+        IQueryable<Product> SelectByQuantityItem(int page, int pageSize);
         long GetTotal();
         IEnumerable<Product> SelectAll();
         Product SelectById(long id);

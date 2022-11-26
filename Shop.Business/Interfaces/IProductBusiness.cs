@@ -9,6 +9,8 @@ namespace Shop.Business.Interfaces
 {
     public interface IProductBusiness
     {
+        IEnumerable<ProductDTO> SelectOutStanding();
+        IEnumerable<ProductDTO> SelectTrendProduct();
         ProductDTO GetProductByID(long ID);
         IEnumerable<ProductDTO> SelectRelatedProduct(long IDCategory,long ID);
         IEnumerable<ProductDTO> SelectNewProduct();

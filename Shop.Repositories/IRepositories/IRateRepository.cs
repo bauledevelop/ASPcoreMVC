@@ -9,6 +9,8 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IRateRepository
     {
+        IQueryable<Rate> SelectByIDProduct(long idProduct);
+        IQueryable<Rate> GetRateByIDAccount(long idAccount);
         IEnumerable<Rate> SelectAll();
         Rate SelectById(long id);
         void Insert(Rate obj);

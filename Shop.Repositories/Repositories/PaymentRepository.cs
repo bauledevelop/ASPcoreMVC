@@ -15,7 +15,7 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
-        public IEnumerable<Payment> SelectByQuantityItem(int page, int pageSize)
+        public IQueryable<Payment> SelectByQuantityItem(int page, int pageSize)
         {
             try
             {

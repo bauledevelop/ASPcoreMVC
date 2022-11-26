@@ -60,7 +60,7 @@ namespace Shop.Repositories.Repositories
         {
             return _dbContext.Accounts.Where(x => x.IsDelete == false).Count();
         }
-        public IEnumerable<Account> SelectByQuantityItem(int page,int pageSize)
+        public IQueryable<Account> SelectByQuantityItem(int page,int pageSize)
         {
             var model = _dbContext.Accounts.Where(x => x.IsDelete == false).Skip((page - 1) * pageSize).Take(pageSize);
             return model;

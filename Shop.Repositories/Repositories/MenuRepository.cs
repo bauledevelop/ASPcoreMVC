@@ -15,17 +15,17 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
-        public IEnumerable<Menu> SelectAllByStatus()
+        public IQueryable<Menu> SelectAllByStatus()
         {
             var model = _dbContext.Menus.Where(x => x.Status);
             return model;
         }
-        public IEnumerable<Menu> SelectAllByDelete()
+        public IQueryable<Menu> SelectAllByDelete()
         {
             var model = _dbContext.Menus.Where(x => x.IsDelete == false);
             return model;
         }
-        public IEnumerable<Menu> SelectByQuantityItem(int page, int pageSize)
+        public IQueryable<Menu> SelectByQuantityItem(int page, int pageSize)
         {
             var model = _dbContext.Menus.Where(x => x.IsDelete == false).Skip((page - 1) * pageSize).Take(pageSize);
             return model;

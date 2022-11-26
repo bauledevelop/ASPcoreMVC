@@ -3,6 +3,7 @@ using Shop.Business.Interfaces;
 using Shop.Mvc.Entensions;
 using Shop.Mvc.Models;
 using System.Drawing;
+using System.Linq.Expressions;
 
 namespace Shop.Mvc.Controllers
 {
@@ -119,6 +120,30 @@ namespace Shop.Mvc.Controllers
                 });
             }
             catch(Exception ex)
+            {
+                return Json(new
+                {
+                    status = false
+                });
+            }
+        }
+        [HttpPost]
+        public IActionResult ChangeSize(string id,string size)
+        {
+            if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
+            try
+            {
+                var listCart = HttpContext.Session.Get<List<CartItem>>("ListCart");
+                foreach (var item in listCart.Where(x => x.Product.ID == long.Parse(id)))
+                {
+                    item.Size = size;
+                }
+                HttpContext.Session.Set<List<CartItem>>("ListCart", listCart);
+                return Json(new
+                {
+                    status = true
+                });
+            }catch(Exception ex)
             {
                 return Json(new
                 {

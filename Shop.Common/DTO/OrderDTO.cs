@@ -11,6 +11,7 @@ namespace Shop.Common.DTO
         public long ID { set; get; }
         public long Quantity { set; get; }
         public DateTime CreatedDate { set; get; }
+        public bool IsDelete { set; get; }
         public long Total { set; get; }
         public bool Status { set; get; }
         public long IDAccount { set; get; }

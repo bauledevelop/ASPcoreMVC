@@ -11,7 +11,7 @@ namespace Shop.Mvc.Controllers
         private readonly IAccountBusiness _accountBusiness;
         private readonly IProductBusiness _productBusiness;
         private readonly IFileBusiness _fileBusiness;
-        public HomeController(IAccountBusiness accountBusiness,IProductBusiness productBusiness,IFileBusiness fileBusiness)
+        public HomeController(IAccountBusiness accountBusiness, IProductBusiness productBusiness, IFileBusiness fileBusiness)
         {
             _accountBusiness = accountBusiness;
             _productBusiness = productBusiness;
@@ -23,15 +23,19 @@ namespace Shop.Mvc.Controllers
             {
                 var listNew = _productBusiness.SelectNewProduct();
                 var listFile = _fileBusiness.SelectAll();
+                var listTrend = _productBusiness.SelectTrendProduct();
+                var listOutStanding = _productBusiness.SelectOutStanding();
+                ViewData["ListTrend"] = listTrend;
                 ViewData["ListNew"] = listNew;
                 ViewData["ListFile"] = listFile;
+                ViewData["ListOutStanding"] = listOutStanding;
                 return View();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return Redirect("/404");
             }
-            
+
         }
         [HttpGet]
         public IActionResult Login()
@@ -76,7 +80,7 @@ namespace Shop.Mvc.Controllers
                         }
                         return RedirectToAction("Index", "Home");
                     }
-                    switch(check)
+                    switch (check)
                     {
                         case 1:
                             ViewBag.Message = "Tài khoản không tồn tại";
@@ -88,7 +92,7 @@ namespace Shop.Mvc.Controllers
                 }
             }
             return View(loginModel);
-            
+
         }
     }
 }
