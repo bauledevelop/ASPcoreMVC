@@ -2,7 +2,7 @@
     let _color = 1;
     let _size = 1;
     let _page = 1;
-    let _pageSize = 5;
+    let _pageSize = 1;
     let _idStar;
     var _idProduct;
 
@@ -42,7 +42,6 @@
             },
             success: function (res) {
                 if (res.status == true) {
-                    //console.log(res.listComment, res.paginationView);
                     let _listComment = document.getElementsByClassName('list-comment')[0];
                     _listComment.innerHTML = '';
                     var data = res.listComment;

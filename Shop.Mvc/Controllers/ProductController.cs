@@ -46,7 +46,7 @@ namespace Shop.Mvc.Controllers
                 var account = _accountBusiness.GetAccountById(model.CreatedBy);
                 if (loginModel != null)
                 {
-                    var commentDTO = _commentBusiness.GetCommentByIDAccount(loginModel.ID);
+                    var commentDTO = _commentBusiness.GetCommentByIDAccount(loginModel.ID,long.Parse(id));
                     ViewData["Comment"] = commentDTO;
                 }
                 else

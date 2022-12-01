@@ -11,7 +11,7 @@ namespace Shop.Business.Interfaces
     {
         long GetTotalByIDProduct(long idProduct);
         IEnumerable<CommentDTO> SelectByIDProduct(long idProduct, int page, int pageSize);
-        CommentDTO GetCommentByIDAccount(long IDAccount);
+        CommentDTO GetCommentByIDAccount(long IDAccount, long IDProduct);
         void Insert(CommentDTO commentDTO);
         void DeleteByIDAccount(long IDAccount);
         void DeleteByIDProduct(long IDProduct, bool where = false);

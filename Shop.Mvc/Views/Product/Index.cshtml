@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/Layout/_Layout.cshtml";
+    ViewBag.Title = "Sản phẩm";
     var listFile = (IEnumerable<Shop.Common.DTO.FileDTO>)ViewData["ListFile"];
     var listProduct = (IEnumerable<Shop.Common.DTO.ProductDTO>)ViewData["ListProduct"];
     var product = (Shop.Common.DTO.ProductDTO)ViewData["Product"];

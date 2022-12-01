@@ -38,9 +38,9 @@ namespace Shop.Business.Implements
             _commentRepository.Insert(comment);
             _commentRepository.Save();
         }
-        public CommentDTO GetCommentByIDAccount(long IDAccount)
+        public CommentDTO GetCommentByIDAccount(long IDAccount,long IDProduct)
         {
-            var comment = _commentRepository.GetCommentByIDAccount(IDAccount);
+            var comment = _commentRepository.GetCommentByIDAccount(IDAccount,IDProduct);
             if (comment == null) return null;
             var commentDTO = _mapper.Map<Comment, CommentDTO>(comment);
             return commentDTO;

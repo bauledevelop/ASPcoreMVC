@@ -18,7 +18,6 @@ namespace Shop.Business.Implements
         private readonly IMapper _mapper;
         private readonly ICategoryProductBusiness _categoryProductBusiness;
         private readonly IProductBusiness _productBusiness;
-        private readonly IFeedbackBusiness _feedbackBusiness;
         private readonly IFileBusiness _fileBusiness;
         private readonly ICommentBusiness _commentBusiness;
         private readonly IPaymentBusiness _paymentBusiness;
@@ -26,7 +25,6 @@ namespace Shop.Business.Implements
         public AccountBusiness(IAccountRepository accountRepository,IMapper mapper,
             ICategoryProductBusiness categoryProductBusiness,
             IProductBusiness productBusiness,
-            IFeedbackBusiness feedbackBusiness,
             IFileBusiness fileBusiness,
             ICommentBusiness commentBusiness,
             IPaymentBusiness paymentBusiness,
@@ -37,17 +35,43 @@ namespace Shop.Business.Implements
             _mapper = mapper;
             _categoryProductBusiness = categoryProductBusiness;
             _productBusiness = productBusiness;
-            _feedbackBusiness = feedbackBusiness;
             _fileBusiness = fileBusiness;
             _commentBusiness = commentBusiness;
             _paymentBusiness = paymentBusiness;
             _orderBusiness = orderBusiness;
+        }
+        public void InsertAccountByUser(AccountDTO accountDTO)
+        {
+            accountDTO.CreatedDate = DateTime.Now;
+            accountDTO.IsDelete = false;
+            accountDTO.Status = true;
+            accountDTO.IsActive = false;
+            var account = _mapper.Map<AccountDTO, Account>(accountDTO);
+            _accountRepository.Insert(account);
+            _accountRepository.Save();
         }
         public AccountDTO GetAccountByUsername(string username )
         {
             var account = _accountRepository.GetAccountByUsername(username );
             var accountDTO = _mapper.Map<AccountDTO>( account );
             return accountDTO;
+        }
+        public int CheckRegister(string Username,string Password,string Email)
+        {
+            var checkUsername = _accountRepository.CheckUsername(Username);
+            var checkEmail = _accountRepository.CheckEmail(Email);
+            if (checkUsername == true)
+            {
+                return 1;
+            }
+            else 
+            {
+                if (checkEmail == false)
+                {
+                    return 2;
+                }
+            }
+            return 3;
         }
         public int CheckLogin(string Username,string Password)
         {
@@ -82,7 +106,6 @@ namespace Shop.Business.Implements
             _categoryProductBusiness.DeleteByAccountID(id);
             _productBusiness.DeleteByIDAccount(id);
             _commentBusiness.DeleteByIDAccount(id);
-            _feedbackBusiness.DeleteByIDAccount(id);
             _fileBusiness.DeleteByIDAccount(id);
             _orderBusiness.DeleteByIDAccount(id);
             _paymentBusiness.DeleteByIDAccount(id);

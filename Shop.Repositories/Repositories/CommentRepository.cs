@@ -31,11 +31,11 @@ namespace Shop.Repositories.Repositories
         {
             return _dbContext.Comments.Where(x => x.Status == true && x.IDProduct == productID).Count();
         }
-        public Comment GetCommentByIDAccount(long IDAccount)
+        public Comment GetCommentByIDAccount(long IDAccount, long IDProduct)
         {
             try
             {
-                var model = _dbContext.Comments.SingleOrDefault(x => x.IDAccount == IDAccount);
+                var model = _dbContext.Comments.SingleOrDefault(x => x.IDAccount == IDAccount && x.IDProduct == IDProduct);
                 return model;
             }
             catch {

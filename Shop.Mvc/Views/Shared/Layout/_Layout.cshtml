@@ -18,7 +18,7 @@
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="/assets/dist/css/style.min.css">
     <link rel="stylesheet" href="/assets/css/all.css">
-    @RenderSection("css",false)
+    @await RenderSectionAsync("css",false)
 
     <!--JS-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -40,6 +40,6 @@
     <!--Main-->
     <script src="/assets/dist/js/main.js"></script>
     <script src="/assets/js/all.js"></script>
-    @RenderSection("js", required: false)
+    @await RenderSectionAsync("js", required: false)
 </body>
 </html>

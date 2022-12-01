@@ -24,7 +24,6 @@ namespace Shop.Entities.Enities
         public virtual DbSet<CategoryProduct> CategoryProducts { set; get; }
         public virtual DbSet<Product> Products { set; get; }
         public virtual DbSet<Comment> Comments { set; get; }
-        public virtual DbSet<Feedback> Feedbacks { set; get; }
         public virtual DbSet<File> Files { set; get; }
         public virtual DbSet<Order> Orders { set; get; }
         public virtual DbSet<OrderDetail> OrderDetails { set; get; }
@@ -39,7 +38,6 @@ namespace Shop.Entities.Enities
             modelBuilder.ApplyConfiguration(new CategoryProductConfig());
             modelBuilder.ApplyConfiguration(new ProductConfig());
             modelBuilder.ApplyConfiguration(new CommentConfig());
-            modelBuilder.ApplyConfiguration(new FeedbackConfig());
             modelBuilder.ApplyConfiguration(new FileConfig());
             modelBuilder.ApplyConfiguration(new OrderConfig());
             modelBuilder.ApplyConfiguration(new OrderDetailConfig());

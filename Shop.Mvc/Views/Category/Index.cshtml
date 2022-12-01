@@ -1,6 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/Layout/_Layout.cshtml";
+    ViewBag.Title = "Loại sản phẩm";
     var listMenu = (IEnumerable<Shop.Common.DTO.MenuDTO>)ViewData["ListMenu"];
     var listProduct = (IEnumerable<Shop.Common.DTO.ProductDTO>)ViewData["ListProduct"];
     var listCategory = (IEnumerable<Shop.Common.DTO.CategoryProductDTO>)ViewData["ListCategory"];

@@ -12,8 +12,8 @@ using Shop.Entities.Enities;
 namespace Shop.Entities.Migrations
 {
     [DbContext(typeof(ShopContext))]
-    [Migration("20221120073817_update-2")]
-    partial class update2
+    [Migration("20221126181013_DBinitial")]
+    partial class DBinitial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -89,8 +89,8 @@ namespace Shop.Entities.Migrations
                             Username = "admin",
                             AccountType = 1,
                             Address = "a",
-                            BirthDay = new DateTime(2022, 11, 20, 14, 38, 16, 753, DateTimeKind.Local).AddTicks(6916),
-                            CreatedDate = new DateTime(2022, 11, 20, 14, 38, 16, 753, DateTimeKind.Local).AddTicks(6908),
+                            BirthDay = new DateTime(2022, 11, 27, 1, 10, 12, 885, DateTimeKind.Local).AddTicks(7186),
+                            CreatedDate = new DateTime(2022, 11, 27, 1, 10, 12, 885, DateTimeKind.Local).AddTicks(7176),
                             IsActive = true,
                             IsDelete = false,
                             Name = "Dương",
@@ -106,8 +106,8 @@ namespace Shop.Entities.Migrations
                             Username = "user",
                             AccountType = 2,
                             Address = "a",
-                            BirthDay = new DateTime(2022, 11, 20, 14, 38, 16, 753, DateTimeKind.Local).AddTicks(6920),
-                            CreatedDate = new DateTime(2022, 11, 20, 14, 38, 16, 753, DateTimeKind.Local).AddTicks(6920),
+                            BirthDay = new DateTime(2022, 11, 27, 1, 10, 12, 885, DateTimeKind.Local).AddTicks(7190),
+                            CreatedDate = new DateTime(2022, 11, 27, 1, 10, 12, 885, DateTimeKind.Local).AddTicks(7189),
                             IsActive = true,
                             IsDelete = false,
                             Name = "Dương",
@@ -191,41 +191,6 @@ namespace Shop.Entities.Migrations
                     b.HasIndex("IDProduct");
 
                     b.ToTable("Comments", (string)null);
-                });
-
-            modelBuilder.Entity("Shop.Entities.Enities.Feedback", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"), 1L, 1);
-
-                    b.Property<string>("Content")
-                        .HasMaxLength(2048)
-                        .HasColumnType("nvarchar(2048)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long>("IDAcount")
-                        .HasColumnType("bigint");
-
-                    b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(1024)
-                        .HasColumnType("nvarchar(1024)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("IDAcount");
-
-                    b.ToTable("Feedbacks", (string)null);
                 });
 
             modelBuilder.Entity("Shop.Entities.Enities.File", b =>
@@ -531,18 +496,6 @@ namespace Shop.Entities.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Shop.Entities.Enities.Feedback", b =>
-                {
-                    b.HasOne("Shop.Entities.Enities.Account", "Account")
-                        .WithMany("Feedbacks")
-                        .HasForeignKey("IDAcount")
-                        .HasPrincipalKey("ID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Account");
-                });
-
             modelBuilder.Entity("Shop.Entities.Enities.File", b =>
                 {
                     b.HasOne("Shop.Entities.Enities.Account", "Account")
@@ -671,8 +624,6 @@ namespace Shop.Entities.Migrations
                     b.Navigation("CategoryProducts");
 
                     b.Navigation("Comments");
-
-                    b.Navigation("Feedbacks");
 
                     b.Navigation("Files");
 

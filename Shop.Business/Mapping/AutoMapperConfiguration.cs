@@ -21,7 +21,6 @@ namespace Shop.Business.Mapping
             CreateMap<Account, AccountDTO>();
             CreateMap<CategoryProduct, CategoryProductDTO>();
             CreateMap<Comment, CommentDTO>();
-            CreateMap<Feedback, FeedbackDTO>();
             CreateMap<File, FileDTO>();
             CreateMap<OrderDetail, OrderDetailDTO>();
             CreateMap<Order, Order>();
@@ -35,7 +34,6 @@ namespace Shop.Business.Mapping
             CreateMap<AccountDTO, Account>();
             CreateMap<CategoryProductDTO, CategoryProduct>();
             CreateMap<CommentDTO, Comment>();
-            CreateMap<FeedbackDTO, Feedback>();
             CreateMap<FileDTO, File>();
             CreateMap<OrderDetailDTO, OrderDetail>();
             CreateMap<OrderDTO, Order>();

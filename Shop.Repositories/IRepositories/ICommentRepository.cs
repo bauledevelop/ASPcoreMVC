@@ -11,7 +11,7 @@ namespace Shop.Repositories.IRepositories
     {
         IQueryable<Comment> SelectByIDProduct(long idProduct,int page,int pageSize);
         long GetTotalByIDProduct(long productID);
-        Comment GetCommentByIDAccount(long IDAccount);
+        Comment GetCommentByIDAccount(long IDAccount, long IDProduct);
         long GetTotal();
         IQueryable<Comment> SelectByQuantityItem(int page, int pageSize);
         IEnumerable<Comment> SelectAll();

@@ -7,6 +7,7 @@ using Shop.Mvc.Entensions;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ShopContext>(options =>
@@ -67,5 +68,4 @@ app.UseEndpoints(endpoints =>
         areaName: "Admin",
         pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 });
-
 app.Run();

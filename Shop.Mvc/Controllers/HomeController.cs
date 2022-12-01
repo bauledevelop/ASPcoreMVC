@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Shop.Business.Interfaces;
+using Shop.Common.DTO;
+using Shop.Mvc.Commons.DropdownList;
 using Shop.Mvc.Entensions;
 using Shop.Mvc.Models;
 using System.Diagnostics;
@@ -41,6 +44,54 @@ namespace Shop.Mvc.Controllers
         public IActionResult Login()
         {
             return View();
+        }
+        [HttpGet]
+        public IActionResult Register()
+        {
+            var dropdownList = new DropdownListItem();
+            ViewData["TypeSex"] = new SelectList(dropdownList.DropdownListTypeSex(),"Value","Text");
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Register(RegisterViewModel registerViewModel)
+        {
+            var dropdownList = new DropdownListItem();
+            ViewData["TypeSex"] = new SelectList(dropdownList.DropdownListTypeSexActive(registerViewModel.Sex),"Value","Text");
+            if (!ModelState.IsValid) return View();
+            try
+            {
+                var check = _accountBusiness.CheckRegister(registerViewModel.Username, registerViewModel.Password,registerViewModel.Email);
+                if (check < 3)
+                {
+                    if (check == 1 )
+                    {
+                        ViewBag.Message = "Tài khoản đã tồn tại";
+                    }
+                    else
+                    {
+                        ViewBag.Message = "Email đã tồn tại";
+                    }
+                    return View();
+                }
+                var accountDTO = new AccountDTO();
+                accountDTO.Username = registerViewModel.Username;
+                accountDTO.Password = registerViewModel.Password;
+                accountDTO.Email = registerViewModel.Email;
+                accountDTO.Phone = registerViewModel.Phone;
+                accountDTO.BirthDay = registerViewModel.BirthDay;
+                accountDTO.Name = registerViewModel.Name;
+                accountDTO.Sex = int.Parse(registerViewModel.Sex);
+                accountDTO.Address = registerViewModel.Address;
+                _accountBusiness.InsertAccountByUser(accountDTO);
+                ViewBag.Success = "Đăng kí tài khoản thành công. ";
+                return View();
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Message = "Đăng kí tài khoản thất bại";
+                return View();
+            }
+
         }
         [HttpPost]
         public IActionResult Login(LoginModel loginModel)

@@ -9,6 +9,8 @@ namespace Shop.Business.Interfaces
 {
     public interface IAccountBusiness
     {
+        void InsertAccountByUser(AccountDTO accountDTO);
+        int CheckRegister(string Username, string Password, string Email);
         AccountDTO GetAccountByUsername(string username);
         int CheckLogin(string Username, string Password);
         IEnumerable<AccountDTO> SelectAll();

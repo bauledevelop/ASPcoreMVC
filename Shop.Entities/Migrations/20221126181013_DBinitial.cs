@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Shop.Entities.Migrations
 {
-    public partial class DbInitial : Migration
+    public partial class DBinitial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -33,30 +33,6 @@ namespace Shop.Entities.Migrations
                 {
                     table.PrimaryKey("PK_Accounts", x => new { x.ID, x.Email, x.Username });
                     table.UniqueConstraint("AK_Accounts_ID", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Feedbacks",
-                columns: table => new
-                {
-                    ID = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: true),
-                    Content = table.Column<string>(type: "nvarchar(2048)", maxLength: 2048, nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsDelete = table.Column<bool>(type: "bit", nullable: false),
-                    Status = table.Column<bool>(type: "bit", nullable: false),
-                    IDAcount = table.Column<long>(type: "bigint", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Feedbacks", x => x.ID);
-                    table.ForeignKey(
-                        name: "FK_Feedbacks_Accounts_IDAcount",
-                        column: x => x.IDAcount,
-                        principalTable: "Accounts",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -177,6 +153,8 @@ namespace Shop.Entities.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(1024)", maxLength: 1024, nullable: true),
                     Description = table.Column<string>(type: "nvarchar(2048)", maxLength: 2048, nullable: true),
+                    Detail = table.Column<string>(type: "nvarchar(2048)", maxLength: 2048, nullable: true),
+                    Price = table.Column<long>(type: "bigint", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDelete = table.Column<bool>(type: "bit", nullable: false),
@@ -271,6 +249,8 @@ namespace Shop.Entities.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Quantity = table.Column<long>(type: "bigint", nullable: false),
                     Total = table.Column<long>(type: "bigint", nullable: false),
+                    Size = table.Column<int>(type: "int", nullable: false),
+                    Color = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<bool>(type: "bit", nullable: false),
                     IDOrder = table.Column<long>(type: "bigint", nullable: false),
                     IDProduct = table.Column<long>(type: "bigint", nullable: false)
@@ -292,15 +272,42 @@ namespace Shop.Entities.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
-            migrationBuilder.InsertData(
-                table: "Accounts",
-                columns: new[] { "Email", "ID", "Username", "AccountType", "Address", "BirthDay", "CreatedDate", "IsActive", "IsDelete", "Name", "Password", "Phone", "Sex", "Status" },
-                values: new object[] { "abc", 1L, "admin", 1, "a", new DateTime(2022, 11, 16, 23, 44, 55, 33, DateTimeKind.Local).AddTicks(5741), new DateTime(2022, 11, 16, 23, 44, 55, 33, DateTimeKind.Local).AddTicks(5732), true, false, "Dương", "1", "123", 1, true });
+            migrationBuilder.CreateTable(
+                name: "Rates",
+                columns: table => new
+                {
+                    ID = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    rate = table.Column<int>(type: "int", nullable: false),
+                    IDProduct = table.Column<long>(type: "bigint", nullable: false),
+                    IDAccount = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Rates", x => x.ID);
+                    table.ForeignKey(
+                        name: "FK_Rates_Accounts_IDAccount",
+                        column: x => x.IDAccount,
+                        principalTable: "Accounts",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Rates_Products_IDProduct",
+                        column: x => x.IDProduct,
+                        principalTable: "Products",
+                        principalColumn: "ID",
+                        onDelete: ReferentialAction.Restrict);
+                });
 
             migrationBuilder.InsertData(
                 table: "Accounts",
                 columns: new[] { "Email", "ID", "Username", "AccountType", "Address", "BirthDay", "CreatedDate", "IsActive", "IsDelete", "Name", "Password", "Phone", "Sex", "Status" },
-                values: new object[] { "zxxz", 2L, "user", 2, "a", new DateTime(2022, 11, 16, 23, 44, 55, 33, DateTimeKind.Local).AddTicks(5745), new DateTime(2022, 11, 16, 23, 44, 55, 33, DateTimeKind.Local).AddTicks(5744), true, false, "Dương", "1", "123", 2, true });
+                values: new object[] { "abc", 1L, "admin", 1, "a", new DateTime(2022, 11, 27, 1, 10, 12, 885, DateTimeKind.Local).AddTicks(7186), new DateTime(2022, 11, 27, 1, 10, 12, 885, DateTimeKind.Local).AddTicks(7176), true, false, "Dương", "1", "123", 1, true });
+
+            migrationBuilder.InsertData(
+                table: "Accounts",
+                columns: new[] { "Email", "ID", "Username", "AccountType", "Address", "BirthDay", "CreatedDate", "IsActive", "IsDelete", "Name", "Password", "Phone", "Sex", "Status" },
+                values: new object[] { "zxxz", 2L, "user", 2, "a", new DateTime(2022, 11, 27, 1, 10, 12, 885, DateTimeKind.Local).AddTicks(7190), new DateTime(2022, 11, 27, 1, 10, 12, 885, DateTimeKind.Local).AddTicks(7189), true, false, "Dương", "1", "123", 2, true });
 
             migrationBuilder.CreateIndex(
                 name: "IX_CategoryProducts_CreatedBy",
@@ -321,11 +328,6 @@ namespace Shop.Entities.Migrations
                 name: "IX_Comments_IDProduct",
                 table: "Comments",
                 column: "IDProduct");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Feedbacks_IDAcount",
-                table: "Feedbacks",
-                column: "IDAcount");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Files_CreatedBy",
@@ -376,15 +378,22 @@ namespace Shop.Entities.Migrations
                 name: "IX_Products_IDCategoryProduct",
                 table: "Products",
                 column: "IDCategoryProduct");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Rates_IDAccount",
+                table: "Rates",
+                column: "IDAccount");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Rates_IDProduct",
+                table: "Rates",
+                column: "IDProduct");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Comments");
-
-            migrationBuilder.DropTable(
-                name: "Feedbacks");
 
             migrationBuilder.DropTable(
                 name: "Files");
@@ -396,10 +405,13 @@ namespace Shop.Entities.Migrations
                 name: "Payments");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "Rates");
 
             migrationBuilder.DropTable(
                 name: "Orders");
+
+            migrationBuilder.DropTable(
+                name: "Products");
 
             migrationBuilder.DropTable(
                 name: "CategoryProducts");
