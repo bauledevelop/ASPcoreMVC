@@ -1,0 +1,114 @@
+﻿@model Shop.Mvc.Models.CheckoutViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Layout/_Layout.cshtml";
+    ViewBag.Title = "Thanh toán";
+    var listCart = (IEnumerable<Shop.Mvc.Models.CartItem>)ViewData["ListCart"];
+}
+
+@await Component.InvokeAsync("Title")
+<div id="main-wrapper">
+    <div class="site-wrapper-reveal border-bottom">
+        <!-- checkout start -->
+        <div class="checkout-main-area section-space--ptb_90">
+            <div class="container">
+                <div class="checkout-wrap">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="billing-info-wrap mr-100">
+                                <h6 class="mb-20">Thông tin hóa đơn</h6>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="billing-info mb-25">
+                                            <label asp-for="Name" class="control-label">Họ và tên<span class="required" title="required">*</span></label>
+                                            <input asp-for="Name" disabled>
+                                        </div>
+                                    </div>
+                                        <div class="col-lg-12">
+                                        <div class="billing-info mb-25">
+                                            <label asp-for="BirthDay" class="control-label">Ngày sinh<span class="required" title="required">*</span></label>
+                                            <input asp-for="BirthDay" type="date" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="billing-info mb-25">
+                                            <label asp-for="Sex" class="control-label">Giới tính<span class="required" title="required">*</span></label>
+                                            <input asp-for="Sex" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="billing-info mb-25">
+                                            <label asp-for="Address" class="control-label">Địa chỉ<span class="required" title="required">*</span></label>
+                                            <input asp-for="Address" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="billing-info mb-25">
+                                            <label asp-for="Phone" class="control-label">Số điện thoại<span class="required" title="required">*</span></label>
+                                            <input asp-for="Phone" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="billing-info mb-25">
+                                            <label asp-for="Email" class="control-label">Địa chỉ Email<span class="required" title="required">*</span></label>
+                                            <input asp-for="Email" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="your-order-wrappwer tablet-mt__60 small-mt__60">
+                                <h6 class="mb-20">Hóa đơn của bạn</h6>
+                                <div class="your-order-area">
+                                    <div class="your-order-wrap gray-bg-4">
+                                        <div class="your-order-info-wrap">
+                                            <div class="your-order-info">
+                                                <ul>
+                                                    <li>Sản phẩm <span>Tổng cộng</span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="your-order-middle">
+                                                <ul>
+                                                    @foreach(var item in listCart)
+                                                    {
+                                                        <li>@item.Product.Name X @item.Amount<span>@item.TotalMoney.ToString("N0") </span></li>
+                                                    }
+                                                </ul>
+                                            </div>
+                                            <div class="your-order-info order-subtotal">
+                                                <ul>
+                                                    <li><strong>Subtotal</strong> <span>@ViewBag.Total.ToString("N0") </span></li>
+                                                </ul>
+                                            </div>
+                                            <div class="your-order-info order-total">
+                                                <ul>
+                                                    <li><strong>Total</strong> <span>@ViewBag.Total.ToString("N0") VND</span></li>
+                                                </ul>
+                                            </div>
+
+                                            <div class="payment-area mt-30">
+                                                <div class="single-payment">
+                                                    <h6 class="mb-10">Kiểm tra hóa đơn</h6>
+                                                    <p>Vui lòng kiểm tra thông tin khách hàng, số lượng sản phẩm trước khi thanh toán hóa đơn</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="place-order mt-30">
+                                    <a href="/Checkout/PaypalCheckout" class="btn--full btn--black btn--lg text-center">Thanh toán hóa đơn</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- checkout end -->
+    </div>
+    @await Component.InvokeAsync("Footer")
+</div>
+

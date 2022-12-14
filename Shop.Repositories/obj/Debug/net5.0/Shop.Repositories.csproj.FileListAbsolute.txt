@@ -1,0 +1,15 @@
+D:\CNNet\source\Shop.Repositories\bin\Debug\net5.0\Shop.Repositories.deps.json
+D:\CNNet\source\Shop.Repositories\bin\Debug\net5.0\Shop.Repositories.dll
+D:\CNNet\source\Shop.Repositories\bin\Debug\net5.0\Shop.Repositories.pdb
+D:\CNNet\source\Shop.Repositories\bin\Debug\net5.0\Shop.Entities.dll
+D:\CNNet\source\Shop.Repositories\bin\Debug\net5.0\Shop.Entities.pdb
+D:\CNNet\source\Shop.Repositories\obj\Debug\net5.0\Shop.Repositories.csproj.AssemblyReference.cache
+D:\CNNet\source\Shop.Repositories\obj\Debug\net5.0\Shop.Repositories.GeneratedMSBuildEditorConfig.editorconfig
+D:\CNNet\source\Shop.Repositories\obj\Debug\net5.0\Shop.Repositories.AssemblyInfoInputs.cache
+D:\CNNet\source\Shop.Repositories\obj\Debug\net5.0\Shop.Repositories.AssemblyInfo.cs
+D:\CNNet\source\Shop.Repositories\obj\Debug\net5.0\Shop.Repositories.csproj.CoreCompileInputs.cache
+D:\CNNet\source\Shop.Repositories\obj\Debug\net5.0\Shop.Repositories.csproj.CopyComplete
+D:\CNNet\source\Shop.Repositories\obj\Debug\net5.0\Shop.Repositories.dll
+D:\CNNet\source\Shop.Repositories\obj\Debug\net5.0\ref\Shop.Repositories.dll
+D:\CNNet\source\Shop.Repositories\obj\Debug\net5.0\Shop.Repositories.pdb
+D:\CNNet\source\Shop.Repositories\obj\Debug\net5.0\refint\Shop.Repositories.dll

@@ -1,0 +1,398 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Layout/_Layout.cshtml";
+    ViewBag.Title = "Sản phẩm";
+    var listFile = (IEnumerable<Shop.Common.DTO.FileDTO>)ViewData["ListFile"];
+    var listProduct = (IEnumerable<Shop.Common.DTO.ProductDTO>)ViewData["ListProduct"];
+    var product = (Shop.Common.DTO.ProductDTO)ViewData["Product"];
+    var rate = (Shop.Common.DTO.RateDTO)ViewData["Rate"];
+    var comment = (Shop.Common.DTO.CommentDTO)ViewData["Comment"];
+    var category = (Shop.Common.DTO.CategoryProductDTO)ViewData["Category"];
+}
+@section js{
+    <script src="/assets/js/Product.js"></script>
+}
+@section css{
+    <link href="/assets/css/Product.css" rel="stylesheet"/>
+}
+@await Component.InvokeAsync("Title")
+<div id="main-wrapper">
+    <div class="site-wrapper-reveal">
+        <div class="single-product-wrap section-space--pt_90 border-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12">
+                        <!-- Product Details Left -->
+                        <div class="product-details-left">
+                            <div class="product-details-images-2 slider-lg-image-2">
+                                @foreach (var item in listFile)
+                                {
+                                    if (item.IDProduct == product.ID)
+                                    {
+                                        <div class="easyzoom-style">
+                                            <div class="easyzoom">
+                                                <a href="@item.FileContent" class="poppu-img">
+                                                    <img src="@item.FileContent" class="img-fluid" style="width: 400px; height: 400px;background-size: cover;" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                            <div class="product-details-thumbs-2 slider-thumbs-2">
+                                @foreach (var item in listFile)
+                                {
+                                    if (item.IDProduct == product.ID)
+                                    {
+                                        <div class="sm-image"><img src="@item.FileContent" style="width: 100px; height: 100px;background-size: cover;" alt="product image thumb"></div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                        <!--// Product Details Left -->
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
+                        <div class="product-details-content ">
+
+                            <h5 class="font-weight--reguler mb-10">@product.Name</h5>
+                            <h3 class="price">@product.Price.ToString("N0") VND</h3>
+                            <div class="quickview-peragraph mt-10">
+                                <p>@product.Description</p>
+                            </div>
+                            <div class="product-size-wrapper mt-20">
+                                <div class="tab-content d-flex">
+                                    <label class="mr-2" style="margin-right:10px">Size</label>
+                                    <div class="tab-pane fade show active" id="tab_list_s">
+                                        S
+                                    </div>
+                                    <div class="tab-pane fade" id="tab_list_m">
+                                        M
+                                    </div>
+                                    <div class="tab-pane fade " id="tab_list_l">
+                                        L
+                                    </div>
+                                </div>
+                                <ul class="nav product-size-menu" role="tablist">
+                                    <li class="tab__item nav-item active">
+                                        <a class="_size nav-link " data-value="3" data-bs-toggle="tab" href="#tab_list_s" role="tab">S</a>
+                                    </li>
+
+                                    <li class="tab__item nav-item">
+                                        <a class="_size nav-link" data-value="2" data-bs-toggle="tab" href="#tab_list_m" role="tab">M</a>
+                                    </li>
+                                    <li class="tab__item nav-item">
+                                        <a class="_size nav-link " data-value="1" data-bs-toggle="tab" href="#tab_list_l" role="tab">L</a>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                            <div class="product-color-wrapper mt-20">
+                                <div class="tab-content d-flex">
+                                    <label class="mr-2" style="margin-right:10px">Color </label>
+                                    <div class="tab-pane fade show active" id="tab_list_black">
+                                        Black
+                                    </div>
+                                    <div class="tab-pane fade" id="tab_list_white">
+                                        White
+                                    </div>
+                                </div>
+                                <ul class="nav product-color-menu" role="tablist">
+                                    <li class="tab__item nav-item active">
+                                        <a class="_color nav-link active" data-value="1" data-bs-toggle="tab" href="#tab_list_black" role="tab"></a>
+                                    </li>
+                                    <li class="tab__item nav-item">
+                                        <a class="_color nav-link" data-value="2" data-bs-toggle="tab" href="#tab_list_white" role="tab"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="_renderAmountSell mt-20">
+                                <span class="pg-rate d-flex flex-row"><span class="txt-span-amountsell">@ViewBag.AmountSell</span><p> Đã bán</p></span>
+                                <div class="pg-rate d-flex _border-left rating_list" >
+                                    <div class="product-rating d-flex " style="align-items: center">
+                                        @for(var i=1;i<=5;i++)
+                                        {
+                                            if (i > ViewBag.TotalRate)
+                                            {
+                                                <i class=" icon_star"></i>
+                                            }
+                                            else
+                                            {
+                                                <i class="yellow icon_star"></i>
+                                            }
+                                        }
+                                        <span class="txt-span-amountsell ">@ViewBag.Amount</span><p> Đánh giá</p>
+                                    </div>
+                                </div>
+                                <span class="pg-rate d-flex _border-left flex-row"><span class="txt-span-amountsell">@ViewBag.TotalComment</span><p>Bình luận</p></span>
+                            </div>
+                            <div class="quickview-action-wrap mt-30">
+                                <div class="quickview-cart-box">
+                                    <div class="quickview-quality">
+                                        <div class="cart-plus-minus _btnClick">
+                                            <input class="cart-plus-minus-box _amount" type="text" name="qtybutton" value="1">
+                                        </div>
+                                    </div>
+                                    <div class="quickview-button">
+                                        <div class="quickview-cart button">
+                                            <a class="_btnSubmit btn--lg btn--black font-weight--reguler text-white" data-id="@product.ID">Thêm giỏ hàng</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product_meta mt-30">
+                                <div class="posted_in item_meta">
+                                    <span class="label">Loại sản phẩm: </span><a style="text-decoration: none;">@ViewBag.Menu</a>, <a href="/Category/@category.ID">@category.Name</a>
+                                </div>
+                                <div class="sku_wrapper item_meta">
+                                    <span class="label"> Ngày tạo: </span>
+                                    <span class="sku"> @product.CreatedDate </span>
+                                </div>
+                                <div class="sku_wrapper item_meta">
+                                    <span class="label"> Tài khoản đăng tải: </span>
+                                    <span class="sku"> @ViewBag.Account </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="product-details-tab section-space--pt_90">
+                            <ul role="tablist" class=" nav">
+                                <li class="active" role="presentation">
+                                    <a data-bs-toggle="tab" role="tab" href="#detail" class="active">Chi tiết sản phẩm</a>
+                                </li>
+                                <li role="presentation">
+                                    <a data-bs-toggle="tab" role="tab" href="#reviews">Comments</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="product_details_tab_content tab-content mt-30">
+                            <!-- Start Single Content -->
+                            <div class="product_tab_content tab-pane active" id="detail" role="tabpanel">
+                                <div class="product_description_wrap">
+                                    <div class="product-details-wrap">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-7 order-md-1 order-2">
+                                                <div class="details mt-30">
+                                                    <h5 class="mb-10">Chi tiết sản phẩm</h5>
+                                                    <p>@product.Detail</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5 order-md-2 order-1">
+                                                <div class="images">
+                                                    @foreach (var item in listFile)
+                                                    {
+                                                        if (item.IDProduct == product.ID)
+                                                        {
+                                                            <img src="@item.FileContent" class="img-fluid img-items" alt="">
+                                                            break;
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Comment-->
+                            <div class="product_tab_content tab-pane" id="reviews" role="tabpanel">
+                                <div class="comments-area comments-reply-area">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            @if (!User.Identity.IsAuthenticated)
+                                            {
+                                                <span class="d-flex" style="align-items: center;justify-content: center">Vui lòng đăng nhập trước khi đánh giá sản phẩm, để đăng nhập nhấp vào <a href="/Home/Login" style="margin-left: 5px;color: blue"> đây </a></span>
+                                            }
+                                            else
+                                            {
+                                                @if (rate == null)
+                                                {
+                                                    <form action="/Comment/Insert" class="comment-form-area">
+                                                        <div class="_comment">
+                                                            <div class="_pic-comment">
+                                                                <img class="size-pic-comment d-flex" src="/Areas/Admin/assets/img/undraw_profile.svg" />
+                                                            </div>
+                                                            <div class="_content-comment flex-column">
+                                                                <div class="_name-comment">
+                                                                    <span class=@(User.IsInRole("Administrator") ? "txt-admin" : "" )>@User.Identity.Name</span>
+                                                                </div>
+                                                                <div class="rating mt-2">
+                                                                    <input type="radio" name="rating-star" class="rating__control screen-reader _rattingComment" value="1" id="rc1">
+                                                                    <input type="radio" name="rating-star" class="rating__control screen-reader _rattingComment" value="2" id="rc2">
+                                                                    <input type="radio" name="rating-star" class="rating__control screen-reader _rattingComment" value="3" id="rc3">
+                                                                    <input type="radio" name="rating-star" class="rating__control screen-reader _rattingComment" value="4" id="rc4">
+                                                                    <input type="radio" name="rating-star" class="rating__control screen-reader _rattingComment" value="4" id="rc5">
+                                                                    <label for="rc1" class="rating__item">
+                                                                        <svg class="rating__star">
+                                                                            <use xlink:href="#star"></use>
+                                                                        </svg>
+                                                                        <span class="screen-reader">1</span>
+                                                                    </label>
+                                                                    <label for="rc2" class="rating__item">
+                                                                        <svg class="rating__star">
+                                                                            <use xlink:href="#star"></use>
+                                                                        </svg>
+                                                                        <span class="screen-reader">2</span>
+                                                                    </label>
+                                                                    <label for="rc3" class="rating__item">
+                                                                        <svg class="rating__star">
+                                                                            <use xlink:href="#star"></use>
+                                                                        </svg>
+                                                                        <span class="screen-reader">3</span>
+                                                                    </label>
+                                                                    <label for="rc4" class="rating__item">
+                                                                        <svg class="rating__star">
+                                                                            <use xlink:href="#star"></use>
+                                                                        </svg>
+                                                                        <span class="screen-reader">4</span>
+                                                                    </label>
+                                                                    <label for="rc5" class="rating__item">
+                                                                        <svg class="rating__star">
+                                                                            <use xlink:href="#star"></use>
+                                                                        </svg>
+                                                                        <span class="screen-reader">5</span>
+                                                                    </label>
+                                                                </div>
+                                                                <p class="comment-form-comment">
+                                                                    <label>Đánh giá của bạn <span class="required">*</span></label>
+                                                                    <textarea class="comment-notes txt-comment" style="height: 100px !important" required="required" placeholder="Nhập đánh giá của bạn"></textarea>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="comment-form-submit">
+                                                            <input type="submit" value="Đánh giá" class="comment-submit btn-submit-comment" data-id="@product.ID">
+                                                        </div>
+                                                    </form>
+                                                }
+                                                else
+                                                {
+                                                    <div class="_comment _border-bottom mb-5">
+                                                        <div class="_pic-comment">
+                                                            <img class="size-pic-comment d-flex" src="/Areas/Admin/assets/img/undraw_profile.svg" />
+                                                        </div>
+                                                        <div class="_content-comment d-flex flex-column">
+                                                            <div class="_name-comment">
+                                                                <span class=@(User.IsInRole("Administrator") ? "txt-admin" : "" )>@User.Identity.Name</span>
+                                                            </div>
+                                                            <div class="rating mt-2">
+                                                                @for (var i = 1; i <= 5; i++)
+                                                                {
+                                                                    if (i > rate.rate)
+                                                                    {
+                                                                        <input type="radio" disabled name="rating-star" class="rating__control screen-reader" id="rcd-@rate.ID-@(i)-block">
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <input type="radio" checked disabled name="rating-star" class="rating__control screen-reader" id="rcd-@rate.ID-@(i)-block">
+                                                                    }
+                                                                }
+                                                                <label for="rcd-@rate.ID-1-block" class="rating__item">
+                                                                    <svg class="rating__star">
+                                                                        <use xlink:href="#star"></use>
+                                                                    </svg>
+                                                                    <span class="screen-reader">1</span>
+                                                                </label>
+                                                                <label for="rcd-@rate.ID-2-block" class="rating__item">
+                                                                    <svg class="rating__star">
+                                                                        <use xlink:href="#star"></use>
+                                                                    </svg>
+                                                                    <span class="screen-reader">2</span>
+                                                                </label>
+                                                                <label for="rcd-@rate.ID-3-block" class="rating__item">
+                                                                    <svg class="rating__star">
+                                                                        <use xlink:href="#star"></use>
+                                                                    </svg>
+                                                                    <span class="screen-reader">3</span>
+                                                                </label>
+                                                                <label for="rcd-@rate.ID-4-block" class="rating__item">
+                                                                    <svg class="rating__star">
+                                                                        <use xlink:href="#star"></use>
+                                                                    </svg>
+                                                                    <span class="screen-reader">4</span>
+                                                                </label>
+                                                                <label for="rcd-@rate.ID-5-block" class="rating__item">
+                                                                    <svg class="rating__star">
+                                                                        <use xlink:href="#star"></use>
+                                                                    </svg>
+                                                                    <span class="screen-reader">5</span>
+                                                                </label>
+                                                            </div>
+                                                            <div class="mt-10 _feedback-content-comment">
+                                                                @comment.Content
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                }
+                                            }
+                                        </div>
+                                        <div class="list-comment" data-id="@product.ID">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--End Comment-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="related-products section-space--ptb_90">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-title text-center mb-30">
+                                <h4>Sản phẩm liên quan</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-slider-active">
+                        @foreach (var item in listProduct)
+                        {
+                            <div class="col-lg-12">
+                                <!-- Single Product Item Start -->
+                                <div class="single-product-item text-center">
+                                    <div class="products-images">
+                                        <a href="/Product/@item.ID" class="product-thumbnail">
+                                            @foreach (var child in listFile)
+                                            {
+                                                if (item.ID == child.IDProduct)
+                                                {
+                                                    <img src="@child.FileContent" class="img-fluid img-items" alt="Product Images" width="300" height="300">
+                                                    break;
+                                                }
+                                            }
+                                        </a>
+                                        <div class="product-actions">
+                                            <a href="/Product/@item.ID"><i class="p-icon icon-plus"></i><span class="tool-tip">Xem chi tiết</span></a>
+                                            <a class="_clickAddBag"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Thêm sản phẩm</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-content">
+                                        <h6 class="prodect-title"><a href="product-details.html">@item.Name</a></h6>
+                                        <div class="prodect-price">
+                                            <span class="new-price">@item.Price.ToString("N0") VND</span>
+                                        </div>
+                                    </div>
+                                </div><!-- Single Product Item End -->
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Star-->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+    <symbol id="star" viewBox="0 0 26 28">
+        <path d="M26 10.109c0 .281-.203.547-.406.75l-5.672 5.531 1.344 7.812c.016.109.016.203.016.313 0 .406-.187.781-.641.781a1.27 1.27 0 0 1-.625-.187L13 21.422l-7.016 3.687c-.203.109-.406.187-.625.187-.453 0-.656-.375-.656-.781 0-.109.016-.203.031-.313l1.344-7.812L.39 10.859c-.187-.203-.391-.469-.391-.75 0-.469.484-.656.875-.719l7.844-1.141 3.516-7.109c.141-.297.406-.641.766-.641s.625.344.766.641l3.516 7.109 7.844 1.141c.375.063.875.25.875.719z" />
+    </symbol>
+</svg>
+@await Component.InvokeAsync("Footer")

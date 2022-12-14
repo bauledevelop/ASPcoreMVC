@@ -1,0 +1,12 @@
+D:\CNNet\source\Shop.Common\bin\Debug\net5.0\Shop.Common.deps.json
+D:\CNNet\source\Shop.Common\bin\Debug\net5.0\Shop.Common.dll
+D:\CNNet\source\Shop.Common\bin\Debug\net5.0\Shop.Common.pdb
+D:\CNNet\source\Shop.Common\obj\Debug\net5.0\Shop.Common.csproj.AssemblyReference.cache
+D:\CNNet\source\Shop.Common\obj\Debug\net5.0\Shop.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\CNNet\source\Shop.Common\obj\Debug\net5.0\Shop.Common.AssemblyInfoInputs.cache
+D:\CNNet\source\Shop.Common\obj\Debug\net5.0\Shop.Common.AssemblyInfo.cs
+D:\CNNet\source\Shop.Common\obj\Debug\net5.0\Shop.Common.csproj.CoreCompileInputs.cache
+D:\CNNet\source\Shop.Common\obj\Debug\net5.0\Shop.Common.dll
+D:\CNNet\source\Shop.Common\obj\Debug\net5.0\ref\Shop.Common.dll
+D:\CNNet\source\Shop.Common\obj\Debug\net5.0\Shop.Common.pdb
+D:\CNNet\source\Shop.Common\obj\Debug\net5.0\refint\Shop.Common.dll
