@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Shop.Business.Interfaces;
 using Shop.Common.DTO;
+using Shop.Entities.Enities;
 using Shop.Mvc.Areas.Admin.Mapper;
 using Shop.Mvc.Areas.Admin.Models;
 using Shop.Mvc.Commons.DropdownList;
@@ -14,13 +16,17 @@ namespace Shop.Mvc.Areas.Admin.Controllers
     public class AccountController : Controller
     {
         private readonly IAccountBusiness _accountBusiness;
-        public AccountController(IAccountBusiness accountBusiness)
+        private readonly UserManager<AppUser> _userManager;
+        private readonly IPasswordHasher<AppUser> _passwordHasher;
+        public AccountController(IAccountBusiness accountBusiness, UserManager<AppUser> userManager, IPasswordHasher<AppUser> passwordHasher)
         {
             _accountBusiness = accountBusiness;
+            _userManager = userManager;
+            _passwordHasher = passwordHasher;
         }
         [Area("Admin")]
         [HttpGet]
-        public IActionResult Index(int page=1,int pageSize=1)
+        public IActionResult Index(int page=1,int pageSize=5)
         {
             try
             {
@@ -64,8 +70,11 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         }
         [Area("Admin")]
         [HttpPost]
-        public IActionResult Create(AccountViewModel accountViewModel)
+        public async Task<IActionResult> Create(AccountViewModel accountViewModel)
         {
+            var dropDownList = new DropdownListItem();
+            ViewData["TypeSex"] = new SelectList(dropDownList.DropdownListTypeSexActive(accountViewModel.AccountType), "Value", "Text");
+            ViewData["TypeAccount"] = new SelectList(dropDownList.DropdownListTypeAccountActive(accountViewModel.Sex), "Value", "Text");
             if (!ModelState.IsValid) return View(accountViewModel);
             try
             {
@@ -73,19 +82,32 @@ namespace Shop.Mvc.Areas.Admin.Controllers
                 var mapperAccount = new AccountMapper();
                 var check = 0;
                 accountDto = mapperAccount.MapperViewModelToDTO(accountViewModel);
-                check = _accountBusiness.InsertAccount(accountDto);
-                if (check == 1)
+                var appUser = new AppUser
                 {
+                    UserName = accountViewModel.Username,
+                    Email = accountViewModel.Email,
+                    PhoneNumber = accountViewModel.Phone,
+                    BirthDay = accountViewModel.BirthDay,
+                    Name = accountViewModel.Name,
+                    Sex = int.Parse(accountViewModel.Sex),
+                    Address = accountViewModel.Address,
+                    AccountType = int.Parse(accountViewModel.AccountType),
+                    EmailConfirmed = true
+                };
+                var result = await _userManager.CreateAsync(appUser, accountViewModel.Password);
+                if (result.Succeeded)
+                {
+                    var role = await _userManager.AddToRoleAsync(appUser, (appUser.AccountType == 1) ? "Administrator" : "User");
+                    _accountBusiness.InsertAccount(accountDto);
                     return Redirect("/Admin/Account");
                 }
-                else if (check == 2)
-                {
-                    ViewBag.Message = "Email đã tồn tại";
-                }
                 else
-                    ViewBag.Message = "Số điện thoại đã tồn tại";
+                {
+                    foreach (var error in result.Errors)
+                        ModelState.AddModelError("", error.Description);
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ViewBag.Message = "Thêm tài khoản không thành công";
             }

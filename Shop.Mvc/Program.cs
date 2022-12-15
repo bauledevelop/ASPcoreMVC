@@ -7,22 +7,28 @@ using Shop.Mvc.Entensions;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
 using Shop.Common.MailHelper;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddDbContext<ShopContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("ShopDb")).UseLazyLoadingProxies());
+builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<ShopContext>().AddDefaultTokenProviders();
 builder.Services.AddControllersWithViews();
 var emailConfig = builder.Configuration.GetSection("EmailConfiguration");
 builder.Services.Configure<MailSettings>(emailConfig);
 builder.Services.AddSingleton(emailConfig);
-builder.Services.AddAuthentication(options =>
+builder.Services.ConfigureApplicationCookie(opts =>
 {
-    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-})
-.AddCookie(options =>
+    opts.LoginPath = "/Home/Login";
+    opts.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+});
+builder.Services.Configure<DataProtectionTokenProviderOptions>(opts => opts.TokenLifespan = TimeSpan.FromMinutes(5));
+builder.Services.Configure<IdentityOptions>(opts =>
 {
-    options.LoginPath = "/Home/Login";
-    options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
+    opts.SignIn.RequireConfirmedEmail = true;
+    opts.User.RequireUniqueEmail = true;
 });
 //.AddGoogle( options =>
 //{
@@ -31,8 +37,7 @@ builder.Services.AddAuthentication(options =>
 //    options.ClientSecret = "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";
 //});
 builder.Services.AddControllers();
-builder.Services.AddDbContext<ShopContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("ShopDb")).UseLazyLoadingProxies());
+
 var mappingConfig = new MapperConfiguration(cfg =>
 {
     cfg.AddProfile(new AutoMapperConfiguration());

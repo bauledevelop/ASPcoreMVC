@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 using Shop.Entities.ConfigurationEntities;
 using Shop.Entities.SeedData;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Shop.Entities.Enities
 {
-    public class ShopContext : DbContext
+    public class ShopContext : IdentityDbContext<AppUser>
     {
         public ShopContext(DbContextOptions<ShopContext> options) : base(options)
         {
@@ -46,6 +47,7 @@ namespace Shop.Entities.Enities
             modelBuilder.ApplyConfiguration(new RateConfig());
             modelBuilder.ApplyConfiguration(new SlideConfig());
             configData.ConfigDataAccount(modelBuilder);
+            base.OnModelCreating(modelBuilder);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

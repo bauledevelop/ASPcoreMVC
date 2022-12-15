@@ -16,6 +16,10 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
+        public Account GetAccountByUsernameThenActive(string username)
+        {
+            return _dbContext.Accounts.SingleOrDefault(a => a.Username == username && a.IsActive == false);
+        }
         public Account GetAccountByUsername(string username)
         {
             return _dbContext.Accounts.SingleOrDefault(a => a.Username == username && a.Status == true);

@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "ConfirmEmail";
+    Layout = "~/Views/Shared/Layout/_Layout.cshtml";
+}
+
+<div id="main-wrapper" style="min-height:30vh">
+    <div class="container">
+        @if(ViewBag.Check == "true")
+        {
+            <h3 style="text-align: center;">Xác thực tài khoản thành công. Đăng nhập ngay tại <a href="/Home/Login"style="margin-left:2px;"> đây </a></h3>
+        }
+        else
+        {
+            <h3 style="text-align: center;">Mã xác thực không tồn tại</h3>
+        }
+    </div>
+
+</div>
+@await Component.InvokeAsync("Footer")

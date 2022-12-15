@@ -40,6 +40,21 @@ namespace Shop.Business.Implements
             _paymentBusiness = paymentBusiness;
             _orderBusiness = orderBusiness;
         }
+        public void ResetPassword(string username, string password)
+        {
+            var account = _accountRepository.GetAccountByUsername(username);
+            account.Password = password;
+            _accountRepository.Update(account);
+            _accountRepository.Save();
+        }
+        public void SetActiveAccount(string username)
+        {
+            var account = _accountRepository.GetAccountByUsernameThenActive(username);
+            account.IsActive = true;
+            account.Status = true;
+            _accountRepository.Update(account);
+            _accountRepository.Save();
+        }
         public void InsertAccountByUser(AccountDTO accountDTO)
         {
             accountDTO.CreatedDate = DateTime.Now;
@@ -134,30 +149,13 @@ namespace Shop.Business.Implements
             var accountDto = _mapper.Map<Account, AccountDTO>(account);
             return accountDto;
         }
-        public int InsertAccount(AccountDTO accountDTO)
+        public void InsertAccount(AccountDTO accountDTO)
         {
+            accountDTO.CreatedDate = DateTime.Now;
+            accountDTO.IsActive = true;
             var account = _mapper.Map<AccountDTO, Account>(accountDTO);
-            var SHA1 = new HashPasswordSHA1();
-            account.CreatedDate = DateTime.Now;
-            account.IsActive = true;
-            account.IsDelete = false;
-            var checkEmail = _accountRepository.CheckEmail(account.Email);
-            var checkPhone = _accountRepository.CheckPhone(account.Phone);
-            if (checkEmail)
-            {
-                if (checkPhone)
-                {
-                    //account.Password = SHA1.HashPassword(account.Password);
-                    _accountRepository.Insert(account);
-                    _accountRepository.Save();
-                    return 1;
-                }
-                return 3;
-            }
-            else
-            {
-                return 2;
-            }
+            _accountRepository.Insert(account);
+            _accountRepository.Save();
         }
         public IEnumerable<AccountDTO> SelectByQuantityItem(int page,int pageSize)
         {

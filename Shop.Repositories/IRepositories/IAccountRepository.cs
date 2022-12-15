@@ -9,6 +9,7 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IAccountRepository
     {
+        Account GetAccountByUsernameThenActive(string username);
         Account GetAccountByUsername(string username);
         bool CheckPassword(string password);
         bool CheckUsername(string username);
