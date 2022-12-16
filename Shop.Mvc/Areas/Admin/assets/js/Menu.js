@@ -12,9 +12,8 @@
             },
             success: function (res) {
                 if (res.status == true) {
-                    alert("Xóa người dùng thành công");
-                    var item = ".item-" + Id;
-                    $(item).html('');
+                    alert("Xóa thành công");
+                    window.location.reload();
                 }
             }
         })

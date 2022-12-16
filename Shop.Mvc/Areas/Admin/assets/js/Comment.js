@@ -12,10 +12,8 @@
             },
             success: function (res) {
                 if (res.status == true) {
-                    alert("Xóa người dùng thành công");
-                    $('#deleteComment').modal('toggle');
-                    var item = ".item-" + Id;
-                    $(item).html('');
+                    alert("Xóa thành công");
+                    window.location.reload();
                 }
             }
         })

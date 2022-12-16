@@ -13,10 +13,9 @@
             },
             success: function (res) {
                 if (res.status == true) {
-                    alert("Xóa người dùng thành công");
-                    var item = ".item-" + Id;
-                    $(item).html('');
-                    $('._renderData').css("display", "none");
+                    alert("Xóa thành công");
+                    window.location.reload();
+                    ;
                 }
             }
         })
