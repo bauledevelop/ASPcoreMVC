@@ -1,0 +1,93 @@
+﻿@model Shop.Mvc.Models.RegisterViewModel
+@{
+    ViewData["Title"] = "Đăng kí";
+    Layout = "~/Views/Shared/Layout/_Layout.cshtml";
+    var typeSex = (SelectList)ViewData["TypeSex"];
+}
+@section js{
+    <script src="/assets/js/Register.js"></script>
+}
+
+
+<div class="site-wrapper-reveal border-bottom">
+
+    <div class="my-account-page-warpper section-space--ptb_120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-7 m-auto">
+                    <div class="myaccount-box-wrapper">
+                        <div class="helendo-tabs">
+                            <ul class="nav" role="tablist">
+                                <li class="tab__item nav-item active">
+                                    <div class="nav-link active" style="color: black">Đăng kí</div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content content-modal-box">
+                            <div class="tab-pane fade show active" id="tab_list_06" role="tabpanel">
+                                <form asp-action="Register" asp-controller="Home" method="POST" class="account-form-box">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    @if (ViewBag.Message != null)
+                                    {
+                                        <div class="alert alert-danger">@ViewBag.Message</div>
+                                    }
+                                    @if (ViewBag.Success != null)
+                                    {
+                                        <div class="alert alert-success">@ViewBag.Success</div>
+                                    }
+                                    <div class="single-input">
+                                        <label asp-for="Username" class="control-label"></label>
+                                        <input asp-for="Username" placeholder="Tài khoản ..." />
+                                        <span asp-validation-for="Username" class="text-danger"></span>
+                                    </div>
+                                    <div class="single-input">
+                                        <label asp-for="Password" class="control-label"></label>
+                                        <input asp-for="Password" placeholder="Mật khẩu ..." />
+                                        <span asp-validation-for="Password" class="text-danger"></span>
+                                    </div>
+                                    <div class="single-input">
+                                        <label asp-for="Name" class="control-label"></label>
+                                        <input asp-for="Name" placeholder="Họ và tên ..." />
+                                        <span asp-validation-for="Name" class="text-danger"></span>
+                                    </div>
+                                    <div class="single-input">
+                                        <label asp-for="BirthDay" class="control-label"></label>
+                                        <input asp-for="BirthDay" class="input-date" placeholder="Enter date: DD/MM/YYYY" />
+                                        <span asp-validation-for="BirthDay" ty class="text-danger"></span>
+                                    </div>
+                                    <div class="single-input">
+                                        <label asp-for="Sex" class="control-label"></label>
+                                        <select asp-for="Sex" asp-items="@typeSex" class="select-active">
+                                        </select>
+
+                                        <span asp-validation-for="Sex" class="text-danger"></span>
+                                    </div>
+                                    <div class="single-input">
+                                        <label asp-for="Address" class="control-label"></label>
+                                        <input asp-for="Address" placeholder="Địa chỉ ..." />
+                                        <span asp-validation-for="Address" class="text-danger"></span>
+                                    </div>
+                                    <div class="single-input">
+                                        <label asp-for="Phone" class="control-label"></label>
+                                        <input asp-for="Phone" placeholder="Số điện thoại ..." />
+                                        <span asp-validation-for="Phone" class="text-danger"></span>
+                                    </div>
+                                    <div class="single-input">
+                                        <label asp-for="Email" class="control-label"></label>
+                                        <input asp-for="Email" placeholder="Địa chỉ Email ..." />
+                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="form-group mt-2">
+                                        <input type="submit" value="Tạo tài khoản" class="btn btn-success" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

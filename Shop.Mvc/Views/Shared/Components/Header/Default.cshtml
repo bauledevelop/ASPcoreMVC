@@ -1,0 +1,134 @@
+﻿@{
+    var listMenu = (IEnumerable<Shop.Common.DTO.MenuDTO>)ViewData["ListMenu"];
+    var listCategory = (IEnumerable<Shop.Common.DTO.CategoryProductDTO>)ViewData["ListCategory"];
+    var loginModel = ViewData["LoginModel"];
+}
+
+
+<div class="header-area header-area--default height-header">
+    <!-- Header Bottom Wrap Start -->
+    <header class="header-area header_absolute header_height-90 header-sticky bg-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 col-md-4 d-none d-md-block">
+                    <div class="logo text-md-center">
+                        <a href="/"><img src="~/../assets/dist/images/logo/logo.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-6">
+                    <div class="header__navigation d-none d-lg-block">
+                        <nav class="navigation-menu">
+                            <ul class="justify-content-center">
+                                <li class="has-children">
+                                    <a href="/"><span>Home</span></a>
+                                </li>
+                                <li class="has-children">
+                                    <a href="#"><span>Shop</span></a>
+                                    <!-- mega menu -->
+                                    <ul class="megamenu megamenu--mega" style="left: -70%;">
+
+                                        @foreach (var item in listMenu)
+                                        {
+                                            <li>
+                                                <h2 class="page-list-title">@item.Name</h2>
+                                                <ul>
+                                                    @foreach (var child in listCategory)
+                                                    {
+                                                        if (item.ID == child.IDMenu)
+                                                        {
+                                                            <li><a href="/Category/@child.ID"><span>@child.Name</span></a></li>
+                                                        }
+                                                    }
+                                                </ul>
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+                                <li class="has-children">
+
+                                    <a href="/Contact"><span>Liên hệ</span></a>
+                                </li>
+                            @*    <li class="has-children has-children--multilevel-submenu">
+                                    <a href="#"><span>Blog</span></a>
+                                    <!-- multilevel submenu -->
+                                    <ul class="submenu">
+                                        <li><a href="blog-grid.html"><span>Blog Grid</span></a></li>
+                                        <li><a href="blog-listing.html"><span>Blog List</span></a></li>
+                                        <li><a href="blog-masonry.html"><span>Blog Masonry</span></a></li>
+                                        <li><a href="blog-left-sidebar.html"><span>Blog Sidebar</span></a></li>
+                                        <li><a href="single-blog-post.html"><span>Single Post V1</span></a></li>
+                                        <li><a href="single-blog-post-2.html"><span>Single Post V2</span></a></li>
+                                    </ul>
+                                </li>
+*@
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-6">
+
+                    <div class="header-right-side text-end">
+                        <div class="header-right-items">
+                            <a href="#" class="search-icon" id="search-overlay-trigger">
+                                <i class="icon-magnifier"></i>
+                            </a>
+                        </div>
+                        <div class="header-right-items d-none d-md-block">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <div class="btn-group">
+                                    @if (User.IsInRole("Administrator"))
+                                    {
+                                            <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="icon-user" style="color: red;"></i>
+                                            </a>
+                                            <ul class="dropdown-menu top-menu-dropdown">
+                                            <li><a class="dropdown-item txt-dropdown-item" href="/Admin/Home">Quản lý</a></li>
+                                            <li><a class="dropdown-item txt-dropdown-item" asp-action="Index" asp-controller="Account">Xem thông tin</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item txt-dropdown-item" asp-action="Logout" asp-controller="Home">Đăng xuất</a></li>
+                                            </ul>
+ 
+                                    }
+                                    else
+                                    {
+                                        <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="icon-user" style="color: blue"></i>
+                                        </a>
+                                        <ul class="dropdown-menu top-menu-dropdown">
+                                            <li><a class="dropdown-item txt-dropdown-item" asp-action="Index" asp-controller="Account" >Xem thông tin</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item txt-dropdown-item" asp-action="Logout" asp-controller="Home">Đăng xuất</a></li>
+
+                                        </ul>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <a href="/Home/Login">
+                                    <i class="icon-user"></i>
+                                </a>
+                            }
+
+                        </div>
+
+                        <div class="header-right-items">
+                            <a href="#miniCart" class=" header-cart minicart-btn toolbar-btn header-icon">
+                                <i class="icon-bag2"></i>
+                                <span class="item-counter">@ViewBag.Total</span>
+                            </a>
+                        </div>
+                        <div class="header-right-items">
+                            <a href="#" class="mobile-navigation-icon" id="mobile-menu-trigger">
+                                <i class="icon-menu"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header Bottom Wrap End -->
+</div>
+<!--====================  End of header area  ====================-->

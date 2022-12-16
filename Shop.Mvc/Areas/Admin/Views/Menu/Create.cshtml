@@ -1,0 +1,45 @@
+﻿@model Shop.Mvc.Areas.Admin.Models.MenuViewModel
+
+@{
+    ViewData["Title"] = "Tạo menu";
+    Layout = "~/Areas/Admin/Views/Shared/Layout/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="card card__pd">
+    <div class="col-md-12">
+        @using (Html.BeginForm("", "", FormMethod.Post, new { action = "/Admin/Menu/Create" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+                <h4>Tạo Menu</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @if (ViewBag.Message != null)
+                {
+                    <div class="alert alert-danger">@ViewBag.Message</div>
+                }
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label" })
+                    <div class="form-width-txt">
+                            @Html.TextBoxFor(model => model.Name, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label " })
+                    <div>
+                        @Html.CheckBoxFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group mt-4">
+                    <div class="col-md-offset-2">
+                        <input type="submit" value="Tạo mới" class="btn btn-success" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    </div>
+</div>

@@ -1,0 +1,149 @@
+﻿
+@{
+    ViewData["Title"] = "Giỏ hàng";
+    Layout = "~/Views/Shared/Layout/_Layout.cshtml";
+    ViewBag.Title = "Giỏ hàng";
+    var listFile = (IEnumerable<Shop.Common.DTO.FileDTO>)ViewData["ListFile"];
+    var listCart = (IEnumerable<Shop.Mvc.Models.CartItem>)ViewData["ListCart"];
+    long total = ViewBag.Total;
+    long stt = 0;
+}
+@section js{
+    <script src="/assets/js/Cart.js"></script>
+}
+@await Component.InvokeAsync("Title")
+<div id="main-wrapper">
+    <div class="site-wrapper-reveal border-bottom">
+
+        <!-- cart start -->
+        <div class="cart-main-area  section-space--ptb_90">
+            <div class="container">
+                <div class="row">
+                     @if(listCart != null)
+                    {
+                        <div class="col-lg-12">
+                            <div class="table-content table-responsive cart-table-content header-color-gray">
+                                <table>
+                                    <thead>
+                                        <tr class="bg-gray">
+                                            <th></th>
+                                            <th>Sản phẩm</th>
+                                            <th>Giá</th>
+                                            <th>Size</th>
+                                            <th>Màu sắc</th>
+                                            <th>Số lượng</th>
+                                            <th>Tổng tiền</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot style="height: 50px;">
+                                        <tr class="bg-gray">
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th>Tổng cộng</th>
+                                            <th class="_totalMoney">@total</th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+
+                                        @foreach (var item in listCart)
+                                        {
+                                            <tr class="_clickID _item-@item.Product.ID" data-id="@item.Product.ID">
+                                                <td class="product-img">
+                                                    @foreach (var child in listFile)
+                                                    {
+                                                        if (item.Product.ID == child.IDProduct)
+                                                        {
+                                                            <a href="/Product/@item.Product.ID"><img style="width: 50px;height: 50px;background-size:cover;" src="/uploadFiles/@child.FileContent" alt="hình ảnh về sản phẩm"></a>
+                                                            break;
+                                                        }
+                                                    }
+                                                </td>
+                                                <td class="product-name"><a href="/Product/@item.Product.ID">@item.Product.Name</a></td>
+
+                                                <td><span class="amount">@item.Product.Price.ToString("N0") VND</span></td>
+                                                <td class="_settingSelect">
+                                                    <select class="_settionSize">
+                                                        @if(item.Size == "1")
+                                                        {
+                                                            <option value="1">S</option>
+                                                            <option value="2">M</option>
+                                                            <option value="3">L</option>
+                                                        }
+                                                        else
+                                                        {
+                                                            if (item.Size == "2")
+                                                            {
+                                                                <option value="2">M</option>
+                                                                <option value="1">S</option>
+                                                                <option value="3">L</option>
+                                                            }
+                                                            else
+                                                            {
+                                                                <option value="3">L</option>
+                                                                <option value="1">S</option>
+                                                                <option value="2">M</option>
+                                                            }
+                                                        }
+                                                    </select>
+                                                </td>
+                                                <td>
+                                                    <select class="_settingOption">
+                                                        @if(item.Color == "1")
+                                                        {
+                                                            <option value="1">Đen</option>
+                                                            <option value="2">Trắng</option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="2">Trắng</option>
+                                                            <option value="1">Đen</option>
+                                                        }
+                                                    </select>
+                                                </td>
+                                                <td class="cart-quality">
+                                                    <div class="quickview-quality quality-height-dec2">
+                                                        <div class="cart-plus-minus _clickChangeAmount">
+                                                            <input class="cart-plus-minus-box _Amount-@item.Product.ID" type="text" name="qtybutton" value="@item.Amount">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="price-total">
+                                                    <span class="amount _amount-@item.Product.ID">@item.TotalMoney</span>
+                                                </td>
+                                                <td class="product-remove">
+                                                    <a class="_deleteItem"><i class="icon-cross2"></i></a>
+                                                </td>
+                                            </tr>
+                                        }           
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="shoping-update-area row">
+                                <div class="continue-shopping-butotn col-6 mt-30">
+                                    <a href="/" class="btn btn--lg btn--black"><i class="icon-arrow-left"></i> Tiếp tục mua hàng</a>
+                                </div>
+                                <div class="update-cart-button col-6 text-end mt-30">
+                                    <a href="/Checkout" class="btn btn--lg btn--border_1">Thanh toán giỏ hàng</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    @*                    
+                    else
+                    {
+                        <span>Giỏ hàng đang trống, bạn hãy mua hàng</span><a href="/">tại đây</a>
+                    }*@
+                </div>
+            </div>
+        </div>
+        <!-- cart end -->
+
+    </div>
+    @await Component.InvokeAsync("Footer")
+</div>
+
