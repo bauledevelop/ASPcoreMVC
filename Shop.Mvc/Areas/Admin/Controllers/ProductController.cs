@@ -124,7 +124,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         }
         [Area("Admin")]
         [HttpPost]
-        public IActionResult Edit(ProductViewModel productViewModel)
+        public async Task<IActionResult> Edit(ProductViewModel productViewModel, List<IFormFile> uploadFiles)
         {
             var categoryDto = _categoryProductBusiness.SelectByIDMenu(long.Parse(productViewModel.IDMenu));
             var dropdownList = new DropdownListItem();
@@ -135,6 +135,43 @@ namespace Shop.Mvc.Areas.Admin.Controllers
                 var mapperProduct = new ProductMapper();
                 var productDto = mapperProduct.MapperViewModelToDto(productViewModel);
                 _productBusiness.EditProduct(productDto);
+                if (uploadFiles.Count > 0)
+                {
+
+                    var listFile = _fileBusiness.SelectAll();
+                    foreach(var file in listFile)
+                    {
+                        string deletePaths = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot//uploadFiles", file.FileContent);
+                        System.IO.FileInfo fi = new System.IO.FileInfo(deletePaths);
+                        try
+                        {
+                            fi.Delete();
+                        }
+                        catch (System.IO.IOException e)
+                        {
+                            Console.WriteLine(e.Message);
+                        }
+                    }
+                    _fileBusiness.DeleteByIDProduct(productDto.ID);
+                    var accountDTO = _accountBusiness.GetAccountByUsername(User.Identity.Name);
+                    productDto.CreatedBy = accountDTO.ID;
+                    var fileDTO = new FileDTO();
+                    fileDTO.Type = 1;
+                    fileDTO.CreatedBy = accountDTO.ID;
+                    fileDTO.IDProduct = productDto.ID;
+                    fileDTO.Status = true;
+                    foreach (var file in uploadFiles)
+                    {
+                        string fileName = file.FileName;
+                        fileName = Path.GetFileName(fileName);
+                        string uploadPaths = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot//uploadFiles", fileName);
+                        var stream = new FileStream(uploadPaths, FileMode.Create);
+                        fileDTO.FileContent = fileName;
+                        _fileBusiness.InsertFile(fileDTO);
+                        await file.CopyToAsync(stream);
+                        stream.Dispose();
+                    }
+                }
                 return Redirect("/Admin/Product");
             }
             catch (Exception ex)
