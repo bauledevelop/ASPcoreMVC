@@ -76,16 +76,33 @@
                         <div class="header-right-items d-none d-md-block">
                             @if (User.Identity.IsAuthenticated)
                             {
-                                <a href="#">
+                                <div class="btn-group">
                                     @if (User.IsInRole("Administrator"))
                                     {
-                                        <i class="icon-user" style="color: red"></i>
+                                            <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="icon-user" style="color: red;"></i>
+                                            </a>
+                                            <ul class="dropdown-menu top-menu-dropdown">
+                                            <li><a class="dropdown-item txt-dropdown-item" href="/Admin/Home">Quản lý</a></li>
+                                            <li><a class="dropdown-item txt-dropdown-item" asp-action="Index" asp-controller="Account">Xem thông tin</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item txt-dropdown-item" asp-action="Logout" asp-controller="Home">Đăng xuất</a></li>
+                                            </ul>
+ 
                                     }
                                     else
                                     {
-                                        <i class="icon-user" style="color: blue"></i>
+                                        <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="icon-user" style="color: blue"></i>
+                                        </a>
+                                        <ul class="dropdown-menu top-menu-dropdown">
+                                            <li><a class="dropdown-item txt-dropdown-item" asp-action="Index" asp-controller="Account" >Xem thông tin</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item txt-dropdown-item" asp-action="Logout" asp-controller="Home">Đăng xuất</a></li>
+
+                                        </ul>
                                     }
-                                </a>
+                                </div>
                             }
                             else
                             {

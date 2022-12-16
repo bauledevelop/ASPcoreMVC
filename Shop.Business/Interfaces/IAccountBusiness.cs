@@ -9,6 +9,7 @@ namespace Shop.Business.Interfaces
 {
     public interface IAccountBusiness
     {
+        bool ChangeAccount(AccountDTO accountDTO);
         void ResetPassword(string username, string password);
         void SetActiveAccount(string username);
         void InsertAccountByUser(AccountDTO accountDTO);
@@ -17,7 +18,7 @@ namespace Shop.Business.Interfaces
         int CheckLogin(string Username, string Password);
         IEnumerable<AccountDTO> SelectAll();
         void DeleteAccount(long id);
-        bool EditAccount(AccountDTO accountDTO);
+        void EditAccount(AccountDTO accountDTO);
         AccountDTO GetAccountById(long id);
         void InsertAccount(AccountDTO accountDTO);
         long GetTotal();

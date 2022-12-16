@@ -50,14 +50,38 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         }
         [Area("Admin")]
         [HttpPost]
-        public IActionResult Delete(string id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
-            _accountBusiness.DeleteAccount(long.Parse(id));
-            return Json(new
+            try
             {
-                status = true
-            });
+                var accountDTO = _accountBusiness.GetAccountById(long.Parse(id));
+                var user = await _userManager.FindByEmailAsync(accountDTO.Email);
+                var result = await _userManager.DeleteAsync(user);
+                if (result.Succeeded)
+                {
+                    _accountBusiness.DeleteAccount(long.Parse(id));
+                    return Json(new
+                    {
+                        status = true
+                    });
+                }
+                else
+                {
+                    return Json(new
+                    {
+                        status = false
+                    });
+                }
+            }
+            catch(Exception ex)
+            {
+                return Json(new
+                {
+                    status = false
+                });
+            }
+            
         }
         [Area("Admin")]
         [HttpGet]
@@ -120,6 +144,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
             {
+                
                 var accoutDto = new AccountDTO();
                 var model = new AccountViewModel();
                 var mapperAccount = new AccountMapper();
@@ -137,23 +162,68 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         }
         [Area("Admin")]
         [HttpPost]
-        public IActionResult Edit(AccountViewModel accountViewModel)
+        public async Task<IActionResult> Edit(AccountViewModel accountViewModel)
         {
             var dropDownList = new DropdownListItem();
             ViewData["TypeSex"] = new SelectList(dropDownList.DropdownListTypeSexActive(accountViewModel.Sex), "Value", "Text");
             ViewData["TypeAccount"] = new SelectList(dropDownList.DropdownListTypeAccountActive(accountViewModel.AccountType), "Value", "Text");
             if (!ModelState.IsValid) return View(accountViewModel);
-            var accountDto = new AccountDTO();
-            var mapperAccount = new AccountMapper();
-            accountDto = mapperAccount.MapperViewModelToDTO(accountViewModel);
-            var check = _accountBusiness.EditAccount(accountDto);
-            if (check)
+            try
             {
-                return Redirect("/Admin/Account");
+               
+                var accountDto = new AccountDTO();
+                var mapperAccount = new AccountMapper();
+                var currentAccount = _accountBusiness.GetAccountById(accountViewModel.ID);
+                var appUser = await _userManager.FindByEmailAsync(accountViewModel.Email);
+                var changePassword = await _userManager.ChangePasswordAsync(appUser, currentAccount.Password, accountViewModel.Password);
+                if (changePassword.Succeeded)
+                {
+                    var deleteRole = await _userManager.RemoveFromRoleAsync(appUser, (appUser.AccountType == 1) ? "Administrator" : "User");
+                    if (deleteRole.Succeeded)
+                    {
+                        appUser.PasswordHash = _passwordHasher.HashPassword(appUser, accountViewModel.Password);
+                        appUser.Name = accountViewModel.Name;
+                        appUser.Sex = int.Parse(accountViewModel.Sex);
+                        appUser.Address = accountViewModel.Address;
+                        appUser.PhoneNumber = accountViewModel.Phone;
+                        appUser.AccountType = int.Parse(accountViewModel.AccountType);
+                        var result = await _userManager.UpdateAsync(appUser);
+                        if (result.Succeeded)
+                        {
+                            var changeRole = await _userManager.AddToRoleAsync(appUser, (appUser.AccountType == 1) ? "Administrator" : "User");
+                            if (changeRole.Succeeded)
+                            {
+                                accountDto = mapperAccount.MapperViewModelToDTO(accountViewModel);
+                                _accountBusiness.EditAccount(accountDto);
+                                return Redirect("/Admin/Account");
+                            }
+                        }
+                        else
+                        {
+                            foreach (var error in deleteRole.Errors)
+                            {
+                                ModelState.AddModelError("", error.Description);
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        ViewBag.Message = "Thay đổi tài khoản thất bại";
+                    }
+
+                }
+                else
+                {
+                    foreach (var error in changePassword.Errors)
+                    {
+                        ModelState.AddModelError("", error.Description);
+                    }
+                }
             }
-            else
+            catch(Exception ex)
             {
-                ViewBag.Message = "Số điện thoại đã tồn tại";
+                ViewBag.Message = "Thay đổi thất bại";
             }
             return View(accountViewModel);
         }

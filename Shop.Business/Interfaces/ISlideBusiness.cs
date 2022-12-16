@@ -9,6 +9,7 @@ namespace Shop.Business.Interfaces
 {
     public interface ISlideBusiness
     {
+        SlideDTO SelectByID(long id);
         void InsertSlide(SlideDTO slideDTO);
         void DeleteSlide(long id);
         IEnumerable<SlideDTO> SelectByQuantityItem(int page, int pageSize);

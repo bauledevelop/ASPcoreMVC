@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Shop.Business.Implements;
 using Shop.Business.Interfaces;
 using Shop.Common.DTO;
 using Shop.Entities.Enities;
@@ -26,13 +27,16 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         private readonly IAccountBusiness _accountBusiness;
         private readonly ICategoryProductBusiness _categoryProductBusiness;
         private readonly IMenuBusiness _menuBusiness;
+        private readonly IFileBusiness _fileBusiness;
         public ProductController(IProductBusiness productBusiness,
-            IAccountBusiness accountBusiness, ICategoryProductBusiness categoryProductBusiness, IMenuBusiness menuBusiness)
+            IAccountBusiness accountBusiness, ICategoryProductBusiness categoryProductBusiness, IMenuBusiness menuBusiness,
+            IFileBusiness fileBusiness)
         {
             _productBusiness = productBusiness;
             _accountBusiness = accountBusiness;
             _categoryProductBusiness = categoryProductBusiness;
             _menuBusiness = menuBusiness;
+            _fileBusiness = fileBusiness;
         }
         [Area("Admin")]
         [HttpGet]
@@ -150,7 +154,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         }
         [Area("Admin")]
         [HttpPost]
-        public IActionResult Create(ProductViewModel productViewModel)
+        public async Task<IActionResult> Create(List<IFormFile> uploadFiles,ProductViewModel productViewModel)
         {
             var menuDTOs = _menuBusiness.SelectAll();
             var dropdownList = new DropdownListItem();
@@ -163,12 +167,32 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             }
             try
             {
-                var mapperProduct = new ProductMapper();
-                var productDto = mapperProduct.MapperViewModelToDto(productViewModel);
-                var accountDTO = _accountBusiness.GetAccountByUsername(User.Identity.Name);
-                productDto.CreatedBy = accountDTO.ID;
-                _productBusiness.CreateProduct(productDto);
-                return Redirect("/Admin/Product");
+                if (uploadFiles.Count > 0)
+                {
+                    var mapperProduct = new ProductMapper();
+                    var productDto = mapperProduct.MapperViewModelToDto(productViewModel);
+                    var accountDTO = _accountBusiness.GetAccountByUsername(User.Identity.Name);
+                    productDto.CreatedBy = accountDTO.ID;
+                    long IDProduct = _productBusiness.CreateProduct(productDto);
+                    var fileDTO = new FileDTO();
+                    fileDTO.Type = 1;
+                    fileDTO.CreatedBy = accountDTO.ID;
+                    fileDTO.IDProduct = IDProduct;
+                    fileDTO.Status = true;
+                    foreach (var file in uploadFiles)
+                    {
+                        string fileName = file.FileName;
+                        fileName = Path.GetFileName(fileName);
+                        string uploadPaths = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot//uploadFiles", fileName);
+                        var stream = new FileStream(uploadPaths, FileMode.Create);
+                        fileDTO.FileContent = fileName;
+                        _fileBusiness.InsertFile(fileDTO);
+                        await file.CopyToAsync(stream);
+                        stream.Dispose();
+                    }
+                    return Redirect("/Admin/Product");
+                }
+                ViewBag.Message = "Vui lòng chọn hình ảnh của sản phẩm";
             }
             catch (Exception ex)
             {

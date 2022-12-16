@@ -11,6 +11,7 @@ using Shop.Business.Implements;
 
 namespace Shop.Mvc.Controllers
 {
+    [Authorize]
     public class CheckoutController : Controller
     {
         private readonly IAccountBusiness _accountBusiness;

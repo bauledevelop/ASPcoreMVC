@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "T6LMI2Z00TbnPf9vnDloCVTbZ6mzbpEKFOol1qRqnUI=",
+  "Hash": "GVySo2wpcQAMynVzuoChONitfQuTtBOsiQr61oeZABM=",
   "Source": "Shop.Mvc",
   "BasePath": "_content/Shop.Mvc",
   "Mode": "Default",
@@ -1071,12 +1071,12 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\slide\\hinh1-coder-la-gi.jpg",
+      "Identity": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\pngegg (1).png",
       "SourceId": "Shop.Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\",
       "BasePath": "_content/Shop.Mvc",
-      "RelativePath": "slide/hinh1-coder-la-gi.jpg",
+      "RelativePath": "uploadFiles/pngegg (1).png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1085,15 +1085,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\slide\\hinh1-coder-la-gi.jpg"
+      "OriginalItemSpec": "wwwroot\\uploadFiles\\pngegg (1).png"
     },
     {
-      "Identity": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\46.01.104.039_NguyenHuuMinhDuong.jpg",
+      "Identity": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\pngegg (2).png",
       "SourceId": "Shop.Mvc",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\",
       "BasePath": "_content/Shop.Mvc",
-      "RelativePath": "uploadFiles/46.01.104.039_NguyenHuuMinhDuong.jpg",
+      "RelativePath": "uploadFiles/pngegg (2).png",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1102,75 +1102,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploadFiles\\46.01.104.039_NguyenHuuMinhDuong.jpg"
-    },
-    {
-      "Identity": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\4601104039_NguyenHuuMinhDuong.jpg",
-      "SourceId": "Shop.Mvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\",
-      "BasePath": "_content/Shop.Mvc",
-      "RelativePath": "uploadFiles/4601104039_NguyenHuuMinhDuong.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploadFiles\\4601104039_NguyenHuuMinhDuong.jpg"
-    },
-    {
-      "Identity": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\hinh1-coder-la-gi.jpg",
-      "SourceId": "Shop.Mvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\",
-      "BasePath": "_content/Shop.Mvc",
-      "RelativePath": "uploadFiles/hinh1-coder-la-gi.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploadFiles\\hinh1-coder-la-gi.jpg"
-    },
-    {
-      "Identity": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\ngày.png",
-      "SourceId": "Shop.Mvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\",
-      "BasePath": "_content/Shop.Mvc",
-      "RelativePath": "uploadFiles/ngày.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploadFiles\\ngày.png"
-    },
-    {
-      "Identity": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\Nguyen Huu Minh Duong.jpg",
-      "SourceId": "Shop.Mvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\",
-      "BasePath": "_content/Shop.Mvc",
-      "RelativePath": "uploadFiles/Nguyen Huu Minh Duong.jpg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploadFiles\\Nguyen Huu Minh Duong.jpg"
+      "OriginalItemSpec": "wwwroot\\uploadFiles\\pngegg (2).png"
     }
   ]
 }

@@ -4,8 +4,21 @@ body {
     font-size: 1rem;
     margin: 0;
 }
-.height-header{
+.dropdown-menu .txt-dropdown-item{
+    font-size: 15px !important;
+    
+}
+.top-menu-dropdown {
+    left: -50px !important;
+}
+.txt-order-account{
+    text-align:center;
+}
+.height-header {
     height: 100px;
+}
+.txt-td-order > li{
+   text-align: center;
 }
 .img-pic-small-product {
     width: 80px;

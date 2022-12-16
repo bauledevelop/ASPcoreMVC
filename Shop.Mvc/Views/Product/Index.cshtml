@@ -32,7 +32,7 @@
                                         <div class="easyzoom-style">
                                             <div class="easyzoom">
                                                 <a href="@item.FileContent" class="poppu-img">
-                                                    <img src="@item.FileContent" class="img-fluid" style="width: 400px; height: 400px;background-size: cover;" alt="">
+                                                    <img src="/uploadFiles/@item.FileContent" class="img-fluid" style="width: 400px; height: 400px;background-size: cover;" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -44,7 +44,7 @@
                                 {
                                     if (item.IDProduct == product.ID)
                                     {
-                                        <div class="sm-image"><img src="@item.FileContent" style="width: 100px; height: 100px;background-size: cover;" alt="product image thumb"></div>
+                                        <div class="sm-image"><img src="/uploadFiles/@item.FileContent" style="width: 100px; height: 100px;background-size: cover;" alt="product image thumb"></div>
                                     }
                                 }
                             </div>
@@ -190,7 +190,7 @@
                                                     {
                                                         if (item.IDProduct == product.ID)
                                                         {
-                                                            <img src="@item.FileContent" class="img-fluid img-items" alt="">
+                                                            <img src="/uploadFiles/@item.FileContent" class="img-fluid img-items" alt="">
                                                             break;
                                                         }
                                                     }
@@ -364,7 +364,7 @@
                                             {
                                                 if (item.ID == child.IDProduct)
                                                 {
-                                                    <img src="@child.FileContent" class="img-fluid img-items" alt="Product Images" width="300" height="300">
+                                                    <img src="/uploadFiles/@child.FileContent" class="img-fluid img-items" alt="Product Images" width="300" height="300">
                                                     break;
                                                 }
                                             }

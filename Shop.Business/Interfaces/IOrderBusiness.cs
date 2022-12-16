@@ -9,6 +9,7 @@ namespace Shop.Business.Interfaces
 {
     public interface IOrderBusiness
     {
+        IEnumerable<OrderDTO> SelectByIDAccount(long IDAccount);
         long InsertOrder(OrderDTO orderDTO);
         void DeleteByIDAccount(long IDAccount);
         void DeleteByIDOrder(long IDOrder);

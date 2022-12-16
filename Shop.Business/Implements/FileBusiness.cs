@@ -71,7 +71,7 @@ namespace Shop.Business.Implements
             _fileRepository.Update(file);
             _fileRepository.Save();
         }
-        public async Task InsertFile(FileDTO fileDTO)
+        public void InsertFile(FileDTO fileDTO)
         {
             var file = _mapper.Map<FileDTO, File>(fileDTO);
             file.CreatedDate = DateTime.Now;

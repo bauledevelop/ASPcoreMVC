@@ -72,6 +72,7 @@ namespace Shop.Mvc.Controllers
                 ViewData["Category"] = category;
                 ViewBag.TotalComment = totalComment;
                 ViewBag.Menu = menu.Name;
+                ViewBag.Account = account.Username;
                 return View();
             }
             catch (Exception ex)

@@ -22,7 +22,7 @@ builder.Services.AddSingleton(emailConfig);
 builder.Services.ConfigureApplicationCookie(opts =>
 {
     opts.LoginPath = "/Home/Login";
-    opts.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+    opts.ExpireTimeSpan = TimeSpan.FromHours(24);
 });
 builder.Services.Configure<DataProtectionTokenProviderOptions>(opts => opts.TokenLifespan = TimeSpan.FromMinutes(5));
 builder.Services.Configure<IdentityOptions>(opts =>

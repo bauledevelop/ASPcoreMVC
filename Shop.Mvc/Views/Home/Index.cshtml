@@ -148,7 +148,7 @@
                                 <div class="product-thumbnail">
                                     @foreach (var child in listFile.Where(x => x.IDProduct == item.ID))
                                     {
-                                    <a href="/Product/@item.ID"><img src="@child.FileContent" class="img-fluid img-trend" alt="Featured Image" height="451" width="397"></a>
+                                    <a href="/Product/@item.ID"><img src="/uploadFiles/@child.FileContent" class="img-fluid img-trend" alt="Featured Image" height="451" width="397"></a>
                                         break;
                                     }
                                 </div>
@@ -177,7 +177,7 @@
                                     {
                                         if (child.IDProduct == item.ID)
                                         {
-                                            <img src="@child.FileContent" class="img-fluid img-items" alt="Product Images" width="300" height="300" width="300" height="300">
+                                            <img src="/uploadFiles/@child.FileContent" class="img-fluid img-items" alt="Product Images" width="300" height="300" width="300" height="300">
                                             break;
                                         }
                                     }

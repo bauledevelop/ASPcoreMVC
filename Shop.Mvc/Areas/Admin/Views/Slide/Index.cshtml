@@ -42,7 +42,7 @@
                                 var tick = "fa-solid fa-check color-tick";
                                 var xmask = "fa-solid fa-xmark color-xmask";
                                 <tr class="item-@item.ID">
-                                    <td><img src="@item.Content" class="pic pic__size" /></td>
+                                    <td><img src="/slide/@item.Content" class="pic pic__size" /></td>
                                     <td>@item.CreatedDate</td>
                                     <td>
                                         <span class="_deleteSlide" data-bs-toggle="modal" data-bs-target="#deleteSlide" data-id="@item.ID" style="cursor: pointer; margin-right: 2px"><i class="fa-solid fa-trash color-trash"></i></span>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="row mt-4" style="justify-content: space-between;">
                     <div class="col-sm-12 col-md-5">
-                        <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Show @paginations.FirstItemOnPage to @paginations.PageNumber total @paginations.PageCount entities</div>
+                        <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Show @paginations.FirstItemOnPage to @paginations.LastItemOnPage total @paginations.TotalItemCount entities</div>
                     </div>
                     <div class="col-md-4">
                         <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">

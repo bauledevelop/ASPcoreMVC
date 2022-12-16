@@ -20,7 +20,8 @@ namespace Shop.Mvc.Areas.Admin.Models
         public string Detail { set; get; }
         [Display(Name = "Giá tiền")]
         [Required(ErrorMessage = "Vui lòng điền giá tiền")]
-        public string Price { set; get; } 
+        public string Price { set; get; }
+        
         [Display(Name = "Menu")]
         public string IDMenu { set; get; }
         public DateTime CreatedDate { set; get; }

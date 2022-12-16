@@ -245,28 +245,12 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\slide\\hinh1-coder-la-gi.jpg",
-      "PackagePath": "staticwebassets\\slide\\hinh1-coder-la-gi.jpg"
+      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\pngegg (1).png",
+      "PackagePath": "staticwebassets\\uploadFiles\\pngegg (1).png"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\46.01.104.039_NguyenHuuMinhDuong.jpg",
-      "PackagePath": "staticwebassets\\uploadFiles\\46.01.104.039_NguyenHuuMinhDuong.jpg"
-    },
-    {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\4601104039_NguyenHuuMinhDuong.jpg",
-      "PackagePath": "staticwebassets\\uploadFiles\\4601104039_NguyenHuuMinhDuong.jpg"
-    },
-    {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\Nguyen Huu Minh Duong.jpg",
-      "PackagePath": "staticwebassets\\uploadFiles\\Nguyen Huu Minh Duong.jpg"
-    },
-    {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\hinh1-coder-la-gi.jpg",
-      "PackagePath": "staticwebassets\\uploadFiles\\hinh1-coder-la-gi.jpg"
-    },
-    {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\ngày.png",
-      "PackagePath": "staticwebassets\\uploadFiles\\ngày.png"
+      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\pngegg (2).png",
+      "PackagePath": "staticwebassets\\uploadFiles\\pngegg (2).png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Shop.Mvc.Microsoft.AspNetCore.StaticWebAssets.props",

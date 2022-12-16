@@ -21,6 +21,12 @@ namespace Shop.Business.Implements
             _slideRepository = slideRepository;
             _mapper = mapper;
         }
+        public SlideDTO SelectByID(long id)
+        {
+            var slide = _slideRepository.SelectById(id);
+            var slideDTO = _mapper.Map<Slide, SlideDTO>(slide);
+            return slideDTO;
+        }
         public void InsertSlide(SlideDTO slideDTO)
         {
             var slide = _mapper.Map<SlideDTO,Slide>(slideDTO);

@@ -15,7 +15,7 @@ namespace Shop.Business.Interfaces
         void DeleteByIDAccount(long IDAccount);
         void DeleteByIDProduct(long IDProduct);
         void EditFile(FileDTO fileDTO);
-        Task InsertFile(FileDTO fileDTO);
+        void InsertFile(FileDTO fileDTO);
         FileDTO SelectById(long id);
         IEnumerable<FileDTO> SelectByQuantityItem(int page, int pageSize);
         long GetTotal();

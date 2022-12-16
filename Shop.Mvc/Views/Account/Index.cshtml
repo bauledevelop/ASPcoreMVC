@@ -1,0 +1,71 @@
+﻿@model Shop.Mvc.Models.InformationAccount
+@{
+    ViewData["Title"] = "Thông tin cá nhân";
+    Layout = "~/Views/Shared/Layout/_Layout.cshtml";
+    ViewBag.Title = "Thông tin cá nhân";
+}
+
+@await Component.InvokeAsync("Title")
+<div id="main-wrapper">
+    <div class="site-wrapper-reveal border-bottom">
+        <div class="my-account-page-warpper section-space--ptb_120">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="myaccount-page-wrapper">
+                            <div class="row">
+                                @await Component.InvokeAsync("MenuAccount")
+                                <div class="col-lg-9 col-md-8">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active">
+                                            <div class="myaccount-content">
+                                                <h3 class="title">@ViewBag.Title</h3>
+                                                <div class="account-details-form">
+                                                    <form action="#">
+                                                        <div class="row">
+                                                            <div class="single-input-item mb-3">
+                                                                <label asp-for="Name" class="required mb-1"></label>
+                                                                <input asp-for="Name" disabled="disabled" />
+                                                            </div>
+                                                            <div class="single-input-item mb-3">
+                                                                <label asp-for="BirthDay" class="required mb-1"></label>
+                                                                <input asp-for="BirthDay" disabled="disabled" />
+                                                            </div>
+                                                            <div class="single-input-item mb-3">
+                                                                <label asp-for="Phone" class="control-label"></label>
+                                                                <input asp-for="Phone" disabled="disabled" />
+                                                            </div>
+                                                            <div class="single-input-item mb-3">
+                                                                <label asp-for="Address" class="control-label"></label>
+                                                                <input asp-for="Address" disabled="disabled" />
+                                                            </div>
+                                                            <div class="single-input-item mb-3">
+                                                                <label asp-for="Email" class="control-label"></label>
+                                                                <input asp-for="Email" disabled="disabled" />
+                                                            </div>
+                                                            <div class="single-input-item mb-3">
+                                                                <label asp-for="Sex" class="control-label"></label>
+                                                                <input asp-for="Sex" disabled="disabled" />
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                                
+                                                <div class="single-input-item single-item-button">
+                                                    <a asp-action="ChangeAccount" asp-controller="Account" class="btn btn btn-dark btn-hover-primary rounded-0">Thay đổi thông tin</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    @await Component.InvokeAsync("Footer")
+</div>
+

@@ -180,7 +180,7 @@ namespace Shop.Business.Implements
             _productRepository.Update(product);
             _productRepository.Save();
         }
-        public void CreateProduct(ProductDTO productDTO)
+        public long CreateProduct(ProductDTO productDTO)
         {
             var product = _mapper.Map<ProductDTO, Product>(productDTO);
             product.UpdatedDate = DateTime.Now;
@@ -188,6 +188,7 @@ namespace Shop.Business.Implements
             product.IsDelete = false;
             _productRepository.Insert(product);
             _productRepository.Save();
+            return product.ID;
         }
         public ProductDTO SelectById(long id)
         {

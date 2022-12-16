@@ -45,7 +45,7 @@
                         var tdCreate = document.createElement('td');
                         var img = document.createElement('img');
                         tdType.innerHTML = (item.type == 1) ? "Hình ảnh" : "Video";
-                        img.src = item.fileContent;
+                        img.src = "/uploadFiles/" + item.fileContent;
                         img.classList.add('pic', 'pic__size');
                         tdContent.appendChild(img);
                         var m = new Date(item.createdDate);

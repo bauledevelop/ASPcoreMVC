@@ -24,7 +24,12 @@ namespace Shop.Business.Implements
             _orderDetailBusiness = orderDetailBusiness;
             _paymentBusiness = paymentBusiness;
         }
-
+        public IEnumerable<OrderDTO> SelectByIDAccount(long IDAccount)
+        {
+            var order = _orderRepository.SelectByIDAccount(IDAccount);
+            var orderDTOs = order.Select(x => _mapper.Map<Order, OrderDTO>(x));
+            return orderDTOs;
+        }
         public long InsertOrder(OrderDTO orderDTO)
         {
             orderDTO.CreatedDate = DateTime.Now;

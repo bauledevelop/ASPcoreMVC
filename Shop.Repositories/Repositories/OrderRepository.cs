@@ -15,6 +15,18 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
+        public IQueryable<Order> SelectByIDAccount(long IDAccount)
+        {
+            try
+            {
+                var model = _dbContext.Orders.Where(x => x.IDAccount == IDAccount);
+                return model;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         public long InsertOrder(Order order)
         {
             _dbContext.Orders.Add(order);

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Shop.Business.Implements;
 using Shop.Business.Interfaces;
@@ -56,9 +57,10 @@ namespace Shop.Mvc.Areas.Admin.Controllers
                         string uploadPaths = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot//slide", fileName);
 
                         var stream = new FileStream(uploadPaths, FileMode.Create);
-                        slideDTO.Content = "/slide/" + fileName;
+                        slideDTO.Content = fileName;
                         _slideBusiness.InsertSlide(slideDTO);
                         await file.CopyToAsync(stream);
+                        stream.Dispose();
                     }
                     return Redirect("/Admin/Slide");
                 }
@@ -76,7 +78,10 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
             {
+                var slide = _slideBusiness.SelectByID(long.Parse(id));
                 var ID = long.Parse(id);
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot//slide", slide.Content);
+                System.IO.File.Delete(path);
                 _slideBusiness.DeleteSlide(ID);
                 return Json(new
                 {

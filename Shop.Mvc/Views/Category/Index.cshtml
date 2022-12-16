@@ -54,7 +54,7 @@
                                                     {
                                                         if (item.ID == child.IDProduct)
                                                         {
-                                                            <img src="@child.FileContent" class="img-fluid img-items" alt="Product Images" width="300" height="300">
+                                                            <img src="/uploadFiles/@child.FileContent" class="img-fluid img-items" alt="Product Images" width="300" height="300">
                                                             break;
                                                         }
                                                     }
@@ -84,7 +84,10 @@
                     <div class="col-lg-6 col-md-6">
                         <div class="shop-toolbar__items shop-toolbar__item--left">
                             <div class="shop-toolbar__item shop-toolbar__item--result">
-                                <p class="result-count"> Show @paginations.FirstItemOnPage to @paginations.PageNumber total @paginations.PageCount results</p>
+                                @if(paginations != null)
+                                {
+                                    <p class="result-count"> Hiện @paginations.FirstItemOnPage đến @paginations.LastItemOnPage total @paginations.TotalItemCount kết quả</p>
+                                }
                             </div>
                         </div>
                     </div>
@@ -142,7 +145,7 @@
                                                 {
                                                     if (item.ID == child.IDProduct)
                                                     {
-                                                        <img src="@child.FileContent" class="img-fluid img-items" alt="Product Images" width="300" height="300">
+                                                        <img src="/uploadFiles/@child.FileContent" class="img-fluid img-items" alt="Product Images" width="300" height="300">
                                                         break;
                                                     }
                                                 }

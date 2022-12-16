@@ -40,6 +40,21 @@ namespace Shop.Business.Implements
             _paymentBusiness = paymentBusiness;
             _orderBusiness = orderBusiness;
         }
+        public bool ChangeAccount(AccountDTO accountDTO)
+        {
+            var account = _mapper.Map<AccountDTO, Account>(accountDTO);
+            var check = _accountRepository.CheckPhone(account.Phone);
+            if (check == true)
+            {
+                _accountRepository.Update(account);
+                _accountRepository.Save();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public void ResetPassword(string username, string password)
         {
             var account = _accountRepository.GetAccountByUsername(username);
@@ -128,20 +143,11 @@ namespace Shop.Business.Implements
             _accountRepository.Save();
            
         }
-        public bool EditAccount(AccountDTO accountDTO)
+        public void EditAccount(AccountDTO accountDTO)
         {
             var account = _mapper.Map<AccountDTO, Account>(accountDTO);
-            var SHA1 = new HashPasswordSHA1();
-            var phone = _accountRepository.GetPhoneByUsername(account.Username);
-            var check = _accountRepository.CheckPhone(account.Phone);
-            if (check || phone == accountDTO.Phone)
-            {
-                //account.Password = SHA1.HashPassword(account.Password);
-                _accountRepository.Update(account);
-                _accountRepository.Save();
-                return true;
-            }
-            return false;
+            _accountRepository.Update(account);
+            _accountRepository.Save();
         }
         public AccountDTO GetAccountById(long id)
         {

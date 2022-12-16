@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Shop.Business.Interfaces;
 using Shop.Mvc.Entensions;
 using Shop.Mvc.Models;
@@ -7,6 +8,7 @@ using System.Linq.Expressions;
 
 namespace Shop.Mvc.Controllers
 {
+    [Authorize]
     public class CartController : Controller
     {
         private readonly IProductBusiness _productBusiness;

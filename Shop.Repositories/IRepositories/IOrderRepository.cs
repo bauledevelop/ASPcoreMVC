@@ -9,6 +9,7 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IOrderRepository
     {
+        IQueryable<Order> SelectByIDAccount(long IDAccount);
         long InsertOrder(Order order);
         IQueryable<Order> SelectByQuantityItem(int page, int pageSize);
         long GetTotal();

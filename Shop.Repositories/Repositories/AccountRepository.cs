@@ -52,7 +52,7 @@ namespace Shop.Repositories.Repositories
         }
         public bool CheckPhone(string phone)
         {
-            var model = _dbContext.Accounts.SingleOrDefault(x => x.Phone == phone);
+            var model = _dbContext.Accounts.SingleOrDefault(x => x.Phone == phone && x.Status == true);
             return (model == null ? true : false);
         }
         public bool CheckEmail(string email)

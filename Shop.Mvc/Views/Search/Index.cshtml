@@ -54,7 +54,7 @@
                                                     {
                                                         if (item.ID == child.IDProduct)
                                                         {
-                                                            <img src="@child.FileContent" class="img-fluid img-items" alt="Product Images" width="300" height="300">
+                                                            <img src="/uploadFiles/@child.FileContent" class="img-fluid img-items" alt="Product Images" width="300" height="300">
                                                             break;
                                                         }
                                                     }
@@ -86,7 +86,7 @@
                             <div class="shop-toolbar__item shop-toolbar__item--result">
                                 @if (paginations != null)
                                 {
-                                    <p class="result-count"> Hiện @paginations.FirstItemOnPage đến @paginations.PageNumber total @paginations.PageCount kết quả</p>
+                                    <p class="result-count"> Hiện @paginations.FirstItemOnPage đến @paginations.LastItemOnPage total @paginations.TotalItemCount kết quả</p>
                                 }
                                 
                             </div>
@@ -147,7 +147,7 @@
                                                 {
                                                     if (item.ID == child.IDProduct)
                                                     {
-                                                        <img src="@child.FileContent" class="img-fluid img-items" alt="Product Images" width="300" height="300">
+                                                        <img src="/uploadFiles/@child.FileContent" class="img-fluid img-items" alt="Product Images" width="300" height="300">
                                                         break;
                                                     }
                                                 }
