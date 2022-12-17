@@ -16,13 +16,11 @@ namespace Shop.Business.Implements
         private readonly IOrderRepository _orderRepository;
         private readonly IMapper _mapper;
         private readonly IOrderDetailBusiness _orderDetailBusiness;
-        private readonly IPaymentBusiness _paymentBusiness;
-        public OrderBusiness(IOrderRepository orderRepository, IMapper mapper,IOrderDetailBusiness orderDetailBusiness,IPaymentBusiness paymentBusiness)
+        public OrderBusiness(IOrderRepository orderRepository, IMapper mapper,IOrderDetailBusiness orderDetailBusiness)
         {
             _orderRepository = orderRepository;
             _mapper = mapper;
             _orderDetailBusiness = orderDetailBusiness;
-            _paymentBusiness = paymentBusiness;
         }
         public void ChangeStatus(long id)
         {
@@ -66,7 +64,6 @@ namespace Shop.Business.Implements
         public void DeleteOrder(long id)
         {
             _orderDetailBusiness.DeleteByIDOrder(id);
-            _paymentBusiness.DeleteByIDOrder(id);
             _orderRepository.Delete(id);
             _orderRepository.Save();
         }

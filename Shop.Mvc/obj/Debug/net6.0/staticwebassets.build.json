@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Kh/cpTCnLvnQZxHQtaWFYN0ZE6MzfR4gOjZc3B4iPMU=",
+  "Hash": "dWoVR8EVtx3zVGUMkDJi3RHwerLhqcmNmH/ceEgdSQQ=",
   "Source": "Shop.Mvc",
   "BasePath": "_content/Shop.Mvc",
   "Mode": "Default",
@@ -1088,6 +1088,23 @@
       "OriginalItemSpec": "wwwroot\\slide\\hinh1-coder-la-gi.jpg"
     },
     {
+      "Identity": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\316190669_705136194337333_8721002030928651031_n.jpg",
+      "SourceId": "Shop.Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\",
+      "BasePath": "_content/Shop.Mvc",
+      "RelativePath": "uploadFiles/316190669_705136194337333_8721002030928651031_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploadFiles\\316190669_705136194337333_8721002030928651031_n.jpg"
+    },
+    {
       "Identity": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\4601104039-NguyenHuuMinhDuong.jpg",
       "SourceId": "Shop.Mvc",
       "SourceType": "Discovered",
@@ -1103,23 +1120,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploadFiles\\4601104039-NguyenHuuMinhDuong.jpg"
-    },
-    {
-      "Identity": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\asdsadsad.png",
-      "SourceId": "Shop.Mvc",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\",
-      "BasePath": "_content/Shop.Mvc",
-      "RelativePath": "uploadFiles/asdsadsad.png",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\uploadFiles\\asdsadsad.png"
     },
     {
       "Identity": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\hinh1-coder-la-gi.jpg",

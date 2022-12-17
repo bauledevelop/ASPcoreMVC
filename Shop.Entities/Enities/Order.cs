@@ -21,7 +21,6 @@ namespace Shop.Entities.Enities
         public long IDAccount { set; get; }
         [ForeignKey("IDAccount")]
         public virtual Account Account { set; get; }
-        public virtual ICollection<Payment> Payments { set; get; }
         public virtual ICollection<OrderDetail> OrderDetails { set; get; }
     }
 }

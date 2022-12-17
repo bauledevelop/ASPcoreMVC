@@ -79,7 +79,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         }
         [Area("Admin")]
         [HttpPost]
-        public IActionResult Delete(string id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
@@ -100,6 +100,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         }
         [Area("Admin")]
         [HttpGet]
+        
         public IActionResult Edit(string id)
         {
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
@@ -124,7 +125,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         }
         [Area("Admin")]
         [HttpPost]
-        public IActionResult Edit(ProductViewModel productViewModel)
+        public async Task<IActionResult> Edit(ProductViewModel productViewModel,List<IFormFile> uploadFiles)
         {
             var categoryDto = _categoryProductBusiness.SelectByIDMenu(long.Parse(productViewModel.IDMenu));
             var dropdownList = new DropdownListItem();
@@ -132,10 +133,41 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             if (!ModelState.IsValid) return View(productViewModel);
             try
             {
-                var mapperProduct = new ProductMapper();
-                var productDto = mapperProduct.MapperViewModelToDto(productViewModel);
-                _productBusiness.EditProduct(productDto);
-                return Redirect("/Admin/Product");
+                if (uploadFiles.Count > 0)
+                {
+                    var accountDTO = _accountBusiness.GetAccountByUsername(User.Identity.Name);
+                    var listFile = _fileBusiness.SelectByIDProduct(productViewModel.ID);
+                    if (listFile != null)
+                    {
+                        foreach (FileDTO item in listFile)
+                        {
+                            string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot//uploadFiles", item.FileContent);
+                            System.IO.File.Delete(path);
+                        }
+                    }
+                    var fileDTO = new FileDTO();
+                    fileDTO.Type = 1;
+                    fileDTO.CreatedBy = accountDTO.ID;
+                    fileDTO.IDProduct = productViewModel.ID;
+                    fileDTO.Status = true;
+                    _fileBusiness.DeleteFileByIDProduct(productViewModel.ID);
+                    foreach (var file in uploadFiles)
+                    {
+                        string fileName = file.FileName;
+                        fileName = Path.GetFileName(fileName);
+                        string uploadPaths = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot//uploadFiles", fileName);
+                        var stream = new FileStream(uploadPaths, FileMode.Create);
+                        fileDTO.FileContent = fileName;
+                        await _fileBusiness.InsertFile(fileDTO);
+                        file.CopyTo(stream);
+                        stream.Dispose();
+                    }
+                    var mapperProduct = new ProductMapper();
+                    var productDto = mapperProduct.MapperViewModelToDto(productViewModel);
+                    _productBusiness.EditProduct(productDto);
+                    return Redirect("/Admin/Product");
+                } 
+                ViewBag.Message = "Vui lòng chọn hình ảnh của sản phẩm";
             }
             catch (Exception ex)
             {
@@ -186,7 +218,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
                         string uploadPaths = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot//uploadFiles", fileName);
                         var stream = new FileStream(uploadPaths, FileMode.Create);
                         fileDTO.FileContent = fileName;
-                        _fileBusiness.InsertFile(fileDTO);
+                        await _fileBusiness.InsertFile(fileDTO);
                         await file.CopyToAsync(stream);
                         stream.Dispose();
                     }

@@ -9,8 +9,9 @@ namespace Shop.Repositories.IRepositories
 {
     public interface IFileRepository
     {
+        Task SaveAsync();
         IQueryable<File> SelectByStatus();
-        IQueryable<File> SelectByIDProduct(long IDProduct);
+        IEnumerable<File> SelectByIDProduct(long IDProduct);
         long GetTotal();
         IQueryable<File> SelectByQuantityItem(int page, int pageSize);
         IEnumerable<File> SelectAll();

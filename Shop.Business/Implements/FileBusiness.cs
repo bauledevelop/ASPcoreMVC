@@ -20,16 +20,28 @@ namespace Shop.Business.Implements
             _fileRepository = fileRepository;
             _mapper = mapper;
         }
+        public void DeleteFileByIDProduct(long IDProduct)
+        {
+            var file = _fileRepository.SelectByIDProduct(IDProduct);
+            if (file != null)
+            {
+                foreach(var item in file)
+                {
+                    _fileRepository.DeleteByItem(item);
+                    _fileRepository.Save();
+                }
+            }
+        }
         public IEnumerable<FileDTO> SelectAll()
         {
             var files = _fileRepository.SelectByStatus();
-            var fileDTOs = files.Select(item => _mapper.Map<File, FileDTO>(item));
+            var fileDTOs = files.Select(item => _mapper.Map<File, FileDTO>(item)).ToList();
             return fileDTOs;
         }
         public IEnumerable<FileDTO> SelectByIDProduct(long IDProduct)
         {
             var files = _fileRepository.SelectByIDProduct(IDProduct);
-            var fileDTOs = files.Select(item => _mapper.Map<File, FileDTO>(item));
+            var fileDTOs = files.Select(item => _mapper.Map<File, FileDTO>(item)).ToList();
             return fileDTOs;
         }
         public void DeleteFIle(long ID)
@@ -71,13 +83,13 @@ namespace Shop.Business.Implements
             _fileRepository.Update(file);
             _fileRepository.Save();
         }
-        public void InsertFile(FileDTO fileDTO)
+        public async Task InsertFile(FileDTO fileDTO)
         {
             var file = _mapper.Map<FileDTO, File>(fileDTO);
             file.CreatedDate = DateTime.Now;
             file.UpdatedDate = DateTime.Now;
             _fileRepository.Insert(file);
-            _fileRepository.Save();
+            await _fileRepository.SaveAsync();
         }
         public FileDTO SelectById(long id)
         {
@@ -88,7 +100,7 @@ namespace Shop.Business.Implements
         public IEnumerable<FileDTO> SelectByQuantityItem(int page,int pageSize)
         {
             var files = _fileRepository.SelectByQuantityItem(page, pageSize);
-            var fileDtos = files.Select(item => _mapper.Map<File, FileDTO>(item));
+            var fileDtos = files.Select(item => _mapper.Map<File, FileDTO>(item)).ToList();
             return fileDtos;
         }
         public long GetTotal()

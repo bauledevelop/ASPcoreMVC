@@ -1,5 +1,4 @@
-﻿using Castle.Core.Internal;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Shop.Business.Interfaces;
 using X.PagedList;
 
@@ -43,7 +42,6 @@ namespace Shop.Mvc.Controllers
             {
                 return Redirect("/404");
             }
-            return View();
         }
     }
 }

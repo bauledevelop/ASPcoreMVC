@@ -10,13 +10,9 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.Google;
-using System.Net.Mail;
-using System.Net;
 using Shop.Business.Implements;
 using Microsoft.AspNetCore.Identity;
 using Shop.Entities.Enities;
-using NuGet.Protocol.Plugins;
-using Microsoft.Build.Framework;
 
 namespace Shop.Mvc.Controllers
 {

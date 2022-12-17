@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Shop.Business.Implements;
 using Shop.Business.Interfaces;
 using Shop.Common.DTO;
+using Shop.Entities.Enities;
 using Shop.Mvc.Areas.Admin.Mapper;
 using Shop.Mvc.Areas.Admin.Models;
 using Shop.Mvc.Commons.DropdownList;
@@ -38,6 +40,9 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
             {
+                var fileDTO = _fileBusiness.SelectById(long.Parse(id));
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot//uploadFiles", fileDTO.FileContent);
+                System.IO.File.Delete(path);
                 _fileBusiness.DeleteFIle(long.Parse(id));
                 return Json(new
                 {

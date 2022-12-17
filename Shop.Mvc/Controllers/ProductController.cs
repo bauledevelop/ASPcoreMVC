@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Shop.Business.Interfaces;
-using Shop.Mvc.Entensions;
-using Shop.Mvc.Models;
 
 namespace Shop.Mvc.Controllers
 {

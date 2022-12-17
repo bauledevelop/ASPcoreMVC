@@ -48,7 +48,6 @@ namespace Shop.Entities.Enities
         public virtual ICollection<File> Files { set; get; }
         public virtual ICollection<Comment> Comments { set; get; }
         public virtual ICollection<Order> Orders { set; get; }
-        public virtual ICollection<Payment> Payments { set; get; }
         public virtual ICollection<Rate> Rates { set; get; }
     }
 }

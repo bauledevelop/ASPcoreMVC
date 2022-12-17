@@ -67,5 +67,9 @@ namespace Shop.Repositories.Repositories
         {
             _db.SaveChanges();
         }
+        public async Task SaveAsync()
+        {
+            await _db.SaveChangesAsync();
+        }
     }
 }

@@ -20,14 +20,12 @@ namespace Shop.Business.Implements
         private readonly IProductBusiness _productBusiness;
         private readonly IFileBusiness _fileBusiness;
         private readonly ICommentBusiness _commentBusiness;
-        private readonly IPaymentBusiness _paymentBusiness;
         private readonly IOrderBusiness _orderBusiness;
         public AccountBusiness(IAccountRepository accountRepository,IMapper mapper,
             ICategoryProductBusiness categoryProductBusiness,
             IProductBusiness productBusiness,
             IFileBusiness fileBusiness,
             ICommentBusiness commentBusiness,
-            IPaymentBusiness paymentBusiness,
             IOrderBusiness orderBusiness
             )
         {
@@ -37,7 +35,6 @@ namespace Shop.Business.Implements
             _productBusiness = productBusiness;
             _fileBusiness = fileBusiness;
             _commentBusiness = commentBusiness;
-            _paymentBusiness = paymentBusiness;
             _orderBusiness = orderBusiness;
         }
         public bool ChangeAccount(AccountDTO accountDTO)
@@ -138,7 +135,6 @@ namespace Shop.Business.Implements
             _commentBusiness.DeleteByIDAccount(id);
             _fileBusiness.DeleteByIDAccount(id);
             _orderBusiness.DeleteByIDAccount(id);
-            _paymentBusiness.DeleteByIDAccount(id);
             _accountRepository.DeleteByItem(account);
             _accountRepository.Save();
            

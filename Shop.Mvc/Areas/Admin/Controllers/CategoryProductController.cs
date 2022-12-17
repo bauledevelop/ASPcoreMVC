@@ -79,7 +79,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         }
         [Area("Admin")]
         [HttpPost]
-        public IActionResult Delete(string id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             _categoryProductBusiness.DeleteCategory(long.Parse(id));
@@ -98,14 +98,9 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             return View();
         }
 
-        public HttpContext GetHttpContext()
-        {
-            return HttpContext;
-        }
-
         [Area("Admin")]
         [HttpPost]
-        public IActionResult Create(CategoryProductViewModel categoryProductViewModel)
+        public async Task<IActionResult> Create(CategoryProductViewModel categoryProductViewModel)
         {
             var dropdownList = new DropdownListItem();
             var listMenu = _menuBusiness.SelectAll();
@@ -163,7 +158,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         }
         [Area("Admin")]
         [HttpPost]
-        public IActionResult Edit(CategoryProductViewModel categoryProductViewModel)
+        public async Task<IActionResult> Edit(CategoryProductViewModel categoryProductViewModel)
         {
             var dropdownList = new DropdownListItem();
             var listMenu = _menuBusiness.SelectAll();

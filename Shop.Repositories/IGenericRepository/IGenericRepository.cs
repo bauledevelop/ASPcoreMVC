@@ -8,6 +8,7 @@ namespace Shop.Repositories.IGenericRepository
 {
     public interface IGenericRepository<T> where T : class
     {
+        Task SaveAsync();
         IEnumerable<T> SelectAll();
         T SelectById(long id);
         void Insert(T obj);

@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Shop.Business.Interfaces;
 using Shop.Common.DTO;
 using Shop.Mvc.Commons.Models;
-using Shop.Mvc.Entensions;
 using Shop.Mvc.Models;
-using System.Drawing.Printing;
 
 namespace Shop.Mvc.Controllers
 {

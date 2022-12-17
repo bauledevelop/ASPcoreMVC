@@ -29,7 +29,6 @@ namespace Shop.Entities.Enities
         public virtual DbSet<File> Files { set; get; }
         public virtual DbSet<Order> Orders { set; get; }
         public virtual DbSet<OrderDetail> OrderDetails { set; get; }
-        public virtual DbSet<Payment> Payments { set; get; }
         public virtual DbSet<Menu> Menus { set; get; }
         public virtual DbSet<Rate> Rates { set; get; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -43,7 +42,6 @@ namespace Shop.Entities.Enities
             modelBuilder.ApplyConfiguration(new FileConfig());
             modelBuilder.ApplyConfiguration(new OrderConfig());
             modelBuilder.ApplyConfiguration(new OrderDetailConfig());
-            modelBuilder.ApplyConfiguration(new PaymentConfig());
             modelBuilder.ApplyConfiguration(new RateConfig());
             modelBuilder.ApplyConfiguration(new SlideConfig());
             configData.ConfigDataAccount(modelBuilder);

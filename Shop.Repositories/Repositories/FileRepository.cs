@@ -27,11 +27,11 @@ namespace Shop.Repositories.Repositories
                 return null;
             }
         }
-        public IQueryable<File> SelectByIDProduct(long IDProduct)
+        public IEnumerable<File> SelectByIDProduct(long IDProduct)
         {
             try
             {
-                var model = _dbContext.Files.Where(x => x.IDProduct == IDProduct);
+                var model = _dbContext.Files.Where(x => x.IDProduct == IDProduct).ToList();
                 return model;
             }
             catch

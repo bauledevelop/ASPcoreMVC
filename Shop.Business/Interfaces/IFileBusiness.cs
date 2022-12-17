@@ -9,13 +9,14 @@ namespace Shop.Business.Interfaces
 {
     public interface IFileBusiness
     {
+        void DeleteFileByIDProduct(long IDProduct);
         IEnumerable<FileDTO> SelectAll();
         IEnumerable<FileDTO> SelectByIDProduct(long IDProduct);
         void DeleteFIle(long ID);
         void DeleteByIDAccount(long IDAccount);
         void DeleteByIDProduct(long IDProduct);
         void EditFile(FileDTO fileDTO);
-        void InsertFile(FileDTO fileDTO);
+        Task InsertFile(FileDTO fileDTO);
         FileDTO SelectById(long id);
         IEnumerable<FileDTO> SelectByQuantityItem(int page, int pageSize);
         long GetTotal();

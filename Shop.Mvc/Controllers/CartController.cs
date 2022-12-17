@@ -47,7 +47,7 @@ namespace Shop.Mvc.Controllers
             
         }
         [HttpPost]
-        public IActionResult DeleteItem(string id)
+        public async Task<IActionResult> DeleteItem(string id)
         {
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
@@ -75,7 +75,7 @@ namespace Shop.Mvc.Controllers
             }
         }
         [HttpPost]
-        public IActionResult Insert(string id,string color="1",string size="2",string amount="1")
+        public async Task<IActionResult> Insert(string id,string color="1",string size="2",string amount="1")
         {
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
@@ -130,7 +130,7 @@ namespace Shop.Mvc.Controllers
             }
         }
         [HttpPost]
-        public IActionResult ChangeSize(string id,string size)
+        public async Task<IActionResult> ChangeSize(string id,string size)
         {
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
@@ -154,7 +154,7 @@ namespace Shop.Mvc.Controllers
             }
         }
         [HttpPost]
-        public IActionResult ChangeAmount(string id,string amount)
+        public async Task<IActionResult> ChangeAmount(string id,string amount)
         {
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
@@ -189,7 +189,7 @@ namespace Shop.Mvc.Controllers
 
         }
         [HttpPost]
-        public IActionResult ChangeColor(string id,string color)
+        public async Task<IActionResult> ChangeColor(string id,string color)
         {
             if (string.IsNullOrEmpty(id))
             {

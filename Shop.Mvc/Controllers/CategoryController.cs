@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Shop.Business.Interfaces;
-using Shop.Mvc.Commons.Models;
 using X.PagedList;
 
 namespace Shop.Mvc.Controllers

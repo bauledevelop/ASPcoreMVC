@@ -57,7 +57,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         }
         [Area("Admin")]
         [HttpPost]
-        public IActionResult Delete(string id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
@@ -84,7 +84,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         }
         [Area("Admin")]
         [HttpPost]
-        public IActionResult Create(MenuViewModel menuViewModel)
+        public async Task<IActionResult> Create(MenuViewModel menuViewModel)
         {
             if (!ModelState.IsValid) return View(menuViewModel);
             try
@@ -122,7 +122,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         }
         [Area("Admin")]
         [HttpPost]
-        public IActionResult Edit(MenuViewModel menuViewModel)
+        public async Task<IActionResult> Edit(MenuViewModel menuViewModel)
         {
             if (!ModelState.IsValid) return View(menuViewModel);
             try

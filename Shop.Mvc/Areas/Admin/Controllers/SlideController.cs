@@ -73,7 +73,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         }
         [HttpPost]
         [Area("Admin")]
-        public IActionResult Delete(string id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
             try
