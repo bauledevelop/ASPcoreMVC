@@ -1,0 +1,13 @@
+﻿
+@{
+
+}
+
+<div class="col-lg-3 col-md-4">
+    <div class="myaccount-tab-menu nav" role="tablist">
+        <a href="/Account" class="@(ViewBag.active == "Information" ? "active" : "")" ><i class="fa fa-user"></i><div></div>Thông tin cá nhân</a>
+        <a href="/Account/ChangePassword" class="@(ViewBag.active == "ChangePassword" ? "active" : "")"><i class="fa fa-lock"></i><div></div>Thay đổi mật khẩu</a>
+        <a href="/Account/Order" class="@(ViewBag.active == "Order" ? "active" : "")" ><i class="fa fa-credit-card"></i><div></div>Hóa đơn của bạn</a>
+        <a href="/Home/Logout"><i class="fa fa-sign-out"></i><div></div>Đăng xuất</a>
+    </div>
+</div>

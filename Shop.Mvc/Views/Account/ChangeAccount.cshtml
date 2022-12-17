@@ -1,0 +1,79 @@
+﻿@model Shop.Mvc.Models.InformationAccount
+@{
+    ViewData["Title"] = "ChangeAccount";
+    Layout = "~/Views/Shared/Layout/_Layout.cshtml";
+}
+
+@await Component.InvokeAsync("Title")
+<div id="main-wrapper">
+    <div class="site-wrapper-reveal border-bottom">
+        <div class="my-account-page-warpper section-space--ptb_120">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="myaccount-page-wrapper">
+                            <div class="row">
+                                @await Component.InvokeAsync("MenuAccount")
+                                <div class="col-lg-9 col-md-8">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active">
+                                            <div class="myaccount-content">
+                                                <h3 class="title">Thông tin cá nhân</h3>
+                                                <div class="account-details-form">
+                                                    <form asp-action="ChangeAccount" asp-controller="Account" method="post">
+                                                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                        @if(ViewBag.Message != null)
+                                                        {
+                                                            <div class="alert alert-danger">@ViewBag.Message</div>
+                                                        }
+                                                        @if(ViewBag.Success != null)
+                                                        {
+                                                            <div class="alert alert-success">@ViewBag.Success</div>
+                                                        }
+                                                        <div class="row">
+                                                            <div class="single-input-item">
+                                                                <label asp-for="Name" class="required mb-1"></label>
+                                                                <input asp-for="Name" />
+                                                                <span asp-validation-for="Name" class="text-danger"></span>
+                                                            </div>
+                                                            <div class="single-input-item">
+                                                                <label asp-for="BirthDay" class="control-label"></label>
+                                                                <input asp-for="BirthDay"/>
+                                                                <span asp-validation-for="BirthDay" class="text-danger"></span>
+                                                            </div>
+                                                            <div class="single-input-item">
+                                                                <label asp-for="Phone" class="control-label"></label>
+                                                                <input asp-for="Phone"/>
+                                                                <span asp-validation-for="Phone" class="text-danger"></span>
+                                                            </div>
+                                                            <div class="single-input-item">
+                                                                <label asp-for="Address" class="control-label"></label>
+                                                                <input asp-for="Address"/>
+                                                                <span asp-validation-for="Address" class="text-danger"></span>
+                                                            </div>
+                                                            <div class="single-input-item">
+                                                                <label asp-for="Sex" class="control-label"></label>
+                                                                <select asp-for="Sex" asp-items="ViewBag.Gender"></select>
+                                                            </div>
+                                                            <div class="form-group mt-2">
+                                                                <input type="submit" value="Thay đổi " class="btn btn-success" />
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    @await Component.InvokeAsync("Footer")
+</div>
+
+

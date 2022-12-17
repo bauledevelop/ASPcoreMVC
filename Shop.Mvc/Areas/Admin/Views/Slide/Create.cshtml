@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Tạo slide";
+    Layout = "~/Areas/Admin/Views/Shared/Layout/_Layout.cshtml";
+}
+<div class="container">
+    <div class="card card__pd">
+        <div class="col-md-12">
+            @using (Html.BeginForm("", "", FormMethod.Post, new { action = "/Admin/Slide/Create", @enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-horizontal">
+                    <h4>Tạo Slide</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @if (ViewBag.Message != null)
+                    {
+                        <div class="alert alert-danger">@ViewBag.Message</div>
+                    }
+                    <div class="form-group mb-4">
+                        <input name="uploadFiles" type="file" />
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2">
+                            <input type="submit" value="Tạo mới" class="btn btn-success" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

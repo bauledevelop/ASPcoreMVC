@@ -1,0 +1,110 @@
+﻿.pd-home {
+    padding: 0px 110px !important;
+}
+
+.top-menu-borber {
+    border-bottom: 1px solid rgb(180, 180, 180);
+}
+
+.container-home {
+    padding: 100px 20px 100px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+ul.navbar-nav li {
+    padding: 0px 12px;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+li a.nav-link {
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+body {
+    background-color: whitesmoke !important;
+}
+
+.footer {
+    width: auto;
+    height: 200px;
+    background: black;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 200px 50px 50px;
+}
+
+.footer-left {
+    width: 60%;
+    height: auto;
+}
+
+.text-footer-left {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    color: white;
+    width: 25%;
+    font-weight: 700;
+    float: right;
+}
+
+.line-footer {
+    border: 1px solid white;
+    width: 50%;
+    height: 0px;
+}
+
+.flex-dic-col {
+    flex-direction: column;
+}
+
+.flex-dic-row {
+    flex-direction: row;
+}
+
+.txt-algn {
+    align-items: center;
+}
+
+.text-footer-left-bottom {
+    color: #C0C0C0;
+}
+
+.sub-menu {
+    position: absolute;
+    width: 600px;
+    background: lightgray;
+    z-index: 100;
+    display: none;
+    height: auto;
+    top: 100%;
+    left: 55%;
+}
+
+    .sub-menu:hover {
+        display: block;
+    }
+
+ul.sub-menu li {
+    width: 25%;
+    color: gray;
+    float: left;
+    position: relative;
+}
+
+li {
+    list-style-type: none;
+}
+
+.card-text {
+    text-decoration: none !important;
+    color: black;
+}
+
+._padding-txt-card {
+    padding: 10px 0px !important;
+}

@@ -1,0 +1,54 @@
+﻿.color-xmask:hover {
+    color: red !important;
+    transition: all 0.35s ease-in-out;
+    cursor: pointer;
+}
+
+.color-tick:hover {
+    color: greenyellow !important;
+    transition: all 0.35s ease-in-out;
+    cursor: pointer;
+}
+
+.color-trash:hover {
+    color: red !important;
+    transition: all 0.35s ease-in-out;
+}
+.color-edit {
+    color: #435971;
+}
+.color-edit:hover {
+    color: yellow !important;
+    transition: all 0.35s ease-in-out;
+}
+.color-file:hover {
+    color: blue !important;
+    transition: all 0.35s ease-in-out;
+}
+
+.txt-area {
+    width: 100%;
+}
+.form-width-txt{
+    width: 80%;
+}
+.form-width-txt input{
+    width: 100%;
+}
+.card__pd{
+    padding: 50px;
+}
+.index-layout{
+    z-index: 1000 !important;
+}
+.pic{
+    border-radius: 0.5em;
+}
+.pic__size{
+    width: 200px;
+    height: 100px;
+    background-size: cover;
+}
+.float-right{
+    float: right;
+}

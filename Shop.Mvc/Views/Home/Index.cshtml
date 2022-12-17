@@ -1,0 +1,208 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/Layout/_Layout.cshtml";
+    var listNew = (IEnumerable<Shop.Common.DTO.ProductDTO>)ViewData["ListNew"];
+    var listFile = (IEnumerable<Shop.Common.DTO.FileDTO>)ViewData["ListFile"];
+    var listTrend = (IEnumerable<Shop.Common.DTO.ProductDTO>)ViewData["ListTrend"];
+    var listOutStanding = (IEnumerable<Shop.Common.DTO.ProductDTO>)ViewData["ListOutStanding"];
+    var listSlide = (IEnumerable<Shop.Common.DTO.SlideDTO>)ViewData["ListSlide"];
+    var i = 0;
+}
+@section js{
+    <script src="~/../assets/js/Home.js"></script>
+}
+<h1>@ViewBag.Message</h1>
+<div id="main-wrapper">
+    <div class="site-wrapper-reveal">
+        <div class="hero-box-area mt-md-0 mt-lg-3">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 ps-0 pe-0">
+                        <!-- Hero Slider Area Start -->
+                        <div class="hero-area hero-slider-one">
+                            @foreach (var item in listSlide)
+                            {
+                                <div class="single-hero-slider-one bg-img" data-bg="/slide/@item.Content">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="hero-text-one">
+                                                    <h6 class="text-color-primary mb-10">
+                                                        Nơi sưu tầm <br> Thời trang <br> 2022
+                                                    </h6>
+                                                    <h1 class="hero-title">
+                                                        Chào mừng đến với <br> Sky Shop
+                                                    </h1>
+                                                    <p class="mt-30">
+                                                        Cửa hàng có nhiều sản phẩm chất lượng<br>
+                                                        tốt nhất trong thị trường quần áo
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <!-- Hero Slider Area End -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Shopping Support Area Start -->
+        <div class="shopping-support-area border-bottom section-space--pt_60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-shopping-support">
+                            <div class="icon">
+                                <i class="icon-phone-wave"></i>
+                            </div>
+                            <div class="content">
+                                <h6>Hỗ trợ 24/7</h6>
+                                <p>Chúng tôi sẽ hỗ trợ bạn 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-shopping-support">
+                            <div class="icon">
+                                <i class="icon-truck"></i>
+                            </div>
+                            <div class="content">
+                                <h6>Miễn phí giao hàng</h6>
+                                <p>Miễn phí giao hàng trên toàn quốc</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6s">
+                        <div class="single-shopping-support">
+                            <div class="icon">
+                                <i class="icon-tab"></i>
+                            </div>
+                            <div class="content">
+                                <h6>Hoàn tác</h6>
+                                <p>Hoàn trả tiền nếu sản phẩm không đúng chất lượng</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Shopping Support Area End -->
+        @foreach (var item in listOutStanding)
+        {
+            <div class="featuted-product-wrap section-space--pt_120">
+                <div class="container">
+                    <div class="row align-items-center featuted-product-one">
+                            <div class="col-lg-6 col-md-6 order-md-2 order-2">
+                                <div class="featured-product-contect">
+                                    <h6 class="sub-heading mb-2">Sản phẩm nổi bật</h6>
+                                    <h2 class="section-title--one"><a href="/Product/@item.ID">@item.Name</a></h2>
+                                    <p class="mt-30">
+                                        @item.Description
+                                    </p>
+                                    <div class="button-box section-space--mt_60">
+                                        <a href="/Product/@item.ID" class="btn btn--md btn--border_1">@item.Price.ToString("N0") VND <i class="icon-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 order-md-1 order-1">
+                                <div class="product-thumbnail">
+                                    @foreach (var child in listFile.Where(x => x.IDProduct == item.ID))
+                                    {
+                                    <a href="/Product/@item.ID"><img src="/uploadFiles/@child.FileContent" class="img-fluid img-trend" alt="Featured Image" height="451" width="397"></a>
+                                        break;
+                                    }
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="product-wrapper section-space--ptb_120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title text-center mb-20">
+                            <h2 class="section-title--one section-title--center">Sản phẩm mới cập nhật</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-slider-active">
+                    @foreach (var item in listNew)
+                    {
+                        <div class="single-product-item text-center">
+                            <div class="products-images">
+                                <a href="/Product/@item.ID" class="product-thumbnail">
+                                    @foreach (var child in listFile)
+                                    {
+                                        if (child.IDProduct == item.ID)
+                                        {
+                                            <img src="/uploadFiles/@child.FileContent" class="img-fluid img-items" alt="Product Images" width="300" height="300" width="300" height="300">
+                                            break;
+                                        }
+                                    }
+                                </a>
+                                <div class="product-actions">
+                                    <a href="/Product/@item.ID"><i class="p-icon icon-plus"></i><span class="tool-tip">Xem chi tiết</span></a>
+                                    <a class="_clickAddBag" data-id="@item.ID"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Thêm giỏ hàng</span></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h6 class="prodect-title"><a href="product-details.html">@item.Name</a></h6>
+                                <div class="prodect-price">
+                                    <span class="new-price">@item.Price.ToString("N0") VND</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="product-wrapper section-space--ptb_120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title text-center mb-20">
+                            <h2 class="section-title--one section-title--center">Sản phẩm được mua nhiều nhất</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-slider-active">
+                    @foreach (var item in listTrend)
+                    {
+                        <div class="single-product-item text-center">
+                            <div class="products-images">
+                                <a href="/Product/@item.ID" class="product-thumbnail">
+                                    @foreach (var child in listFile)
+                                    {
+                                        if (child.IDProduct == item.ID)
+                                        {
+                                            <img src="@child.FileContent" class="img-fluid img-items" alt="Product Images" width="300" height="300" width="300" height="300">
+                                            break;
+                                        }
+                                    }
+                                </a>
+                                <div class="product-actions">
+                                    <a href="/Product/@item.ID"><i class="p-icon icon-plus"></i><span class="tool-tip">Xem chi tiết</span></a>
+                                    <a class="_clickAddBag" data-id="@item.ID"><i class="p-icon icon-bag2"></i> <span class="tool-tip">Thêm giỏ hàng</span></a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h6 class="prodect-title"><a href="product-details.html">@item.Name</a></h6>
+                                <div class="prodect-price">
+                                    <span class="new-price">@item.Price.ToString("N0") VND</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    @await Component.InvokeAsync("Footer")
+</div>
