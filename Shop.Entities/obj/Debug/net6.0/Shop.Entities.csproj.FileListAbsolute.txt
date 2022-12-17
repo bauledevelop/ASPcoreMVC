@@ -40,3 +40,17 @@ D:\rac\backupcodeasp.net\source\Shop.Entities\obj\Debug\net6.0\refint\Shop.Entit
 D:\rac\backupcodeasp.net\source\Shop.Entities\obj\Debug\net6.0\Shop.Entities.pdb
 D:\rac\backupcodeasp.net\source\Shop.Entities\obj\Debug\net6.0\Shop.Entities.genruntimeconfig.cache
 D:\rac\backupcodeasp.net\source\Shop.Entities\obj\Debug\net6.0\ref\Shop.Entities.dll
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Entities\bin\Debug\net6.0\Shop.Entities.deps.json
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Entities\bin\Debug\net6.0\Shop.Entities.runtimeconfig.json
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Entities\bin\Debug\net6.0\Shop.Entities.dll
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Entities\bin\Debug\net6.0\Shop.Entities.pdb
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.csproj.AssemblyReference.cache
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.AssemblyInfoInputs.cache
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.AssemblyInfo.cs
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.csproj.CoreCompileInputs.cache
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.dll
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\refint\Shop.Entities.dll
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.pdb
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.genruntimeconfig.cache
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\ref\Shop.Entities.dll
