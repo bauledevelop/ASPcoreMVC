@@ -34,3 +34,15 @@ D:\rac\backupcodeasp.net\source\Shop.Common\obj\Debug\net6.0\Shop.Common.dll
 D:\rac\backupcodeasp.net\source\Shop.Common\obj\Debug\net6.0\refint\Shop.Common.dll
 D:\rac\backupcodeasp.net\source\Shop.Common\obj\Debug\net6.0\Shop.Common.pdb
 D:\rac\backupcodeasp.net\source\Shop.Common\obj\Debug\net6.0\ref\Shop.Common.dll
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Common\bin\Debug\net6.0\Shop.Common.deps.json
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Common\bin\Debug\net6.0\Shop.Common.dll
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Common\bin\Debug\net6.0\Shop.Common.pdb
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\Shop.Common.csproj.AssemblyReference.cache
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\Shop.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\Shop.Common.AssemblyInfoInputs.cache
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\Shop.Common.AssemblyInfo.cs
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\Shop.Common.csproj.CoreCompileInputs.cache
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\Shop.Common.dll
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\refint\Shop.Common.dll
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\Shop.Common.pdb
+C:\Thinh\2022-2023\dotnet\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\ref\Shop.Common.dll

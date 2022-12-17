@@ -52,14 +52,14 @@ namespace Shop.Entities.Migrations
                         new
                         {
                             Id = "8e445865-a24d-4543-a6c6-9443d048cdb3",
-                            ConcurrencyStamp = "0d587c5a-3943-424b-a49e-e3835d2638c0",
+                            ConcurrencyStamp = "d4220877-6361-439d-ad9b-77fefada8760",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
                             Id = "8e445865-a24d-4543-a6c6-9443d048cdb8",
-                            ConcurrencyStamp = "db40b4e2-ea2f-4453-9f18-bcd7a047b6ee",
+                            ConcurrencyStamp = "a315a78a-4d13-4703-ad96-e1cd341d01a5",
                             Name = "User",
                             NormalizedName = "USER"
                         });
@@ -236,8 +236,8 @@ namespace Shop.Entities.Migrations
                             Username = "admin",
                             AccountType = 1,
                             Address = "123 Phạm Văn Đồng",
-                            BirthDay = new DateTime(2022, 12, 15, 17, 0, 8, 130, DateTimeKind.Local).AddTicks(9865),
-                            CreatedDate = new DateTime(2022, 12, 15, 17, 0, 8, 130, DateTimeKind.Local).AddTicks(9854),
+                            BirthDay = new DateTime(2022, 12, 17, 23, 51, 50, 75, DateTimeKind.Local).AddTicks(1482),
+                            CreatedDate = new DateTime(2022, 12, 17, 23, 51, 50, 75, DateTimeKind.Local).AddTicks(1472),
                             IsActive = true,
                             IsDelete = false,
                             Name = "Dương",
@@ -336,18 +336,18 @@ namespace Shop.Entities.Migrations
                             AccessFailedCount = 0,
                             AccountType = 1,
                             Address = "123 Phạm Văn Đồng",
-                            BirthDay = new DateTime(2022, 12, 15, 17, 0, 8, 133, DateTimeKind.Local).AddTicks(7227),
-                            ConcurrencyStamp = "efc580a9-7895-4844-b6b8-b6af6693d0c4",
+                            BirthDay = new DateTime(2022, 12, 17, 23, 51, 50, 81, DateTimeKind.Local).AddTicks(710),
+                            ConcurrencyStamp = "7708b39e-44a3-41ab-9c9c-6b2eda194f9d",
                             Email = "minhduong18072002@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             Name = "Dương",
                             NormalizedEmail = "MINHDUONG18072002@GMAIL.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAEAACcQAAAAEN6YQVf4XvGCVtdFvtmLQOM32MmpEUfIwmcMhWZGEf+cI5e3ONQsYI52GgdtVelN4w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECCSyVbKFRYSk8VEC9HfPYWLlAJ5S72DbmnPevv6K0+sT9acTYn0sDNERMKSe34V2g==",
                             PhoneNumber = "0862883237",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "17c98367-3523-44b7-b0c4-015ed30845b2",
+                            SecurityStamp = "be83edf2-2c96-47cc-aa4f-ad1c7b9a4617",
                             Sex = 1,
                             TwoFactorEnabled = false,
                             UserName = "admin"
@@ -574,46 +574,6 @@ namespace Shop.Entities.Migrations
                     b.HasIndex("IDProduct");
 
                     b.ToTable("OrderDetails", (string)null);
-                });
-
-            modelBuilder.Entity("Shop.Entities.Enities.Payment", b =>
-                {
-                    b.Property<long>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("ID"), 1L, 1);
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(1024)
-                        .HasColumnType("nvarchar(1024)");
-
-                    b.Property<long>("IDAccount")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("IDOrder")
-                        .HasColumnType("bigint");
-
-                    b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Phone")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
-
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("IDAccount");
-
-                    b.HasIndex("IDOrder");
-
-                    b.ToTable("Payments", (string)null);
                 });
 
             modelBuilder.Entity("Shop.Entities.Enities.Product", b =>
@@ -865,26 +825,6 @@ namespace Shop.Entities.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Shop.Entities.Enities.Payment", b =>
-                {
-                    b.HasOne("Shop.Entities.Enities.Account", "Account")
-                        .WithMany("Payments")
-                        .HasForeignKey("IDAccount")
-                        .HasPrincipalKey("ID")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Shop.Entities.Enities.Order", "Order")
-                        .WithMany("Payments")
-                        .HasForeignKey("IDOrder")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("Account");
-
-                    b.Navigation("Order");
-                });
-
             modelBuilder.Entity("Shop.Entities.Enities.Product", b =>
                 {
                     b.HasOne("Shop.Entities.Enities.Account", "Account")
@@ -937,8 +877,6 @@ namespace Shop.Entities.Migrations
 
                     b.Navigation("Orders");
 
-                    b.Navigation("Payments");
-
                     b.Navigation("Products");
 
                     b.Navigation("Rates");
@@ -957,8 +895,6 @@ namespace Shop.Entities.Migrations
             modelBuilder.Entity("Shop.Entities.Enities.Order", b =>
                 {
                     b.Navigation("OrderDetails");
-
-                    b.Navigation("Payments");
                 });
 
             modelBuilder.Entity("Shop.Entities.Enities.Product", b =>
