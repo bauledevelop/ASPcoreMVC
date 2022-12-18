@@ -24,7 +24,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
 
         [Area("Admin")]
         [HttpGet]
-        public IActionResult Index(int page = 1, int pageSize = 1)
+        public IActionResult Index(int page = 1, int pageSize = 5)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             }
             catch (Exception ex)
             {
-
+                return Redirect("/404");
             }
             return View();
         }

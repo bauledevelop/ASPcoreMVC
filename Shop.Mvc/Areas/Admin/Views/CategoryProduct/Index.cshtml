@@ -29,19 +29,11 @@
                                 <th>Ngày tạo</th>
                                 <th>Chỉnh sửa gần nhất</th>
                                 <th>Tài khoản đăng tải</th>
+                                <th>Trạng thái</th>
                                 <th>Công cụ</th>
                             </tr>
                         </thead>
-                        <tfoot class="table-info">
-                            <tr>
-                                <th>Tên loại sản phẩm</th>
-                                <th>Loại Menu</th>
-                                <th>Ngày tạo</th>
-                                <th>Chỉnh sửa gần nhất</th>
-                                <th>Tài khoản đăng tải</th>
-                                <th>Công cụ</th>
-                            </tr>
-                        </tfoot>
+                        
                         <tbody class="table-light table-border-bottom-0">
                             @foreach (var item in Model)
                             {
@@ -63,9 +55,12 @@
                                         }
                                     }
                                     <td>
+                                         <i class="@(item.Status == true ? tick : xmask)"></i>
+                                    </td>
+                                    <td>
                                         <a href="/Admin/CategoryProduct/Edit/@item.ID" style="margin-right: 2px"><i class="fa-solid fa-pen color-edit"></i></a>
                                         <span class="_deleteCategory" data-bs-toggle="modal" data-bs-target="#deleteCategory" data-id="@item.ID" style="cursor: pointer; margin-right: 2px"><i class="fa-solid fa-trash color-trash"></i></span>
-                                        <i class="@(item.Status == true ? tick : xmask)"></i>
+                                        
                                     </td>
                                 </tr>
                             }

@@ -31,21 +31,11 @@
                                 <th>Chỉnh sửa gần nhất</th>
                                 <th>Loại sản phẩm</th>
                                 <th>Người tạo</th>
+                                <th>Trạng thái</th>
                                 <th>Công cụ</th>
                             </tr>
                         </thead>
-                        <tfoot class="table-info">
-                            <tr>
-                                <th>Tên</th>
-                                <th>Mô tả</th>
-                                <th>Giá</th>
-                                <th>Ngày tạo</th>
-                                <th>Chỉnh sửa gần nhất</th>
-                                <th>Loại sản phẩm</th>
-                                <th>Người tạo</th>
-                                <th>Công cụ</th>
-                            </tr>
-                        </tfoot>
+                       
                         <tbody class="table-light table-border-bottom-0">
                             @foreach (var item in Model)
                             {
@@ -60,6 +50,7 @@
                                 </td>
                                 <td>@item.UpdatedDate</td>
                                 <td>@item.IDCategoryProduct</td>
+                                 
                                 @foreach (var child in listAccount)
                                 {
                                     if (item.CreatedBy == child.ID)
@@ -68,11 +59,12 @@
                                         break;
                                     }
                                 }
+                                <td> <i class="@(item.Status == true ? tick : xmask) _EditStatus"></i></td>
                                 <td>
                                     <span class="_clickFile" style="cursor: pointer;" data-id=@item.ID><i class="fa-solid fa-file color-file"></i></span>
                                     <a href="/Admin/Product/Edit/@item.ID" style="margin-right: 2px"><i class="fa-solid fa-pen color-edit"></i></a>
                                     <span class="_deleteProduct" data-bs-toggle="modal" data-bs-target="#deleteProduct" data-id="@item.ID" style="cursor: pointer; margin-right: 2px"><i class="fa-solid fa-trash color-trash"></i></span>
-                                    <i class="@(item.Status == true ? tick : xmask) _EditStatus"></i>
+                                    
                                 </td>
                             </tr>
                             }
