@@ -9,6 +9,9 @@ namespace Shop.Business.Interfaces
 {
     public interface IOrderBusiness
     {
+        long RevenueMonth(int month);
+        long TotalOrder();
+        long CountOrder();
         void ChangeStatus(long id);
         IEnumerable<OrderDTO> SelectByIDAccount(long IDAccount);
         long InsertOrder(OrderDTO orderDTO);

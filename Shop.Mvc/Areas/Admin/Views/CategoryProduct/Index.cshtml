@@ -29,19 +29,10 @@
                                 <th>Ngày tạo</th>
                                 <th>Chỉnh sửa gần nhất</th>
                                 <th>Tài khoản đăng tải</th>
+                                <th>Trạng thái</th>
                                 <th>Công cụ</th>
                             </tr>
                         </thead>
-                        <tfoot class="table-info">
-                            <tr>
-                                <th>Tên loại sản phẩm</th>
-                                <th>Loại Menu</th>
-                                <th>Ngày tạo</th>
-                                <th>Chỉnh sửa gần nhất</th>
-                                <th>Tài khoản đăng tải</th>
-                                <th>Công cụ</th>
-                            </tr>
-                        </tfoot>
                         <tbody class="table-light table-border-bottom-0">
                             @foreach (var item in Model)
                             {
@@ -54,6 +45,7 @@
                                     <td>@item.IDMenu</td>
                                     <td>@item.CreatedDate</td>
                                     <td>@item.UpdateDate</td>
+                                    
                                     @foreach (var child in listAccount)
                                     {
                                         if (item.CreatedBy == child.ID)
@@ -63,9 +55,11 @@
                                         }
                                     }
                                     <td>
+                                        <i class="@(item.Status == true ? tick : xmask)"></i>
+                                    </td>
+                                    <td>
                                         <a href="/Admin/CategoryProduct/Edit/@item.ID" style="margin-right: 2px"><i class="fa-solid fa-pen color-edit"></i></a>
                                         <span class="_deleteCategory" data-bs-toggle="modal" data-bs-target="#deleteCategory" data-id="@item.ID" style="cursor: pointer; margin-right: 2px"><i class="fa-solid fa-trash color-trash"></i></span>
-                                        <i class="@(item.Status == true ? tick : xmask)"></i>
                                     </td>
                                 </tr>
                             }
@@ -75,7 +69,7 @@
                 </div>
                 <div class="row mt-4" style="justify-content: space-between;">
                     <div class="col-sm-12 col-md-5">
-                        <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Show @paginations.FirstItemOnPage to @paginations.LastItemOnPage total @paginations.TotalItemCount entities</div>
+                        <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Hiện @paginations.FirstItemOnPage đến @paginations.LastItemOnPage trong @paginations.TotalItemCount kết quả</div>
                     </div>
                     <div class="col-md-4">
                         <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">

@@ -9,7 +9,7 @@ namespace Shop.Business.Interfaces
 {
     public interface IProductBusiness
     {
-
+        long CountProduct();
         IEnumerable<ProductDTO> SelectByKeyWord(string search);
         IEnumerable<ProductDTO> SelectByKeyWordQuantityItem(int page, int pageSize, string search);
         IEnumerable<ProductDTO> SelectOutStanding();

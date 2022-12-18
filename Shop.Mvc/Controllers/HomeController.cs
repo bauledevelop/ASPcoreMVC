@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Authentication.Google;
 using Shop.Business.Implements;
 using Microsoft.AspNetCore.Identity;
 using Shop.Entities.Enities;
+using Shop.Mvc.Entensions;
 
 namespace Shop.Mvc.Controllers
 {
@@ -146,6 +147,7 @@ namespace Shop.Mvc.Controllers
         public async Task<IActionResult> LogOut()
         {
             await _signInManager.SignOutAsync();
+            HttpContext.Session.Set<List<CartItem>>("ListCart", null);
             return RedirectToAction("index", "Home");
         }
 

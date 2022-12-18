@@ -21,10 +21,6 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             _orderDetailBusiness = orderDetailBusiness;
             _productBusiness = productBusiness;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
 
         [Area("Admin")]
         [HttpPost]

@@ -31,22 +31,10 @@
                                 <th>Giới tính</th>
                                 <th>Email</th>
                                 <th>Loại người dùng</th>
+                                <th>Trạng thái</th>
                                 <th>Công cụ</th>
                             </tr>
                         </thead>
-                        <tfoot class="table-info">
-                            <tr>
-                                <th>Tài khoản</th>
-                                <th>Họ tên</th>
-                                <th>Ngày sinh</th>
-                                <th>Nơi ở</th>
-                                <th>Sdt</th>
-                                <th>Giới tính</th>
-                                <th>Email</th>
-                                <th>Loại người dùng</th>
-                                <th>Công cụ</th>
-                            </tr>
-                        </tfoot>
                         <tbody class="table-light table-border-bottom-0">
                             @foreach (var item in Model)
                             {
@@ -67,10 +55,12 @@
                                 <td>@(item.Sex == "1" ? "Nam" : item.Sex == "2" ? "Nữ" : "Khác")</td>
                                 <td>@item.Email</td>
                                     <td><span class="@role">@(item.AccountType == "1" ? "Quản lý" : "Người dùng")</span></td>
+                                    <td><i class="@(item.Status == true ? tick : xmask)"></i></td>
+
                                 <td>
                                     <a href="/Admin/Account/Edit/@item.ID" style="margin-right: 2px"><i class="fa-solid fa-pen color-edit"></i></a>
                                     <span class="_deleteAccount" data-bs-toggle="modal" data-bs-target="#deleteAccount" data-id="@item.ID" style="cursor: pointer; margin-right: 2px"><i class="fa-solid fa-trash color-trash"></i></span>
-                                    <i class="@(item.Status == true ? tick : xmask)"></i>
+                                    
                                 </td>
                             </tr>
                             }
@@ -79,7 +69,7 @@
                 </div>
                 <div class="row mt-4" style="justify-content: space-between;">
                     <div class="col-sm-12 col-md-5">
-                        <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Show @paginations.FirstItemOnPage to @paginations.LastItemOnPage total @paginations.TotalItemCount entities</div>
+                        <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Hiện @paginations.FirstItemOnPage đến @paginations.LastItemOnPage trong @paginations.TotalItemCount kết quả</div>
                     </div>
                     <div class="col-md-4">
                         <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">

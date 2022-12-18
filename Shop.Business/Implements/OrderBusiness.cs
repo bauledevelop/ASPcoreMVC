@@ -22,6 +22,30 @@ namespace Shop.Business.Implements
             _mapper = mapper;
             _orderDetailBusiness = orderDetailBusiness;
         }
+        public long RevenueMonth(int month)
+        {
+            var model = _orderRepository.GetTotalMonth(month);
+            long result = 0;
+            foreach(var item in model)
+            {
+                result += item.Total;
+            }
+            return result;
+        }
+        public long TotalOrder()
+        {
+            var order = _orderRepository.SelectAll();
+            long total = 0;
+            foreach(var item in order)
+            {
+                total += item.Total;
+            }
+            return total;
+        }
+        public long CountOrder()
+        {
+            return _orderRepository.SelectAll().Count();
+        }
         public void ChangeStatus(long id)
         {
             var order = _orderRepository.SelectById(id);

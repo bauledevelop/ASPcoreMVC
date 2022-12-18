@@ -33,6 +33,10 @@ namespace Shop.Business.Implements
             _orderDetailRepository = orderDetailRepository;
             _rateRepository = rateRepository;
         }
+        public long CountProduct()
+        {
+            return _productRepository.SelectAll().Count();
+        }
         public IEnumerable<ProductDTO> SelectByKeyWordQuantityItem(int page,int pageSize,string search)
         {
             var product = _productRepository.SelectByKeyWordQuantityItem(page, pageSize, search);

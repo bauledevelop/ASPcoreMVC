@@ -37,6 +37,10 @@ namespace Shop.Business.Implements
             _commentBusiness = commentBusiness;
             _orderBusiness = orderBusiness;
         }
+        public long CountAccount()
+        {
+            return _accountRepository.SelectAll().Count();
+        }
         public bool ChangeAccount(AccountDTO accountDTO)
         {
             var account = _mapper.Map<AccountDTO, Account>(accountDTO);

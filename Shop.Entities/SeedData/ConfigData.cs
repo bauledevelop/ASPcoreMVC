@@ -23,7 +23,7 @@ namespace Shop.Entities.SeedData
                     Name = "Dương",
                     Address = "123 Phạm Văn Đồng",
                     Phone = "0862883237",
-                    Email = "abc",
+                    Email = "minhduong180702@gmail.com",
                     CreatedDate = DateTime.Now,
                     BirthDay = DateTime.Now,
                     AccountType = 1,
@@ -45,8 +45,8 @@ namespace Shop.Entities.SeedData
                    AccountType = 1,
                    Sex = 1,
                    BirthDay = DateTime.Now,
-                   Email = "minhduong18072002@gmail.com",
-                   NormalizedEmail = "MINHDUONG18072002@GMAIL.COM",
+                   Email = "minhduong180702@gmail.com",
+                   NormalizedEmail = "MINHDUONG180702@GMAIL.COM",
                    EmailConfirmed = true,
                }
             );

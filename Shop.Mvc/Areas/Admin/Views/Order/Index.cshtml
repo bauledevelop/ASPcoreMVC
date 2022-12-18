@@ -25,21 +25,13 @@
                         <thead class="table-info">
                             <tr>
                                 <th>Người tạo</th>
+                                <td>Địa chỉ</td>
                                 <th>Số lượng </th>
                                 <th>Ngày tạo</th>
                                 <th>Tổng tiền</th>
                                 <th>Công cụ</th>
                             </tr>
                         </thead>
-                        <tfoot class="table-info">
-                            <tr>
-                                <th>Người tạo</th>
-                                <th>Số lượng </th>
-                                <th>Ngày tạo</th>
-                                <th>Tổng tiền</th>
-                                <th>Công cụ</th>
-                            </tr>
-                        </tfoot>
                         <tbody class="table-light table-border-bottom-0">
                             @foreach (var item in Model)
                             {
@@ -51,6 +43,7 @@
                                         if (item.IDAccount == child.ID)
                                         {
                                             <td>@child.Username</td>
+                                            <td>@child.Address</td>
                                             break;
                                         }
                                     }
@@ -71,7 +64,7 @@
                 </div>
                 <div class="row mt-4" style="justify-content: space-between;">
                     <div class="col-sm-12 col-md-5">
-                        <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Show @paginations.FirstItemOnPage to @paginations.LastItemOnPage total @paginations.TotalItemCount entities</div>
+                        <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Hiện @paginations.FirstItemOnPage đến @paginations.LastItemOnPage trong @paginations.TotalItemCount kết quả</div>
                     </div>
                     <div class="col-md-4">
                         <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">

@@ -29,7 +29,7 @@ namespace Shop.Mvc.Entensions
             services.AddTransient<IRateRepository, RateRepository>();
             services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<ISlideRepository, SlideRepository>();
-
+            
             services.AddScoped<ICategoryProductBusiness, CategoryProductBusiness>();
             services.AddScoped<IMenuBusiness, MenuBusiness>();
             services.AddScoped<IAccountBusiness, AccountBusiness>();

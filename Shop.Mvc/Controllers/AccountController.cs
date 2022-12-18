@@ -63,6 +63,7 @@ namespace Shop.Mvc.Controllers
             {
                 ViewBag.Active = "Order";
                 var user = _accountBusiness.GetAccountByUsername(HttpContext.User.Identity.Name);
+                ViewBag.Address = user.Address;
                 var orderDTO = _orderBusiness.SelectByIDAccount(user.ID);
                 return View(orderDTO);
             }

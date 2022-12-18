@@ -9,6 +9,7 @@ namespace Shop.Business.Interfaces
 {
     public interface IAccountBusiness
     {
+        long CountAccount();
         bool ChangeAccount(AccountDTO accountDTO);
         void ResetPassword(string username, string password);
         void SetActiveAccount(string username);

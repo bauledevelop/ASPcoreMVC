@@ -25,12 +25,13 @@
                                                     <table class="table table-bordered">
                                                         <thead class="thead-light">
                                                             <tr>
-                                                                <th>Mã đơn hàng</th>
-                                                                <th>Ngày tạo</th>
-                                                                <th>Số lượng</th>
-                                                                <th>Tổng tiền</th>
-                                                                <th>Trạng thái hóa đơn</th>
-                                                                <th>Hành động</th>
+                                                                <th class="txt-order-account">Mã đơn hàng</th>
+                                                                <th class="txt-order-account">Địa chỉ giao hàng</th>
+                                                                <th class="txt-order-account">Ngày tạo</th>
+                                                                <th class="txt-order-account">Số lượng</th>
+                                                                <th class="txt-order-account">Tổng tiền</th>
+                                                                <th class="txt-order-account">Trạng thái hóa đơn</th>
+                                                                <th class="txt-order-account">Hành động</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody>
@@ -38,11 +39,12 @@
                                                             {
                                                                 <tr>
                                                                     <td class="txt-order-account"> @item.ID</td>
+                                                                    <td class="txt-order-account">@ViewBag.Address</td>
                                                                     <td class="txt-order-account">@item.CreatedDate</td>
                                                                     <td class="txt-order-account">@item.Quantity</td>
                                                                     <td class="txt-order-account">@item.Total.ToString("N0") VND</td>
                                                                     <td class="txt-order-account">@(item.Status == true ? "Đã giao hàng" : "Chưa giao hàng")</td>
-                                                                    <td><a href="/Account/OrderDetail/@item.ID" class="btn btn-outline-primary">Xem chi tiết</a></td>
+                                                                    <td><a href="/Account/OrderDetail/@item.ID" class="btn btn-outline-primary">Xem</a></td>
                                                                 </tr>
                                                             }
                                                             

@@ -15,6 +15,18 @@ namespace Shop.Repositories.Repositories
         {
             _dbContext = shopContext;
         }
+        public IEnumerable<Order> GetTotalMonth(int month)
+        {
+            try
+            {
+                var model = _dbContext.Orders.Where(x => x.CreatedDate.Month == month).ToList();
+                return model;
+            }
+            catch
+            {
+                return null;
+            }
+        }
         public IQueryable<Order> SelectByIDAccount(long IDAccount)
         {
             try

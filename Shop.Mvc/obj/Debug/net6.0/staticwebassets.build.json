@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dWoVR8EVtx3zVGUMkDJi3RHwerLhqcmNmH/ceEgdSQQ=",
+  "Hash": "34w92oMf2ADZI9Jd0+D7gFLsW2eWM+9nAMVIvFjTeEU=",
   "Source": "Shop.Mvc",
   "BasePath": "_content/Shop.Mvc",
   "Mode": "Default",
@@ -1171,6 +1171,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploadFiles\\pngegg (2).png"
+    },
+    {
+      "Identity": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\sky.ico",
+      "SourceId": "Shop.Mvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\",
+      "BasePath": "_content/Shop.Mvc",
+      "RelativePath": "uploadFiles/sky.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploadFiles\\sky.ico"
     }
   ]
 }

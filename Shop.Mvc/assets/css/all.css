@@ -4,9 +4,11 @@ body {
     font-size: 1rem;
     margin: 0;
 }
-.dropdown-menu .txt-dropdown-item{
+.megamenu{
+    background-color: white !important;
+}
+.txt-dropdown-item{
     font-size: 15px !important;
-    
 }
 .top-menu-dropdown {
     left: -50px !important;
