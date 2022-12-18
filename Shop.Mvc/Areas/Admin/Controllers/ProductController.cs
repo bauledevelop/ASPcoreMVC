@@ -166,8 +166,14 @@ namespace Shop.Mvc.Areas.Admin.Controllers
                     var productDto = mapperProduct.MapperViewModelToDto(productViewModel);
                     _productBusiness.EditProduct(productDto);
                     return Redirect("/Admin/Product");
-                } 
-                ViewBag.Message = "Vui lòng chọn hình ảnh của sản phẩm";
+                }
+                else
+                {
+                    var mapperProduct = new ProductMapper();
+                    var productDto = mapperProduct.MapperViewModelToDto(productViewModel);
+                    _productBusiness.EditProduct(productDto);
+                    return Redirect("/Admin/Product");
+                }
             }
             catch (Exception ex)
             {
