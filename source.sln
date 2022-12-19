@@ -21,7 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{3A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Business", "Shop.Business\Shop.Business.csproj", "{C08DF6A4-F1B6-43F1-88A0-3E5D5A72661D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Mvc", "Shop.Mvc\Shop.Mvc.csproj", "{7703791D-88D0-489B-8066-209A38C52ABA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Mvc", "Shop.Mvc\Shop.Mvc.csproj", "{7703791D-88D0-489B-8066-209A38C52ABA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

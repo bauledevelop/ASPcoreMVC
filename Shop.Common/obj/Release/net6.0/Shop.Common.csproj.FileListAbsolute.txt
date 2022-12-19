@@ -1,0 +1,12 @@
+D:\rac\backupcodeasp.net\source\Shop.Common\bin\Release\net6.0\Shop.Common.deps.json
+D:\rac\backupcodeasp.net\source\Shop.Common\bin\Release\net6.0\Shop.Common.dll
+D:\rac\backupcodeasp.net\source\Shop.Common\bin\Release\net6.0\Shop.Common.pdb
+D:\rac\backupcodeasp.net\source\Shop.Common\obj\Release\net6.0\Shop.Common.csproj.AssemblyReference.cache
+D:\rac\backupcodeasp.net\source\Shop.Common\obj\Release\net6.0\Shop.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\rac\backupcodeasp.net\source\Shop.Common\obj\Release\net6.0\Shop.Common.AssemblyInfoInputs.cache
+D:\rac\backupcodeasp.net\source\Shop.Common\obj\Release\net6.0\Shop.Common.AssemblyInfo.cs
+D:\rac\backupcodeasp.net\source\Shop.Common\obj\Release\net6.0\Shop.Common.csproj.CoreCompileInputs.cache
+D:\rac\backupcodeasp.net\source\Shop.Common\obj\Release\net6.0\Shop.Common.dll
+D:\rac\backupcodeasp.net\source\Shop.Common\obj\Release\net6.0\refint\Shop.Common.dll
+D:\rac\backupcodeasp.net\source\Shop.Common\obj\Release\net6.0\Shop.Common.pdb
+D:\rac\backupcodeasp.net\source\Shop.Common\obj\Release\net6.0\ref\Shop.Common.dll

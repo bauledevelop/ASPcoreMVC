@@ -49,7 +49,7 @@
                                         <!-- Single Product Item Start -->
                                         <div class="single-product-item text-center">
                                             <div class="products-images">
-                                                <a href="product-details.html" class="product-thumbnail">
+                                                <a href="/Product/@item.ID" class="product-thumbnail">
                                                     @foreach (var child in listFile)
                                                     {
                                                         if (item.ID == child.IDProduct)
@@ -65,7 +65,7 @@
                                                 </div>
                                             </div>
                                             <div class="product-content">
-                                                <h6 class="prodect-title"><a href="product-details.html">@item.Name</a></h6>
+                                                <h6 class="prodect-title"><a href="/Product/@item.ID">@item.Name</a></h6>
                                                 <div class="prodect-price">
                                                     <span class="new-price">@item.Price.ToString("N0") VND</span>
                                                 </div>
