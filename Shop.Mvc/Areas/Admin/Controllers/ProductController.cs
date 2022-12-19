@@ -40,7 +40,7 @@ namespace Shop.Mvc.Areas.Admin.Controllers
         }
         [Area("Admin")]
         [HttpGet]
-        public IActionResult Index(int page=1,int pageSize=5)
+        public IActionResult Index(int page=1,int pageSize=10)
         {
             try
             {
