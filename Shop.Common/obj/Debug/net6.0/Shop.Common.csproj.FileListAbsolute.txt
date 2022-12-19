@@ -34,3 +34,15 @@ D:\rac\backupcodeasp.net\source\Shop.Common\obj\Debug\net6.0\Shop.Common.dll
 D:\rac\backupcodeasp.net\source\Shop.Common\obj\Debug\net6.0\refint\Shop.Common.dll
 D:\rac\backupcodeasp.net\source\Shop.Common\obj\Debug\net6.0\Shop.Common.pdb
 D:\rac\backupcodeasp.net\source\Shop.Common\obj\Debug\net6.0\ref\Shop.Common.dll
+F:\WORK\ASPcoreMVC\Shop.Common\bin\Debug\net6.0\Shop.Common.deps.json
+F:\WORK\ASPcoreMVC\Shop.Common\bin\Debug\net6.0\Shop.Common.dll
+F:\WORK\ASPcoreMVC\Shop.Common\bin\Debug\net6.0\Shop.Common.pdb
+F:\WORK\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\Shop.Common.csproj.AssemblyReference.cache
+F:\WORK\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\Shop.Common.GeneratedMSBuildEditorConfig.editorconfig
+F:\WORK\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\Shop.Common.AssemblyInfoInputs.cache
+F:\WORK\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\Shop.Common.AssemblyInfo.cs
+F:\WORK\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\Shop.Common.csproj.CoreCompileInputs.cache
+F:\WORK\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\Shop.Common.dll
+F:\WORK\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\refint\Shop.Common.dll
+F:\WORK\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\Shop.Common.pdb
+F:\WORK\ASPcoreMVC\Shop.Common\obj\Debug\net6.0\ref\Shop.Common.dll

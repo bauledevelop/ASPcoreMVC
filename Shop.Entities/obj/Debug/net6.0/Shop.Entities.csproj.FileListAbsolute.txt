@@ -40,3 +40,17 @@ D:\rac\backupcodeasp.net\source\Shop.Entities\obj\Debug\net6.0\refint\Shop.Entit
 D:\rac\backupcodeasp.net\source\Shop.Entities\obj\Debug\net6.0\Shop.Entities.pdb
 D:\rac\backupcodeasp.net\source\Shop.Entities\obj\Debug\net6.0\Shop.Entities.genruntimeconfig.cache
 D:\rac\backupcodeasp.net\source\Shop.Entities\obj\Debug\net6.0\ref\Shop.Entities.dll
+F:\WORK\ASPcoreMVC\Shop.Entities\bin\Debug\net6.0\Shop.Entities.deps.json
+F:\WORK\ASPcoreMVC\Shop.Entities\bin\Debug\net6.0\Shop.Entities.runtimeconfig.json
+F:\WORK\ASPcoreMVC\Shop.Entities\bin\Debug\net6.0\Shop.Entities.dll
+F:\WORK\ASPcoreMVC\Shop.Entities\bin\Debug\net6.0\Shop.Entities.pdb
+F:\WORK\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.csproj.AssemblyReference.cache
+F:\WORK\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.GeneratedMSBuildEditorConfig.editorconfig
+F:\WORK\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.AssemblyInfoInputs.cache
+F:\WORK\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.AssemblyInfo.cs
+F:\WORK\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.csproj.CoreCompileInputs.cache
+F:\WORK\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.dll
+F:\WORK\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\refint\Shop.Entities.dll
+F:\WORK\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.pdb
+F:\WORK\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\Shop.Entities.genruntimeconfig.cache
+F:\WORK\ASPcoreMVC\Shop.Entities\obj\Debug\net6.0\ref\Shop.Entities.dll
