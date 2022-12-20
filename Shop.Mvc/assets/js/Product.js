@@ -175,7 +175,7 @@
             success: function (res) {
                 if (res.status == true) {
                     alert("Cảm ơn bạn đã đánh giá sản phẩm");
-
+                    location.reload();
                 }
                 else {
                     alert("Comment thất bại");
@@ -219,6 +219,14 @@
                     else {
                         if (res.isInsert) {
                             alert("Thêm vào giỏ hàng thành công");
+                            //window.postMessage(
+                            //    {
+                            //        event: 'ADD_PRODUCT_TO_CART',
+                            //        value: {
+                            //            product_id: _id,
+                            //            user_id: 0
+                            //        },                                    
+                            //    }, location.href);
                         }
                         else {
                             alert("Sản phẩm đã tồn tại trong giỏ hàng");

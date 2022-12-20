@@ -5,7 +5,6 @@
     $('._clickDelete').click(handleClickDelete);
 
     function handleClickDelete() {
-        console.log(id);
         $.ajax({
             url: '/Cart/DeleteItem',
             dataType: 'Json',
@@ -18,6 +17,14 @@
                     var _item = '._item-' + id;
                     $(_item).html('');
                     $('._totalMoney').text(res.total);
+                    window.postMessage(
+                        {
+                            event: 'DELETE_PRODUCT_TO_CART',
+                            value: {
+                                product_id: id,
+                                user_id: 0
+                            },
+                        }, location.href);
                 }
             }
         });
@@ -27,7 +34,6 @@
     }
     function HandleClickAddBag() {
         var _id = $(this).data('id');
-        console.log(_id);
         $.ajax({
             url: '/Cart/Insert',
             dataType: 'Json',
@@ -43,6 +49,14 @@
                     else {
                         if (res.isInsert) {
                             alert("Thêm vào giỏ hàng thành công");
+                            //window.postMessage(
+                            //    {
+                            //        event: 'ADD_PRODUCT_TO_CART',
+                            //        value: {
+                            //            product_id: _id,
+                            //            user_id: 0
+                            //        },
+                            //    }, location.href);
                         }
                         else {
                             alert("Sản phẩm đã tồn tại trong giỏ hàng");

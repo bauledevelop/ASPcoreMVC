@@ -99,7 +99,6 @@ namespace Shop.Mvc.Controllers
         {
             if (!ModelState.IsValid)
                 return View(resetPassword);
-
             var user = await _userManager.FindByEmailAsync(resetPassword.Email);
             if (user == null)
                 return RedirectToAction("ResetPasswordFail");

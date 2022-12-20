@@ -5,7 +5,6 @@ namespace Shop.Mvc.Models
     public class ResetPassword
     {
         [Display(Name ="Mật khẩu hiện tại")]
-        [Required(ErrorMessage = "Vui lòng nhập mật khẩu hiện tại")]
         [DataType(DataType.Password)]
         public string? CurrentPassword { set; get; }
         [Required(ErrorMessage = "Vui lòng nhập mật khẩu")]

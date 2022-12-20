@@ -33,6 +33,14 @@
                     var _item = '._item-' + _id;
                     $(_item).html('');
                     $('._totalMoney').text(res.total);
+                    //window.postMessage(
+                    //    {
+                    //        event: 'DELETE_PRODUCT_TO_CART',
+                    //        value: {
+                    //            product_id: _id,
+                    //            user_id: 0
+                    //        },
+                    //    }, location.href);
                 }
             }
         });

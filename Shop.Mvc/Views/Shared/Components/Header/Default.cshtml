@@ -67,16 +67,16 @@
                                 <div class="btn-group">
                                     @if (User.IsInRole("Administrator"))
                                     {
-                                            <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="icon-user" style="color: red;"></i>
-                                            </a>
-                                            <ul class="dropdown-menu top-menu-dropdown">
+                                        <a href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="icon-user" style="color: red;"></i>
+                                        </a>
+                                        <ul class="dropdown-menu top-menu-dropdown">
                                             <li><a class="dropdown-item txt-dropdown-item" href="/Admin/Home">Quản lý</a></li>
                                             <li><a class="dropdown-item txt-dropdown-item" asp-action="Index" asp-controller="Account">Xem thông tin</a></li>
                                             <li><hr class="dropdown-divider"></li>
                                             <li><a class="dropdown-item txt-dropdown-item" asp-action="Logout" asp-controller="Home">Đăng xuất</a></li>
-                                            </ul>
- 
+                                        </ul>
+
                                     }
                                     else
                                     {
@@ -84,7 +84,7 @@
                                             <i class="icon-user" style="color: blue"></i>
                                         </a>
                                         <ul class="dropdown-menu top-menu-dropdown">
-                                            <li><a class="dropdown-item txt-dropdown-item" asp-action="Index" asp-controller="Account" >Xem thông tin</a></li>
+                                            <li><a class="dropdown-item txt-dropdown-item" asp-action="Index" asp-controller="Account">Xem thông tin</a></li>
                                             <li><hr class="dropdown-divider"></li>
                                             <li><a class="dropdown-item txt-dropdown-item" asp-action="Logout" asp-controller="Home">Đăng xuất</a></li>
 
@@ -104,7 +104,7 @@
                         <div class="header-right-items">
                             <a href="#miniCart" class=" header-cart minicart-btn toolbar-btn header-icon">
                                 <i class="icon-bag2"></i>
-                                <span class="item-counter">@ViewBag.Total</span>
+                                <span class="item-counter cart_totals">@ViewBag.Total</span>
                             </a>
                         </div>
                         <div class="header-right-items">
@@ -119,4 +119,45 @@
     </header>
     <!-- Header Bottom Wrap End -->
 </div>
+<script type="text/javascript">
+    window.addEventListener('message', e => {
+        // lôi session storage update giỏ hàng
+        if (e.data) {
+            if (e.data.event == 'ADD_PRODUCT_TO_CART') {
+
+                const user_id = e.data.value.user_id;
+                const prod_id = e.data.value.product_id;
+
+                // Cart_{USERID}
+                var currentState = sessionStorage.getItem(`Cart_${user_id}`);
+
+                if (!currentState) {
+                    sessionStorage.setItem(`Cart_${user_id}`, JSON.stringify([prod_id]));
+                    $('.cart_totals').text('1');
+                }
+                else {
+                    //
+                    let arr = JSON.parse(currentState);
+                    if (arr.indexOf(prod_id) != -1) return;
+                    arr.push(prod_id);
+                    sessionStorage.setItem(`Cart_${user_id}`, JSON.stringify(arr));
+                    $('.cart_totals').text(arr.length);
+                }
+            }
+            else
+            {
+                if (e.data.event == 'DELETE_PRODUCT_TO_CART'){
+                    const user_id = e.data.value.user_id;
+                    const prod_id = e.data.value.product_id;
+                    var currentState = sessionStorage.getItem(`Cart_${user_id}`);
+                    let arr = JSON.parse(currentState);
+                    arr.splice(arr.indexOf(prod_id),1);
+                    sessionStorage.setItem(`Cart_${user_id}`, JSON.stringify(arr));
+                    $('.cart_totals').text(arr.length);
+                }
+            }
+        }
+
+    }, false);
+</script>
 <!--====================  End of header area  ====================-->
