@@ -26,7 +26,6 @@ namespace Shop.Mvc.Areas.Admin.Models
         public string Sex { set; get; }
         [Display(Name = "Địa chỉ")]
         [Required(ErrorMessage = "Vui lòng điền địa chỉ")]
-        [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "Không đúng định dạng email")]
         public string Address { set; get; }
         [Display(Name = "Số điện thoại")]
         [Required(ErrorMessage = "Vui lòng điền số điện thoại")]
@@ -34,6 +33,7 @@ namespace Shop.Mvc.Areas.Admin.Models
         public string Phone { set; get; }
         [Display(Name = "Địa chỉ Email")]
         [Required(ErrorMessage = "Vui lòng điền Email")]
+        [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "Không đúng định dạng email")]
         public string Email { set; get; }
         public DateTime CreatedDate { set; get; }
         [Display(Name = "Loại người dùng")]

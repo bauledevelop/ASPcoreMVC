@@ -8362,11 +8362,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Entities\\Shop.Entities.csproj",
+      "projectUniqueName": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Entities\\Shop.Entities.csproj",
       "projectName": "Shop.Entities",
-      "projectPath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Entities\\Shop.Entities.csproj",
+      "projectPath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Entities\\Shop.Entities.csproj",
       "packagesPath": "C:\\Users\\minhp\\.nuget\\packages\\",
-      "outputPath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Entities\\obj\\",
+      "outputPath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Entities\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

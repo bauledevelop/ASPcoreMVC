@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AVZyYyvVpwmoyXPkAm/eYz6eylljo2zBPEACV6WJddcl4x7knH9U4BAMzMieDDqJ9oGNf/R7/Fp8gkFNC0yqew==",
+  "dgSpecHash": "wCGGsRQSZCk91SFVi2c/f3trZJAsp+b6Ymvqs2gfMwBx5P2CpyxDg4nz1auxRd/FjkBJPkxndsNXWj5hygVXzw==",
   "success": true,
-  "projectFilePath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Repositories\\Shop.Repositories.csproj",
+  "projectFilePath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Repositories\\Shop.Repositories.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\minhp\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\minhp\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

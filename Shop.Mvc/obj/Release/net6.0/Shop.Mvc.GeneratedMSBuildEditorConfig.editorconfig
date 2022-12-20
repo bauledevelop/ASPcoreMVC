@@ -9,213 +9,213 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Shop.Mvc
 build_property.RootNamespace = Shop.Mvc
-build_property.ProjectDir = D:\rac\backupcodeasp.net\source\Shop.Mvc\
+build_property.ProjectDir = D:\rac\backupcodeasp.net\abc\ASPcoreMVC\Shop.Mvc\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\rac\backupcodeasp.net\source\Shop.Mvc
+build_property.MSBuildProjectDirectory = D:\rac\backupcodeasp.net\abc\ASPcoreMVC\Shop.Mvc
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Account/Create.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Account/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Account/Edit.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Account/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Account/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/CategoryProduct/Create.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/CategoryProduct/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlQcm9kdWN0XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/CategoryProduct/Edit.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/CategoryProduct/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlQcm9kdWN0XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/CategoryProduct/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/CategoryProduct/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ2F0ZWdvcnlQcm9kdWN0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Home/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Menu/Create.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Menu/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVudVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Menu/Edit.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Menu/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVudVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Menu/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Menu/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVudVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Order/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Order/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Product/Create.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Product/Edit.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Product/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Product/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Shared/Components/MenuAdmin/Default.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Shared/Components/MenuAdmin/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudUFkbWluXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Shared/Components/NavAdmin/Default.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Shared/Components/NavAdmin/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmF2QWRtaW5cRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Shared/Layout/_Layout.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Shared/Layout/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXExheW91dFxfTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Slide/Create.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Slide/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2xpZGVcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Areas/Admin/Views/Slide/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Areas/Admin/Views/Slide/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2xpZGVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Account/ChangeAccount.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Account/ChangeAccount.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VBY2NvdW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Account/ChangePassword.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Account/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDaGFuZ2VQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Account/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Account/Order.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Account/Order.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxPcmRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Account/OrderDetail.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Account/OrderDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxPcmRlckRldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Cart/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Category/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Checkout/CheckoutFail.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Checkout/CheckoutFail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcQ2hlY2tvdXRGYWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Checkout/CheckoutSuccess.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Checkout/CheckoutSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcQ2hlY2tvdXRTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Checkout/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Checkout/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hlY2tvdXRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Contact/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Home/ConfirmEmail.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Home/ConfirmEmail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb25maXJtRW1haWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Home/ForgotPassword.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Home/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Home/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Home/Login.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Home/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Home/Register.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Home/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Home/ResetPassword.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Home/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Home/ResetPasswordConfirmation.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Home/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Home/ResetPasswordFail.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Home/ResetPasswordFail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXNldFBhc3N3b3JkRmFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/PageNotFound/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/PageNotFound/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFnZU5vdEZvdW5kXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Product/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Search/Index.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Search/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VhcmNoXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Shared/Components/Footer/Default.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Shared/Components/Footer/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRm9vdGVyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Shared/Components/Header/Default.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Shared/Components/Header/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Shared/Components/MenuAccount/Default.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Shared/Components/MenuAccount/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudUFjY291bnRcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Shared/Components/Menu/Default.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Shared/Components/Menu/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudVxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Shared/Components/Title/Default.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Shared/Components/Title/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVGl0bGVcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Shared/Layout/Error.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Shared/Layout/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dFxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Shared/Layout/_ValidationScriptsPartial.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Shared/Layout/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dFxfVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/_ViewImports.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/_ViewStart.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/rac/backupcodeasp.net/source/Shop.Mvc/Views/Shared/Layout/_Layout.cshtml]
+[D:/rac/backupcodeasp.net/abc/ASPcoreMVC/Shop.Mvc/Views/Shared/Layout/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dFxfTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = b-d5u63g6o1w

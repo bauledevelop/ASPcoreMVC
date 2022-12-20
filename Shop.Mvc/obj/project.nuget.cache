@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nUP0UzbrcqscHfJnkp9qzEUcETAWGDDNJwqTNKGY/tvTy3/l46QnhnRJV8o9uoiQQGumi5advyikfAA7N16WRQ==",
+  "dgSpecHash": "MF/t7RyLOLPOb7xPGPwIiv8ZrSKV0s/3CSF4KlVD9FiK5J6yO26QDH9wbo7kMeA3hgxXzctbVkJqeUaloNPFCg==",
   "success": true,
-  "projectFilePath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Mvc\\Shop.Mvc.csproj",
+  "projectFilePath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\Shop.Mvc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\minhp\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\minhp\\.nuget\\packages\\braintreehttp-dotnet\\0.3.0\\braintreehttp-dotnet.0.3.0.nupkg.sha512",

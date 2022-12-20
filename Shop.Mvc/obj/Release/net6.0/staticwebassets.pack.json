@@ -1,276 +1,424 @@
 {
   "Files": [
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\Shop.Mvc.bundle.scp.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\Shop.Mvc.bundle.scp.css",
       "PackagePath": "staticwebassets\\Shop.Mvc.bundle.scp.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\css\\site.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\favicon.ico",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\js\\site.js",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\slide\\hinh1-coder-la-gi.jpg",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\slide\\hinh1-coder-la-gi.jpg",
       "PackagePath": "staticwebassets\\slide\\hinh1-coder-la-gi.jpg"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\316190669_705136194337333_8721002030928651031_n.jpg",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\slide\\slide-01.jpg",
+      "PackagePath": "staticwebassets\\slide\\slide-01.jpg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\slide\\slide-02.jpg",
+      "PackagePath": "staticwebassets\\slide\\slide-02.jpg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\slide\\slide-03.jpg",
+      "PackagePath": "staticwebassets\\slide\\slide-03.jpg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\slide\\slide-06.jpg",
+      "PackagePath": "staticwebassets\\slide\\slide-06.jpg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\0e63c5196a8d1ff309446b2a5ad0948e.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\0e63c5196a8d1ff309446b2a5ad0948e.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\0fb0176026274e307f82a8566f586e43.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\0fb0176026274e307f82a8566f586e43.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\1a7ce294d8d2da53cebf75199b6867f8_tn.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\1a7ce294d8d2da53cebf75199b6867f8_tn.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\2b07cdb961d91fcdcd09caa5a9c73121.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\2b07cdb961d91fcdcd09caa5a9c73121.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\2d840b1dfaa96f71424002538d90330f.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\2d840b1dfaa96f71424002538d90330f.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\316190669_705136194337333_8721002030928651031_n.jpg",
       "PackagePath": "staticwebassets\\uploadFiles\\316190669_705136194337333_8721002030928651031_n.jpg"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\4601104039-NguyenHuuMinhDuong.jpg",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\32e83e293fe475b6bcedc32e3a4de9a5.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\32e83e293fe475b6bcedc32e3a4de9a5.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\4601104039-NguyenHuuMinhDuong.jpg",
       "PackagePath": "staticwebassets\\uploadFiles\\4601104039-NguyenHuuMinhDuong.jpg"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\hinh1-coder-la-gi.jpg",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\4f6c63fc056e6153f396db0ddd161acc.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\4f6c63fc056e6153f396db0ddd161acc.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\507f36f04e074b7b6feed0a45da441a8.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\507f36f04e074b7b6feed0a45da441a8.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\55b5941c171f33b83c020cacc425bd99.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\55b5941c171f33b83c020cacc425bd99.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\6a7cc1e26813864553cbd6af72686c91.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\6a7cc1e26813864553cbd6af72686c91.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\8ff5f25cb3c459c37cf76fb12edf0217.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\8ff5f25cb3c459c37cf76fb12edf0217.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\d156d5efe3cb923a78f3b2bc26859e20.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\d156d5efe3cb923a78f3b2bc26859e20.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\d8d1c62e46e9b673777c708d8db0015f.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\d8d1c62e46e9b673777c708d8db0015f.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\e21f5fc0b2959e7a0f7b1b790279dbfe.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\e21f5fc0b2959e7a0f7b1b790279dbfe.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\eda2a4a4f3bf386c9eb75e672664120c.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\eda2a4a4f3bf386c9eb75e672664120c.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\hinh1-coder-la-gi.jpg",
       "PackagePath": "staticwebassets\\uploadFiles\\hinh1-coder-la-gi.jpg"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\pngegg (1).png",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\logo.png",
+      "PackagePath": "staticwebassets\\uploadFiles\\logo.png"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\pngegg (1).png",
       "PackagePath": "staticwebassets\\uploadFiles\\pngegg (1).png"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\pngegg (2).png",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\pngegg (2).png",
       "PackagePath": "staticwebassets\\uploadFiles\\pngegg (2).png"
     },
     {
-      "Id": "D:\\rac\\backupcodeasp.net\\source\\Shop.Mvc\\wwwroot\\uploadFiles\\sky.ico",
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\sg-11134201-22100-ipsdsj2hsbjv3f.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\sg-11134201-22100-ipsdsj2hsbjv3f.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\sg-11134201-22100-q4sxh7wu67iv2e.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\sg-11134201-22100-q4sxh7wu67iv2e.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\sg-11134201-22100-re1hsj2hsbjv41.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\sg-11134201-22100-re1hsj2hsbjv41.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\sg-11134201-22100-w2k1f9wu67ivbf.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\sg-11134201-22100-w2k1f9wu67ivbf.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\sg-11134201-22110-8yuj8v34ssjv76.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\sg-11134201-22110-8yuj8v34ssjv76.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\sg-11134201-22110-nf7jlui6ssjvbd.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\sg-11134201-22110-nf7jlui6ssjvbd.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\sg-11134201-22110-nvuxg57f5ejv54.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\sg-11134201-22110-nvuxg57f5ejv54.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\sg-11134201-22120-1cwfldl11ukv71.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\sg-11134201-22120-1cwfldl11ukv71.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\sg-11134201-22120-icxrh7jiw2kv66.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\sg-11134201-22120-icxrh7jiw2kv66.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\sg-11134201-22120-jik8q4xv2tkv4b.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\sg-11134201-22120-jik8q4xv2tkv4b.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\sg-11134201-22120-wl1plopiw2kv08.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\sg-11134201-22120-wl1plopiw2kv08.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\sg-11134201-22120-y33ffel11ukv40.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\sg-11134201-22120-y33ffel11ukv40.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\sg-11134201-22120-zsc4q4xv2tkvee.jpeg",
+      "PackagePath": "staticwebassets\\uploadFiles\\sg-11134201-22120-zsc4q4xv2tkvee.jpeg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\sky.ico",
       "PackagePath": "staticwebassets\\uploadFiles\\sky.ico"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\slide-01.jpg",
+      "PackagePath": "staticwebassets\\uploadFiles\\slide-01.jpg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\slide-02.jpg",
+      "PackagePath": "staticwebassets\\uploadFiles\\slide-02.jpg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\slide-03.jpg",
+      "PackagePath": "staticwebassets\\uploadFiles\\slide-03.jpg"
+    },
+    {
+      "Id": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Mvc\\wwwroot\\uploadFiles\\slide-06.jpg",
+      "PackagePath": "staticwebassets\\uploadFiles\\slide-06.jpg"
     },
     {
       "Id": "obj\\Release\\net6.0\\staticwebassets\\msbuild.Shop.Mvc.Microsoft.AspNetCore.StaticWebAssets.props",

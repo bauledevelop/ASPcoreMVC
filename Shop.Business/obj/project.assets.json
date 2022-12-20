@@ -8556,11 +8556,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Business\\Shop.Business.csproj",
+      "projectUniqueName": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Business\\Shop.Business.csproj",
       "projectName": "Shop.Business",
-      "projectPath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Business\\Shop.Business.csproj",
+      "projectPath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Business\\Shop.Business.csproj",
       "packagesPath": "C:\\Users\\minhp\\.nuget\\packages\\",
-      "outputPath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Business\\obj\\",
+      "outputPath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Business\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -8584,14 +8584,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Common\\Shop.Common.csproj": {
-              "projectPath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Common\\Shop.Common.csproj"
+            "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Common\\Shop.Common.csproj": {
+              "projectPath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Common\\Shop.Common.csproj"
             },
-            "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Entities\\Shop.Entities.csproj": {
-              "projectPath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Entities\\Shop.Entities.csproj"
+            "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Entities\\Shop.Entities.csproj": {
+              "projectPath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Entities\\Shop.Entities.csproj"
             },
-            "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Repositories\\Shop.Repositories.csproj": {
-              "projectPath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Repositories\\Shop.Repositories.csproj"
+            "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Repositories\\Shop.Repositories.csproj": {
+              "projectPath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Repositories\\Shop.Repositories.csproj"
             }
           }
         }

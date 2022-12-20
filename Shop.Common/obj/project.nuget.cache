@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8pYH94HD+fAclhCKTzw6CQ35+YtR4inbYU0agC5UDkL0t3b9Fkix+Emm+LORSL6Xaer5s/+o5qsHxVOIidJx3Q==",
+  "dgSpecHash": "2ZtBcXfKSKzdXrkcuVFQL/3wzEtcjKatNDLVy8YceJ+0dtQOko0CUCvDp6gG0ZXu5AJTS5dvbbiBN2Hc3wJufA==",
   "success": true,
-  "projectFilePath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Common\\Shop.Common.csproj",
+  "projectFilePath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Common\\Shop.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\minhp\\.nuget\\packages\\mailkit\\3.2.0\\mailkit.3.2.0.nupkg.sha512",
     "C:\\Users\\minhp\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",

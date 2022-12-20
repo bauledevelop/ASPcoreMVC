@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>D:\rac\testhost</_PublishTargetUrl>
-    <History>True|2022-12-18T12:49:53.5449581Z;</History>
+    <_PublishTargetUrl>D:\rac\backupcodeasp.net\publish</_PublishTargetUrl>
+    <History>True|2022-12-20T16:01:01.7494913Z;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

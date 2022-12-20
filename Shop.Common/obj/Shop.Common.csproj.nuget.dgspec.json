@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Common\\Shop.Common.csproj": {}
+    "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Common\\Shop.Common.csproj": {}
   },
   "projects": {
-    "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Common\\Shop.Common.csproj": {
+    "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Common\\Shop.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Common\\Shop.Common.csproj",
+        "projectUniqueName": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Common\\Shop.Common.csproj",
         "projectName": "Shop.Common",
-        "projectPath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Common\\Shop.Common.csproj",
+        "projectPath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Common\\Shop.Common.csproj",
         "packagesPath": "C:\\Users\\minhp\\.nuget\\packages\\",
-        "outputPath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Common\\obj\\",
+        "outputPath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

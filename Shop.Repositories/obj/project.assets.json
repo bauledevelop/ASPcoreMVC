@@ -8278,11 +8278,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Repositories\\Shop.Repositories.csproj",
+      "projectUniqueName": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Repositories\\Shop.Repositories.csproj",
       "projectName": "Shop.Repositories",
-      "projectPath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Repositories\\Shop.Repositories.csproj",
+      "projectPath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Repositories\\Shop.Repositories.csproj",
       "packagesPath": "C:\\Users\\minhp\\.nuget\\packages\\",
-      "outputPath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Repositories\\obj\\",
+      "outputPath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Repositories\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -8306,8 +8306,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Entities\\Shop.Entities.csproj": {
-              "projectPath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Entities\\Shop.Entities.csproj"
+            "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Entities\\Shop.Entities.csproj": {
+              "projectPath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Entities\\Shop.Entities.csproj"
             }
           }
         }

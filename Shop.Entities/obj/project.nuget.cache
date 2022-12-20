@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ARQS7QAL6gTUYk+6rYvy53yWAcKloo/2JgcnktFkvIdxj6q/HzPWx0Yph5vyX1z4NBFmN9SeatjAsb/eyC1Prg==",
+  "dgSpecHash": "EDVPxxPuLg7Piz68Kxl8IZ1bgWAzWycMOK3/lGBNbYlv416mw+b8FOdqwYk3RwJmEYVGlUFBWPa27dWSPZ/nfw==",
   "success": true,
-  "projectFilePath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Entities\\Shop.Entities.csproj",
+  "projectFilePath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Entities\\Shop.Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\minhp\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\minhp\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

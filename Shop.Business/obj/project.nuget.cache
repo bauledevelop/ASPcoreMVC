@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8AzBhp/+/xNabosJIhPlVbckE+Da+BjenG9lsB4BC4d4KcE8sUUAX+LTFml3uOVOHqYyFPGaq5xg6xQSzBlMUA==",
+  "dgSpecHash": "9NnXOIsnKF5A3gURMYsfF09W8/DC6ePptJLKVXGrtG2JXgVA+EqX72HVXAh7P2ar6iPKXXrD20U2Mexi2FpXhw==",
   "success": true,
-  "projectFilePath": "D:\\rac\\backupcodeasp.net\\pullcode\\ASPcoreMVC\\Shop.Business\\Shop.Business.csproj",
+  "projectFilePath": "D:\\rac\\backupcodeasp.net\\abc\\ASPcoreMVC\\Shop.Business\\Shop.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\minhp\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\minhp\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
