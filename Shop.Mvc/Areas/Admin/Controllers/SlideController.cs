@@ -25,8 +25,6 @@ namespace Shop.Mvc.Areas.Admin.Controllers
             try
             {
                 var model = _slideBusiness.SelectByQuantityItem(page, pageSize);
-               
-                ViewData["Pagination"] = _slideBusiness.SelectAll().ToPagedList(page, pageSize);
                 return View(model);
             }
             catch(Exception ex)

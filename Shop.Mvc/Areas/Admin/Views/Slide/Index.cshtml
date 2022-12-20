@@ -5,7 +5,6 @@
 @{
     ViewData["Title"] = "Trang Slide";
     Layout = "~/Areas/Admin/Views/Shared/Layout/_Layout.cshtml";
-    var paginations = (IPagedList)ViewData["Pagination"];
 }
 
 @section js{
@@ -45,26 +44,6 @@
 
                         </tbody>
                     </table>
-                </div>
-                <div class="row mt-4" style="justify-content: space-between;">
-                    <div class="col-sm-12 col-md-5">
-                        <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Show @paginations.FirstItemOnPage to @paginations.LastItemOnPage total @paginations.TotalItemCount entities</div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
-                            @if (paginations != null)
-                            {
-                                @Html.PagedListPager(paginations, page => Url.Action("CategoryProduct","Admin",new {page=page}),new PagedListRenderOptions{
-                        DisplayLinkToIndividualPages = true,
-                        DisplayPageCountAndCurrentLocation = false,
-                        MaximumPageNumbersToDisplay  = 5,
-                        LiElementClasses = new string[] { "page-item" },
-                        PageClasses = new string[] { "page-link" },
-
-                        })
-                            }
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
